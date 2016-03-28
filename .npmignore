@@ -1,0 +1,14 @@
+.babelrc
+.editorconfig
+.eslintrc
+.gitignore
+.travis.yml
+
+node_modules/
+npm-debug.log
+
+build/
+coverage/
+test/
+
+gulpfile.babel.js

@@ -1,0 +1,62 @@
+import chai from 'chai';
+import shallowDeepEqual from 'chai-shallow-deep-equal';
+import Parser from '../lib/parser';
+
+let expect = chai.expect;
+
+describe('Parser → Comma', () => {
+
+  chai.use(shallowDeepEqual);
+
+  let fixtures = [
+    {
+      it: 'should parse comma',
+      test: ' , ',
+      expected: [
+        { type: 'comma', value: ',', raws: { before: ' ', after: ' ' } }
+      ]
+    },
+    {
+      it: 'should parse comma and colon',
+      test: ' , : ',
+      expected: [
+        { type: 'comma', value: ',', raws: { before: ' ' } },
+        { type: 'colon', value: ':', raws: { before: ' ', after: ' ' } }
+      ]
+    },
+    {
+      it: 'should parse functions separated by a comma',
+      test: 'url(foo/bar.jpg), url(`http://website.com/img.jpg)',
+      expected: [
+        { type: 'func', value: 'url' },
+        { type: 'paren', value: '(' },
+        { type: 'word', value: 'foo/bar.jpg' },
+        { type: 'paren', value: ')' },
+        { type: 'comma', value: ',' },
+        { type: 'func', value: 'url', raws: { before: ' ' } },
+        { type: 'paren', value: '(' },
+        { type: 'word', value: '`http://website.com/img.jpg' },
+        { type: 'paren', value: ')' }
+      ]
+    }
+  ];
+
+  fixtures.forEach((fixture) => {
+    it(fixture.it, () => {
+      let ast = new Parser(fixture.test).parse();
+      let index = 0;
+
+      // reminder: .walk() flattens the entire node structure
+      ast.first.walk((node) => {
+        let expected = fixture.expected[index];
+
+        if (expected) {
+          expect(node).to.shallowDeepEqual(expected);
+        }
+
+        index ++;
+      });
+    });
+  });
+
+});

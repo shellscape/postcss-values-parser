@@ -235,9 +235,13 @@ export default class Parser {
     // url functions get special treatment, and anything between the function
     // parens get treated as one word, if the contents aren't not a string.
     if (this.current.type === 'func' && this.current.unbalanced &&
-    this.current.value === 'url' && this.currToken[0] !== 'string') {
+        this.current.value === 'url' && this.currToken[0] !== 'string') {
       let nextToken = this.nextToken;
       let value = this.currToken[1];
+      let start = {
+        line: this.currToken[2],
+        column: this.currToken[3]
+      };
 
       while (nextToken && nextToken[0] !== ')' && this.current.unbalanced) {
         this.position ++;
@@ -252,13 +256,10 @@ export default class Parser {
         this.newNode(new Word({
           value,
           source: {
-            start: {
-              line: this.currToken[2],
-              column: this.currToken[3]
-            },
+            start,
             end: {
               line: this.currToken[4],
-              column: this.currToken[3]
+              column: this.currToken[5]
             }
           },
           sourceIndex: this.currToken[6]

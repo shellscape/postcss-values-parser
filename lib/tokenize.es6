@@ -66,7 +66,12 @@ export default function tokenize (input) {
           code === cr      ||
           code === feed );
 
-        tokens.push(['space', css.slice(pos, next), line, pos - offset, pos]);
+        tokens.push(['space', css.slice(pos, next),
+          line, pos  - offset,
+          line, next - offset,
+          pos
+        ]);
+
         pos = next - 1;
         break;
 
@@ -74,28 +79,51 @@ export default function tokenize (input) {
       case minus:
       case asterisk:
         next = pos + 1;
-        tokens.push(['operator', css.slice(pos, next), line, pos - offset, pos]);
+        tokens.push(['operator', css.slice(pos, next),
+          line, pos  - offset,
+          line, next - offset,
+          pos
+        ]);
+
         pos = next - 1;
         break;
 
       case colon:
         next = pos + 1;
-        tokens.push(['colon', css.slice(pos, next), line, pos - offset, pos]);
+        tokens.push(['colon', css.slice(pos, next),
+          line, pos  - offset,
+          line, next - offset,
+          pos
+        ]);
+
         pos = next - 1;
         break;
 
       case comma:
         next = pos + 1;
-        tokens.push(['comma', css.slice(pos, next), line, pos - offset, pos]);
+        tokens.push(['comma', css.slice(pos, next),
+          line, pos  - offset,
+          line, next - offset,
+          pos
+        ]);
+
         pos = next - 1;
         break;
 
       case openParen:
-        tokens.push(['(', '(', line, pos - offset, pos]);
+        tokens.push(['(', '(',
+          line, pos  - offset,
+          line, next - offset,
+          pos
+        ]);
         break;
 
       case closeParen:
-        tokens.push([')', ')', line, pos - offset, pos]);
+        tokens.push([')', ')',
+          line, pos  - offset,
+          line, next - offset,
+          pos
+        ]);
         break;
 
       case singleQuote:
@@ -195,7 +223,13 @@ export default function tokenize (input) {
         // catch a regular slash, that isn't a comment
         else if (code === slash) {
           next = pos + 1;
-          tokens.push(['operator', css.slice(pos, next), line, pos - offset, pos]);
+
+          tokens.push(['operator', css.slice(pos, next),
+            line, pos  - offset,
+            line, next - offset,
+            pos
+          ]);
+
           pos = next - 1;
         }
         else {

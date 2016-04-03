@@ -1,6 +1,6 @@
 {
   "name": "postcss-values-parser",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A CSS property value parser for use with PostCSS",
   "author": {
     "name": "Andrew Powell (shellscape)",
@@ -19,12 +19,12 @@
     "properties"
   ],
   "bugs": {
-    "url": "https://github.com/lesshint/postcss-value-parser/issues"
+    "url": "https://github.com/lesshint/postcss-values-parser/issues"
   },
-  "homepage": "https://github.com/lesshint/postcss-value-parser",
+  "homepage": "https://github.com/lesshint/postcss-values-parser",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lesshint/postcss-value-parser.git"
+    "url": "https://github.com/lesshint/postcss-values-parser.git"
   },
   "main": "dist/index.js",
   "files": [

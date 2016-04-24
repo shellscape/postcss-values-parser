@@ -15,7 +15,7 @@ const feed        = '\f'.charCodeAt(0);
 const tab         = '\t'.charCodeAt(0);
 const cr          = '\r'.charCodeAt(0);
 const at          = '@'.charCodeAt(0);
-const atEnd       = /[ \n\t\r\{\(\)'"\\;/]/g;
+const atEnd       = /[ \n\t\r\{\(\)'"\\;,/]/g;
 const wordEnd     = /[ \n\t\r\(\)\*:;@!&'"\+\|~>,\[\]\\]|\/(?=\*)/g;
 const wordEndNum  = /[ \n\t\r\(\)\*:;@!&'"\-\+\|~>,\[\]\\]|\//g;
 

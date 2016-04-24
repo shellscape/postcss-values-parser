@@ -38,6 +38,20 @@ describe('Parser → Comma', () => {
         { type: 'word', value: '`http://website.com/img.jpg' },
         { type: 'paren', value: ')' }
       ]
+    },
+    {
+      it: 'should parse at-words and commas separately',
+      test: 'rgb(@a, @b, @c)',
+      expected: [
+        { type: 'func', value: 'rgb' },
+        { type: 'paren', value: '(' },
+        { type: 'atword', value: 'a' },
+        { type: 'comma', value: ',' },
+        { type: 'atword', value: 'b' },
+        { type: 'comma', value: ',' },
+        { type: 'atword', value: 'c' },
+        { type: 'paren', value: ')' }
+      ]
     }
   ];
 

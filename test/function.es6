@@ -9,70 +9,70 @@ describe('Parser → Function', () => {
   chai.use(shallowDeepEqual);
 
   let fixtures = [
-    // {
-    //   it: 'should parse empty url function',
-    //   test: 'url()',
-    //   expected: [
-    //     { type: 'func', value: 'url' },
-    //     { type: 'paren', value: '(' },
-    //     { type: 'paren', value: ')' }
-    //   ]
-    // },
-    // {
-    //   it: 'should parse url function',
-    //   test: 'url( /gfx/img/bg.jpg )',
-    //   expected: [
-    //     { type: 'func', value: 'url' },
-    //     { type: 'paren', value: '(' },
-    //     { type: 'word', value: ' /gfx/img/bg.jpg ' },
-    //     { type: 'paren', value: ')' }
-    //   ]
-    // },
-    // {
-    //   it: 'should  parse url function with quoted first argument',
-    //   test: 'url("/gfx/img/bg.jpg" hello )',
-    //   expected: [
-    //     { type: 'func', value: 'url' },
-    //     { type: 'paren', value: '(' },
-    //     { type: 'string', value: '/gfx/img/bg.jpg', raws: { quote: '"' } },
-    //     { type: 'word', value: 'hello' },
-    //     { type: 'paren', value: ')' }
-    //   ]
-    // },
-    // {
-    //   it: 'should parse rgba function',
-    //   test: 'rgba( 29, 439 , 29 )',
-    //   expected: [
-    //     { type: 'func', value: 'rgba' },
-    //     { type: 'paren', value: '(' },
-    //     { type: 'number', value: '29', raws: { before: ' ' } },
-    //     { type: 'comma', value: ',' },
-    //     { type: 'number', value: '439', raws: { before: ' ' } },
-    //     { type: 'comma', value: ',', raws: { before: ' ' } },
-    //     { type: 'number', value: '29', raws: { before: ' ' } },
-    //     { type: 'paren', value: ')' }
-    //   ]
-    // },
-    // {
-    //   it: 'should parse nested calc functions',
-    //   test: 'calc(((768px - 100vw) / 2) - 15px)',
-    //   expected: [
-    //     { type: 'func', value: 'calc' },
-    //     { type: 'paren', value: '(' },
-    //     { type: 'paren', value: '(' },
-    //     { type: 'paren', value: '(' },
-    //     { type: 'number', value: '768', unit: 'px' },
-    //     { type: 'operator', value: '-' },
-    //     { type: 'number', value: '100', unit: 'vw' },
-    //     { type: 'paren', value: ')' },
-    //     { type: 'operator', value: '/', raws: { before: ' ' } },
-    //     { type: 'number', value: '2', raws: { before: ' ' } },
-    //     { type: 'paren', value: ')' },
-    //     { type: 'operator', value: '-', raws: { before: ' ' } },
-    //     { type: 'number', value: '15', unit: 'px', raws: { before: ' ' } },
-    //     { type: 'paren', value: ')' }
-    //   ]
-    // },
+    {
+      it: 'should parse empty url function',
+      test: 'url()',
+      expected: [
+        { type: 'func', value: 'url' },
+        { type: 'paren', value: '(' },
+        { type: 'paren', value: ')' }
+      ]
+    },
+    {
+      it: 'should parse url function',
+      test: 'url( /gfx/img/bg.jpg )',
+      expected: [
+        { type: 'func', value: 'url' },
+        { type: 'paren', value: '(' },
+        { type: 'word', value: ' /gfx/img/bg.jpg ' },
+        { type: 'paren', value: ')' }
+      ]
+    },
+    {
+      it: 'should  parse url function with quoted first argument',
+      test: 'url("/gfx/img/bg.jpg" hello )',
+      expected: [
+        { type: 'func', value: 'url' },
+        { type: 'paren', value: '(' },
+        { type: 'string', value: '/gfx/img/bg.jpg', raws: { quote: '"' } },
+        { type: 'word', value: 'hello' },
+        { type: 'paren', value: ')' }
+      ]
+    },
+    {
+      it: 'should parse rgba function',
+      test: 'rgba( 29, 439 , 29 )',
+      expected: [
+        { type: 'func', value: 'rgba' },
+        { type: 'paren', value: '(' },
+        { type: 'number', value: '29', raws: { before: ' ' } },
+        { type: 'comma', value: ',' },
+        { type: 'number', value: '439', raws: { before: ' ' } },
+        { type: 'comma', value: ',', raws: { before: ' ' } },
+        { type: 'number', value: '29', raws: { before: ' ' } },
+        { type: 'paren', value: ')' }
+      ]
+    },
+    {
+      it: 'should parse nested calc functions',
+      test: 'calc(((768px - 100vw) / 2) - 15px)',
+      expected: [
+        { type: 'func', value: 'calc' },
+        { type: 'paren', value: '(' },
+        { type: 'paren', value: '(' },
+        { type: 'paren', value: '(' },
+        { type: 'number', value: '768', unit: 'px' },
+        { type: 'operator', value: '-' },
+        { type: 'number', value: '100', unit: 'vw' },
+        { type: 'paren', value: ')' },
+        { type: 'operator', value: '/', raws: { before: ' ' } },
+        { type: 'number', value: '2', raws: { before: ' ' } },
+        { type: 'paren', value: ')' },
+        { type: 'operator', value: '-', raws: { before: ' ' } },
+        { type: 'number', value: '15', unit: 'px', raws: { before: ' ' } },
+        { type: 'paren', value: ')' }
+      ]
+    },
     {
       it: 'should parse nested functions',
       test: 'bar(baz(black, 10%), 10%)',

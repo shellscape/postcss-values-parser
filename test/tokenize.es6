@@ -11,7 +11,8 @@ describe('Tokenize', () => {
     { value: 'w1 w2 w6 \n f(4) ( ) () \t "s\'t" \'st\\"2\'', expectedLength: 21 },
     { value: '#ffffff', expectedLength: 1 },
     { value: 'Bond\\ 007', expectedLength: 4 },
-    { value: ' \\"word\\\'"\\ \\\t ', expectedLength: 7 }
+    { value: ' \\"word\\\'"\\ \\\t ', expectedLength: 7 },
+    { value: 'bar(baz(black, 10%), 10%)', expectedLength: 13 }
   ];
 
   fixtures.forEach((fixture) => {

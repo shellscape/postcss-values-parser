@@ -205,6 +205,7 @@ export default class Parser {
     }
 
     // ok, all parens are balanced. continue on
+
     let last = this.current.last;
 
     if (last && last.type === 'func' && last.unbalanced < 0) {
@@ -287,6 +288,11 @@ export default class Parser {
     }));
 
     this.position ++;
+
+    if (this.position > this.tokens.length - 1) {
+      return;
+    }
+
     this.current.unbalanced --;
 
     if (this.current.unbalanced < 0) {

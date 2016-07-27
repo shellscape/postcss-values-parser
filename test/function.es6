@@ -89,26 +89,17 @@ describe('Parser → Function', () => {
         { type: 'number', value: '10' },
         { type: 'paren', value: ')' }
       ]
+    },
+    {
+      it: 'should parse a browser-prefix function',
+      test: '-webkit-linear-gradient(0)',
+      expected: [
+        { type: 'func', value: '-webkit-linear-gradient' },
+        { type: 'paren', value: '(' },
+        { type: 'number', value: '0' },
+        { type: 'paren', value: ')' }
+      ]
     }
-    // {
-    //   it: 'should parse nested functions',
-    //   test: '(bar(baz(black, 10%), 10%))',
-    //   expected: [
-    //     { type: 'paren', value: '(' },
-    //     { type: 'func', value: 'bar' },
-    //     { type: 'paren', value: '(' },
-    //     { type: 'func', value: 'baz' },
-    //     { type: 'paren', value: '(' },
-    //     { type: 'word', value: 'black' },
-    //     { type: 'comma', value: ',' },
-    //     { type: 'number', value: '10' },
-    //     { type: 'paren', value: ')' },
-    //     { type: 'comma', value: ',' },
-    //     { type: 'number', value: '10' },
-    //     { type: 'paren', value: ')' },
-    //     { type: 'paren', value: ')' }
-    //   ]
-    // }
   ];
 
   let failures = [{

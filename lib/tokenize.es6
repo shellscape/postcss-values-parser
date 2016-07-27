@@ -26,7 +26,7 @@ export default function tokenize (input) {
   let css    = input.valueOf();
 
   let code, next, quote, lines, last, content, escape,
-    nextLine, nextOffset, escaped, escapePos;
+    nextLine, nextOffset, escaped, escapePos, nextChar;
 
   let length = css.length;
   let offset = -1;
@@ -67,19 +67,6 @@ export default function tokenize (input) {
           code === feed );
 
         tokens.push(['space', css.slice(pos, next),
-          line, pos  - offset,
-          line, next - offset,
-          pos
-        ]);
-
-        pos = next - 1;
-        break;
-
-      case plus:
-      case minus:
-      case asterisk:
-        next = pos + 1;
-        tokens.push(['operator', css.slice(pos, next),
           line, pos  - offset,
           line, next - offset,
           pos
@@ -188,6 +175,32 @@ export default function tokenize (input) {
 
         pos = next;
         break;
+
+      case plus:
+      case minus:
+      case asterisk:
+        next = pos + 1;
+        nextChar = css.slice(pos + 1, next + 1);
+
+        // if the operator is immediately followed by a word character, then we
+        // have a prefix of some kind, and should fall-through. eg. -webkit
+
+        /* eslint no-fallthrough: 0 */
+        if (!/[a-z]/gi.test(nextChar)) {
+
+          tokens.push(['operator', css.slice(pos, next),
+            line, pos  - offset,
+            line, next - offset,
+            pos
+          ]);
+
+          pos = next - 1;
+          break;
+        }
+
+        // NOTE: This is the only case that should fall-through. If we run into
+        // another situation where we need fall-through, then we need to break
+        // this select out into functions.
 
       default:
         if ( code === slash && css.charCodeAt(pos + 1) === asterisk ) {

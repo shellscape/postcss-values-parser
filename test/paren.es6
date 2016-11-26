@@ -58,6 +58,30 @@ describe('Parser → Parenthesis', () => {
       ]
     },
     {
+      it: 'should parse nested functions in multiple parens',
+      test: '((a(b(c, d)) / e(f)))',
+      expected: [
+        { type: 'paren', value: '(' },
+        { type: 'paren', value: '(' },
+        { type: 'func', value: 'a' },
+        { type: 'paren', value: '(' },
+        { type: 'func', value: 'b' },
+        { type: 'paren', value: '(' },
+        { type: 'word', value: 'c' },
+        { type: 'comma', value: ',' },
+        { type: 'word', value: 'd' },
+        { type: 'paren', value: ')' },
+        { type: 'paren', value: ')' },
+        { type: 'operator', value: '/' },
+        { type: 'func', value: 'e' },
+        { type: 'paren', value: '(' },
+        { type: 'word', value: 'f' },
+        { type: 'paren', value: ')' },
+        { type: 'paren', value: ')' },
+        { type: 'paren', value: ')' }
+      ]
+    },
+    {
       it: 'should parse functions in parens',
       test: '( calc(( ) ))word',
       expected: [

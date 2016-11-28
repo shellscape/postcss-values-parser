@@ -289,7 +289,7 @@ export default class Parser {
 
     this.position ++;
 
-    if (this.position > this.tokens.length - 1) {
+    if (this.position >= this.tokens.length - 1) {
       return;
     }
 

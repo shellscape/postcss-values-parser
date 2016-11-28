@@ -1,6 +1,6 @@
 {
   "name": "postcss-values-parser",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "A CSS property value parser for use with PostCSS",
   "author": {
     "name": "Andrew Powell (shellscape)",

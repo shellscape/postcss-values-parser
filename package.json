@@ -1,11 +1,20 @@
 {
   "name": "postcss-values-parser",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "A CSS property value parser for use with PostCSS",
+  "main": "index.js",
+  "repository": "lesshint/postcss-values-parser",
   "author": {
     "name": "Andrew Powell (shellscape)",
     "email": "andrew@shellscape.org",
     "url": "http://shellscape.org"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "gulp"
   },
   "keywords": [
     "css",
@@ -18,18 +27,11 @@
     "parsing",
     "properties"
   ],
-  "bugs": {
-    "url": "https://github.com/lesshint/postcss-values-parser/issues"
-  },
-  "homepage": "https://github.com/lesshint/postcss-values-parser",
-  "repository": "lesshint/postcss-values-parser",
-  "main": "index.js",
   "files": [
     "API.md",
     "LICENSE",
     "README.md"
   ],
-  "license": "MIT",
   "dependencies": {
     "flatten": "^1.0.2",
     "indexes-of": "^1.0.1",
@@ -43,8 +45,5 @@
     "gulp": "^3.9.1",
     "gulp-eslint": "^3.0.1",
     "gulp-mocha": "^3.0.1"
-  },
-  "scripts": {
-    "test": "gulp"
   }
 }

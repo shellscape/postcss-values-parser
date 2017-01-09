@@ -1,5 +1,5 @@
-import { expect } from 'chai';
-import Parser from '../lib/parser';
+const expect = require('chai').expect;
+const Parser = require('../lib/parser');
 
 describe('Parser → Number', () => {
 
@@ -33,7 +33,7 @@ describe('Parser → Number', () => {
       expected: { value: '5', unit: '', length: 3 }
     },
     {
-      test: '5+5',
+      test: '5 + 5',
       expected: { value: '5', unit: '', length: 3 }
     },
     {
@@ -48,8 +48,8 @@ describe('Parser → Number', () => {
 
   fixtures.forEach((fixture) => {
     it('should parse ' + fixture.test, () => {
-      let ast = new Parser(fixture.test).parse();
-      let node = ast.first.last;
+      let ast = new Parser(fixture.test).parse(),
+        node = ast.first.last;
 
       expect(ast.first.nodes.length).to.equal(fixture.expected.length);
 

@@ -1,6 +1,6 @@
-import chai from 'chai';
-import shallowDeepEqual from 'chai-shallow-deep-equal';
-import Parser from '../lib/parser';
+const chai = require('chai');
+const shallowDeepEqual = require('chai-shallow-deep-equal');
+const Parser = require('../lib/parser');
 
 let expect = chai.expect;
 

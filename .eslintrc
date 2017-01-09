@@ -1,18 +1,33 @@
 {
-  "parser": "babel-eslint",
-  "extends": "eslint-config-postcss",
-  "rules": {
-    "consistent-return": [0],
-    "complexity":        [0],
-    "space-before-function-paren": [0],
-    "indent": [2, 2, {"SwitchCase": 1}],
-    "max-len": [1, 1000],
-    "brace-style": [2, "stroustrup", { "allowSingleLine": true }],
-    "space-unary-ops": [0],
-    "no-extra-parens": [0],
-    "no-bitwise": [0]
-  },
   "env": {
-    "mocha": true
+    "es6": true,
+    "mocha": true,
+    "node": true
+  },
+  "rules": {
+    "brace-style": ["error", "stroustrup", { "allowSingleLine": false }],
+    "consistent-return": ["off"],
+    "comma-spacing": ["error", { "before": false, "after": true }],
+    "complexity": ["off"],
+    "indent": ["error", 2, { "SwitchCase": 1, "VariableDeclarator": 1 }],
+    "keyword-spacing": ["error", { "after": true }],
+    "max-len": ["warn", 1000],
+    "no-bitwise": ["off"],
+    "no-console": ["off"],
+    "no-extra-parens": ["off"],
+    "one-var": ["error", {
+      "var": "always",
+      "let": "always",
+      "const": "never"
+    }],
+    "prefer-arrow-callback": ["error", { "allowNamedFunctions": true }],
+    "semi": ["error", "always"],
+    "space-before-function-paren": ["error", "always"],
+    "space-infix-ops": ["error", { "int32Hint": false }],
+    "space-in-parens": ["error", "never"],
+    "space-unary-ops": ["off"]
+  },
+  "parserOptions": {
+    "ecmaVersion": 8
   }
 }

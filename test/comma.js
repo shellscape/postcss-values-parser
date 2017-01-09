@@ -1,6 +1,6 @@
-import chai from 'chai';
-import shallowDeepEqual from 'chai-shallow-deep-equal';
-import Parser from '../lib/parser';
+const chai = require('chai');
+const shallowDeepEqual = require('chai-shallow-deep-equal');
+const Parser = require('../lib/parser');
 
 let expect = chai.expect;
 
@@ -57,8 +57,8 @@ describe('Parser → Comma', () => {
 
   fixtures.forEach((fixture) => {
     it(fixture.it, () => {
-      let ast = new Parser(fixture.test).parse();
-      let index = 0;
+      let ast = new Parser(fixture.test).parse(),
+        index = 0;
 
       // reminder: .walk() flattens the entire node structure
       ast.first.walk((node) => {

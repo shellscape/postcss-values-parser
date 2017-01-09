@@ -1,5 +1,5 @@
-import { expect } from 'chai';
-import tokenize from '../lib/tokenize';
+const expect = require('chai').expect;
+const tokenize = require('../lib/tokenize');
 
 describe('Tokenize', () => {
 

@@ -1,6 +1,6 @@
-import chai from 'chai';
-import shallowDeepEqual from 'chai-shallow-deep-equal';
-import Parser from '../lib/parser';
+const chai = require('chai');
+const shallowDeepEqual = require('chai-shallow-deep-equal');
+const Parser = require('../lib/parser');
 
 let expect = chai.expect;
 
@@ -8,7 +8,10 @@ describe('Parser → Comment', () => {
 
   chai.use(shallowDeepEqual);
 
-  let fixtures = [
+  let fixtures,
+    failures;
+
+  fixtures = [
     {
       it: 'should parse comments',
       test: '/*before*/ 1px /*between*/ 1px /*after*/',
@@ -88,15 +91,15 @@ describe('Parser → Comment', () => {
     }
   ];
 
-  let failures = [{
+  failures = [{
     it: 'should not parse unclosed comments',
     test: '/*comment*/ 1px /* unclosed '
   }];
 
   fixtures.forEach((fixture) => {
     it(fixture.it, () => {
-      let ast = new Parser(fixture.test).parse();
-      let index = 0;
+      let ast = new Parser(fixture.test).parse(),
+        index = 0;
 
       ast.first.walk((node) => {
         let expected = fixture.expected[index];

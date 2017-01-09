@@ -1,6 +1,6 @@
-import chai from 'chai';
-import shallowDeepEqual from 'chai-shallow-deep-equal';
-import Parser from '../lib/parser';
+const chai = require('chai');
+const shallowDeepEqual = require('chai-shallow-deep-equal');
+const Parser = require('../lib/parser');
 
 let expect = chai.expect;
 
@@ -8,7 +8,10 @@ describe('Parser → Function', () => {
 
   chai.use(shallowDeepEqual);
 
-  let fixtures = [
+  let fixtures,
+    failures;
+
+  fixtures = [
     {
       it: 'should parse empty url function',
       test: 'url()',
@@ -102,15 +105,15 @@ describe('Parser → Function', () => {
     }
   ];
 
-  let failures = [{
+  failures = [{
     it: 'should not parse url function with missing closing paren',
     test: 'url( /gfx/img/bg.jpg '
   }];
 
   fixtures.forEach((fixture) => {
     it(fixture.it, () => {
-      let ast = new Parser(fixture.test).parse();
-      let index = 0;
+      let ast = new Parser(fixture.test).parse(),
+        index = 0;
 
       ast.first.walk((node) => {
         let expected = fixture.expected[index];

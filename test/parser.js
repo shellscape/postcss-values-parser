@@ -1,5 +1,5 @@
-import { expect } from 'chai';
-import Parser from '../lib/parser';
+const expect = require('chai').expect;
+const Parser = require('../lib/parser');
 
 describe('Parser → Basic Tests', () => {
 

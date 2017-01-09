@@ -14,23 +14,35 @@ describe('Parser → Number', () => {
     },
     {
       test: '2.',
-      expected: { value: '2.', unit: '', length: 1 }
+      expected: { throw: true }
     },
     {
-      test: '+2.',
-      expected: { value: '2.', unit: '', length: 2 }
+      test: '+2',
+      expected: { value: '+2', unit: '', length: 1 }
     },
     {
-      test: '-2.',
-      expected: { value: '2.', unit: '', length: 2 }
+      test: '-2',
+      expected: { value: '-2', unit: '', length: 1 }
     },
     {
       test: '+-2.',
-      expected: { value: '2.', unit: '', length: 3 }
+      expected: { throw: true }
     },
     {
       test: '5/5',
       expected: { value: '5', unit: '', length: 3 }
+    },
+    {
+      test: '5+ 5',
+      expected: { throw: true }
+    },
+    {
+      test: '5 +5',
+      expected: { throw: true }
+    },
+    {
+      test: '5+5',
+      expected: { throw: true }
     },
     {
       test: '5 + 5',
@@ -47,18 +59,32 @@ describe('Parser → Number', () => {
   ];
 
   fixtures.forEach((fixture) => {
-    it('should parse ' + fixture.test, () => {
-      let ast = new Parser(fixture.test).parse(),
+    it('should ' + (fixture.expected.throw ? 'not ' : '')  + 'parse ' + fixture.test, () => {
+      let node,
+        ast;
+
+      function parse () {
+        ast = new Parser(fixture.test).parse();
         node = ast.first.last;
+      }
 
-      expect(ast.first.nodes.length).to.equal(fixture.expected.length);
-
-      if (fixture.expected.fail) {
-        expect(node.value).to.equal(fixture.test);
+      if (fixture.expected.throw) {
+        expect(parse).to.throw;
       }
       else {
-        expect(node.value).to.equal(fixture.expected.value);
-        expect(node.unit).to.equal(fixture.expected.unit);
+        parse();
+
+        console.log(node);
+
+        expect(ast.first.nodes.length).to.equal(fixture.expected.length);
+
+        if (fixture.expected.fail) {
+          expect(node.value).to.equal(fixture.test);
+        }
+        else {
+          expect(node.value).to.equal(fixture.expected.value);
+          expect(node.unit).to.equal(fixture.expected.unit);
+        }
       }
     });
   });

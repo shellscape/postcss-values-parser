@@ -18,7 +18,7 @@ gulp.task('lint', () => {
 
 gulp.task('test', ['lint'], () => {
   let glob = [
-    'test/number.js',
+    'test/*.js',
     '!test/parser.js',
     '!test/tokenize.js'
   ];

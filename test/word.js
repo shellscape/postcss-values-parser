@@ -51,6 +51,20 @@ describe('Parser → Word', () => {
         { type: 'word', value: 'Bond\\' },
         { type: 'number', value: '007', raws: { before: ' ' } }
       ]
+    },
+    {
+      it: 'should parse custom variables',
+      test: '--color',
+      expected: [
+        { type: 'word', value: '--color' }
+      ]
+    },
+    {
+      it: 'should parse custom variables',
+      test: '-webkit-transition',
+      expected: [
+        { type: 'word', value: '-webkit-transition' }
+      ]
     }
   ];
 

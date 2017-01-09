@@ -1,2 +1,2 @@
-requir('./tokenize.es6');
-// require('./parser.es6');
+require('./tokenize');
+require('./parser');

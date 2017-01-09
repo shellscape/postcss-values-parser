@@ -1,5 +1,6 @@
 const expect = require('chai').expect;
 const Parser = require('../lib/parser');
+const TokenizeError = require('../lib/errors/TokenizeError');
 
 describe('Parser → Number', () => {
 
@@ -14,7 +15,7 @@ describe('Parser → Number', () => {
     },
     {
       test: '2.',
-      expected: { throw: true }
+      expected: { value: '2.', unit: '', length: 1 }
     },
     {
       test: '+2',
@@ -69,12 +70,10 @@ describe('Parser → Number', () => {
       }
 
       if (fixture.expected.throw) {
-        expect(parse).to.throw;
+        expect(parse).to.throw(TokenizeError);
       }
       else {
         parse();
-
-        console.log(node);
 
         expect(ast.first.nodes.length).to.equal(fixture.expected.length);
 

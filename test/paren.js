@@ -1,3 +1,5 @@
+'use strict';
+
 const chai = require('chai');
 const shallowDeepEqual = require('chai-shallow-deep-equal');
 const Parser = require('../lib/parser');

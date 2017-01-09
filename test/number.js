@@ -1,3 +1,5 @@
+'use strict';
+
 const expect = require('chai').expect;
 const Parser = require('../lib/parser');
 const TokenizeError = require('../lib/errors/TokenizeError');

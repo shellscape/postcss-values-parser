@@ -25,7 +25,8 @@
     "space-before-function-paren": ["error", "always"],
     "space-infix-ops": ["error", { "int32Hint": false }],
     "space-in-parens": ["error", "never"],
-    "space-unary-ops": ["off"]
+    "space-unary-ops": ["off"],
+    "strict": ["error", "safe"]
   },
   "parserOptions": {
     "ecmaVersion": 8

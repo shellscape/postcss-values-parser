@@ -1,3 +1,5 @@
+'use strict';
+
 const chai = require('chai');
 const Parser = require('../lib/parser');
 

@@ -33,7 +33,7 @@ not documented here are subject to change at any point.*
 
   ```js
   parser.colon({ value: ':' });
-  // → .button
+  // → :
   ```
 
   Arguments:
@@ -47,7 +47,7 @@ not documented here are subject to change at any point.*
 
   ```js
   parser.comma({ value: ',' });
-  // → +
+  // → ,
   ```
 
   Arguments:

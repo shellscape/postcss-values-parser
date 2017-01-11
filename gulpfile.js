@@ -1,6 +1,5 @@
 'use strict';
 
-const del = require('del');
 const eslint = require('gulp-eslint');
 const gulp = require('gulp');
 const mocha = require('gulp-mocha');

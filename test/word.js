@@ -62,7 +62,7 @@ describe('Parser → Word', () => {
       ]
     },
     {
-      it: 'should parse custom variables',
+      it: 'should parse browser prefixes',
       test: '-webkit-transition',
       expected: [
         { type: 'word', value: '-webkit-transition' }

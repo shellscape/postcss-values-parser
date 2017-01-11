@@ -1,8 +1,8 @@
 {
   "name": "postcss-values-parser",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A CSS property value parser for use with PostCSS",
-  "main": "index.js",
+  "main": "lib/index.js",
   "repository": "lesshint/postcss-values-parser",
   "author": {
     "name": "Andrew Powell (shellscape)",

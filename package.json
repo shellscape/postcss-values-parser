@@ -1,6 +1,6 @@
 {
   "name": "postcss-values-parser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A CSS property value parser for use with PostCSS",
   "main": "index.js",
   "repository": "lesshint/postcss-values-parser",
@@ -26,11 +26,6 @@
     "parser",
     "parsing",
     "properties"
-  ],
-  "files": [
-    "API.md",
-    "LICENSE",
-    "README.md"
   ],
   "dependencies": {
     "flatten": "^1.0.2",

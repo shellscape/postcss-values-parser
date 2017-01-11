@@ -1,5 +1,7 @@
-import { expect } from 'chai';
-import Parser from '../lib/parser';
+'use strict';
+
+const expect = require('chai').expect;
+const Parser = require('../lib/parser');
 
 describe('Node → toString', () => {
 
@@ -25,8 +27,8 @@ describe('Node → toString', () => {
 
   fixtures.forEach((fixture) => {
     it('should parse ' + fixture.replace(/\n/g, '\\n').replace(/\t/g, '\\t'), () => {
-      let ast = new Parser(fixture).parse();
-      let result = ast.toString();
+      let ast = new Parser(fixture).parse(),
+        result = ast.toString();
 
       expect(result).to.equal(fixture);
     });

@@ -1,6 +1,8 @@
-import chai from 'chai';
-import shallowDeepEqual from 'chai-shallow-deep-equal';
-import Parser from '../lib/parser';
+'use strict';
+
+const chai = require('chai');
+const shallowDeepEqual = require('chai-shallow-deep-equal');
+const Parser = require('../lib/parser');
 
 let expect = chai.expect;
 
@@ -50,6 +52,20 @@ describe('Parser → Word', () => {
       expected: [
         { type: 'word', value: 'Bond\\' },
         { type: 'number', value: '007', raws: { before: ' ' } }
+      ]
+    },
+    {
+      it: 'should parse custom variables',
+      test: '--color',
+      expected: [
+        { type: 'word', value: '--color' }
+      ]
+    },
+    {
+      it: 'should parse browser prefixes',
+      test: '-webkit-transition',
+      expected: [
+        { type: 'word', value: '-webkit-transition' }
       ]
     }
   ];

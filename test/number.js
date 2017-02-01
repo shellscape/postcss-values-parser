@@ -2,7 +2,7 @@
 
 const expect = require('chai').expect;
 const Parser = require('../lib/parser');
-const TokenizeError = require('../lib/errors/TokenizeError');
+const ParserError = require('../lib/errors/ParserError');
 
 describe('Parser → Number', () => {
 
@@ -72,7 +72,7 @@ describe('Parser → Number', () => {
       }
 
       if (fixture.expected.throw) {
-        expect(parse).to.throw(TokenizeError);
+        expect(parse).to.throw(ParserError);
       }
       else {
         parse();
@@ -87,6 +87,52 @@ describe('Parser → Number', () => {
           expect(node.unit).to.equal(fixture.expected.unit);
         }
       }
+    });
+  });
+
+});
+
+describe('Parser → Number : Loose', () => {
+
+  let fixtures = [
+    {
+      test: '-2',
+      expected: { value: '-2', unit: '', length: 1 }
+    },
+    {
+      test: '  -2',
+      expected: { value: '-2', unit: '', length: 1 }
+    },
+    {
+      test: '+-2.',
+      expected: { value: '-2.', unit: '', length: 2 }
+    },
+    {
+      test: '5+ 5',
+      expected: { value: '5', unit: '', length: 3 }
+    },
+    {
+      test: '1+ 5 + +5',
+      expected: { value: '+5', unit: '', length: 5 }
+    },
+    {
+      test: '5+5',
+      expected: { value: '5', unit: '', length: 3 }
+    },
+    {
+      test: '5+-+-+-+5',
+      expected: { value: '+5', unit: '', length: 8 }
+    }
+  ];
+
+  fixtures.forEach((fixture) => {
+    it('should ' + (fixture.expected.throw ? 'not ' : '')  + 'parse ' + fixture.test, () => {
+      let ast = new Parser(fixture.test, { loose: true }).parse(),
+        node = ast.first.last;
+
+      expect(ast.first.nodes.length).to.equal(fixture.expected.length);
+      expect(node.value).to.equal(fixture.expected.value);
+      expect(node.unit).to.equal(fixture.expected.unit);
     });
   });
 

@@ -53,23 +53,27 @@ npm install postcss-values-parser
 Using this parser is straightforward and doesn't require callbacks:
 
 ```js
-// ES6
-let parser = require('postcss-values-parser');
-let ast = parser('#fff').parse();
+const parser = require('postcss-values-parser');
+const ast = parser('#fff').parse();
 
 let color = ast       // the Root node
               .first  // the Value node
               .first; // a Word node, containing the color value.
 ```
 
-```js
-// ES5
-var parser = require('postcss-values-parser');
-var ast = parser('#fff').parse();
+## CSS-Like Languages
 
-var color = ast       // the Root node
-              .first  // the Value node
-              .first; // a Word node, containing the color value.
+If your intent is to use this parser with a CSS-like language (eg. SASS, LESS)
+then you can instruct the parser **_not to adhere to strict CSS_** parsing rules as
+per [the spec](https://drafts.csswg.org/css-values-3/). For example, the parser
+will throw an error by default if `calc` parameters [don't adhere to the spec](https://drafts.csswg.org/css-values-3/#calc-syntax).
+
+We call this `loose` mode. To enable `loose` mode, pass an options object to the
+`parser` method:
+
+```js
+const parser = require('postcss-values-parser');
+const ast = parser('#fff', { loose: true }).parse();
 ```
 
 ## Acknowledgements
@@ -78,4 +82,4 @@ This project was heavily influenced by [postcss-selector-parser](https://github.
 and utilized many patterns and logical constructs from the project.
 
 Tests and some tokenizing techniques found in [postcss-value-parser](https://github.com/TrySound/postcss-value-parser)
-and were used.
+were used.

@@ -40,16 +40,32 @@ describe('Parser → Number', () => {
       expected: { throw: true }
     },
     {
-      test: '5 +5',
+      test: 'calc(5+ 5)',
       expected: { throw: true }
     },
     {
-      test: '5+5',
+      test: '5 +5',
+      expected: { value: '+5', unit: '', length: 2 }
+    },
+    {
+      test: 'calc(5 +5)',
+      expected: { throw: true }
+    },
+    {
+      test: '5px+5px',
+      expected: { value: '+5', unit: 'px', length: 2 }
+    },
+    {
+      test: 'calc(5+5)',
       expected: { throw: true }
     },
     {
       test: '5 + 5',
-      expected: { value: '5', unit: '', length: 3 }
+      expected: { throw: true }
+    },
+    {
+      test: 'calc(5 + 5)',
+      expected: { value: ')', length: 5 }
     },
     {
       test: '.',
@@ -58,6 +74,18 @@ describe('Parser → Number', () => {
     {
       test: '.rem',
       expected: { fail: true, length: 1 }
+    },
+    {
+      test: '-2px',
+      expected: { value: '-2', unit: 'px', length: 1 }
+    },
+    {
+      test: '-16px',
+      expected: { value: '-16', unit: 'px', length: 1 }
+    },
+    {
+      test: '-16px -1px -1px -16px',
+      expected: { value: '-16', unit: 'px', length: 4 }
     }
   ];
 
@@ -77,7 +105,15 @@ describe('Parser → Number', () => {
       else {
         parse();
 
-        expect(ast.first.nodes.length).to.equal(fixture.expected.length);
+        let targetNode = ast.first;
+
+        // support testing calc
+        if (targetNode.first.nodes && targetNode.first.nodes.length) {
+          targetNode = targetNode.first;
+          node = targetNode.last;
+        }
+
+        expect(targetNode.nodes.length).to.equal(fixture.expected.length);
 
         if (fixture.expected.fail) {
           expect(node.value).to.equal(fixture.test);
@@ -117,11 +153,15 @@ describe('Parser → Number : Loose', () => {
     },
     {
       test: '5+5',
-      expected: { value: '5', unit: '', length: 3 }
+      expected: { value: '+5', unit: '', length: 2 }
     },
     {
       test: '5+-+-+-+5',
       expected: { value: '+5', unit: '', length: 8 }
+    },
+    {
+      test: '-16px -1px -1px -16px',
+      expected: { value: '-16', unit: 'px', length: 4 }
     }
   ];
 

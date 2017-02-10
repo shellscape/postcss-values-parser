@@ -14,13 +14,14 @@ describe('Tokenize', () => {
     { value: '#ffffff', expectedLength: 1 },
     { value: 'Bond\\ 007', expectedLength: 4 },
     { value: ' \\"word\\\'"\\ \\\t ', expectedLength: 7 },
-    { value: 'bar(baz(black, 10%), 10%)', expectedLength: 13 }
+    { value: 'bar(baz(black, 10%), 10%)', expectedLength: 13 },
+    { value: '-16px -1px -1px -16px', expectedLength: 11 }
   ];
 
   fixtures.forEach((fixture) => {
     it('should tokenize ' + fixture.value.replace(/\n/g, '\\n').replace(/\t/g, '\\t'), () => {
       let tokens = tokenize(fixture.value);
-
+      console.log(tokens);
       expect(tokens.length).to.equal(fixture.expectedLength);
     });
   });

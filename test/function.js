@@ -59,6 +59,20 @@ describe('Parser → Function', () => {
       ]
     },
     {
+      it: 'should parse calc function with nutty numbers',
+      test: 'calc(1px + -2vw - 4px)',
+      expected: [
+        { type: 'func', value: 'calc' },
+        { type: 'paren', value: '(' },
+        { type: 'number', value: '1', unit: 'px' },
+        { type: 'operator', value: '+' },
+        { type: 'number', value: '-2', unit: 'vw' },
+        { type: 'operator', value: '-' },
+        { type: 'number', value: '4', unit: 'px' },
+        { type: 'paren', value: ')' }
+      ]
+    },
+    {
       it: 'should parse nested calc functions',
       test: 'calc(((768px - 100vw) / 2) - 15px)',
       expected: [
@@ -116,6 +130,8 @@ describe('Parser → Function', () => {
     it(fixture.it, () => {
       let ast = new Parser(fixture.test).parse(),
         index = 0;
+
+      // console.log(ast.first.first.nodes);
 
       ast.first.walk((node) => {
         let expected = fixture.expected[index];

@@ -104,6 +104,16 @@ describe('Parser → Function', () => {
         { type: 'number', value: '0' },
         { type: 'paren', value: ')' }
       ]
+    },
+    {
+      it: 'should parse shorthand properties with negative values',
+      test: '-1px -2px -3px -4px',
+      expected: [
+        { type: 'number', value: '-1', unit: 'px' },
+        { type: 'number', value: '-2', unit: 'px' },
+        { type: 'number', value: '-3', unit: 'px' },
+        { type: 'number', value: '-4', unit: 'px' }
+      ]
     }
   ];
 

@@ -153,15 +153,15 @@ describe('Parser → Number : Loose', () => {
     },
     {
       test: '5+5',
-      expected: { value: '+5', unit: '', length: 2 }
+      expected: { value: '5', unit: '', length: 3 }
     },
     {
       test: '5+-+-+-+5',
       expected: { value: '+5', unit: '', length: 8 }
     },
     {
-      test: '-16px -1px -1px -16px',
-      expected: { value: '-16', unit: 'px', length: 4 }
+      test: '-16px -1px -1px 16px',
+      expected: { value: '16', unit: 'px', length: 6 }
     }
   ];
 

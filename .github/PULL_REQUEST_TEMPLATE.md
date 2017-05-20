@@ -1,3 +1,6 @@
+<!-- This template is *not* optional. If you remove this template or choose
+not to complete it, your PR may be closed without review -->
+
 **Which issue #** if any, does this resolve?
 
 <!-- PRs must be accompanied by related tests -->

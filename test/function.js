@@ -118,6 +118,19 @@ describe('Parser → Function', () => {
         { type: 'number', value: '0' },
         { type: 'paren', value: ')' }
       ]
+    },
+    {
+      it: 'should parse nested function',
+      test: 'a(b())',
+      level: true,
+      expected: [
+        { type: 'func', value: 'a', level: 1 },
+          { type: 'paren', value: '(', level: 2 },
+          { type: 'func', value: 'b', level: 2 },
+            { type: 'paren', value: '(', level: 3 },
+            { type: 'paren', value: ')', level: 3 },
+          { type: 'paren', value: ')', level: 2 }
+      ]
     }
   ];
 
@@ -131,11 +144,24 @@ describe('Parser → Function', () => {
       let ast = new Parser(fixture.test).parse(),
         index = 0;
 
+      function getLevel (node) {
+        let level = -1;
+        while (node.parent) {
+          node = node.parent;
+          level++;
+        }
+        return level;
+      }
+
       // console.log(ast.first.first.nodes);
 
       ast.first.walk((node) => {
         let expected = fixture.expected[index];
         index ++;
+
+        if (fixture.level) {
+          node.level = getLevel(node);
+        }
 
         if (expected) {
           expect(node).to.shallowDeepEqual(expected);

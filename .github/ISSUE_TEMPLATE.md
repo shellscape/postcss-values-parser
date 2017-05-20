@@ -1,7 +1,7 @@
 <!--
-  Please note: This template is not optional. Please fill in all fields and
-  questions otherwise the issue may be closed. Please provide actual technical
-  information about errors, if an error has occured.
+  Please note: This template is *not* optional. Please fill in all fields and
+  questions, otherwise *the issue may be closed*. Please provide actual technical
+  information about errors, if an error has occurred.
 -->
 
 * Node Version:

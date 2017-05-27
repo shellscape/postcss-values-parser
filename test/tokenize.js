@@ -21,7 +21,6 @@ describe('Tokenize', () => {
   fixtures.forEach((fixture) => {
     it('should tokenize ' + fixture.value.replace(/\n/g, '\\n').replace(/\t/g, '\\t'), () => {
       let tokens = tokenize(fixture.value);
-      console.log(tokens);
       expect(tokens.length).to.equal(fixture.expectedLength);
     });
   });

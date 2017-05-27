@@ -24,6 +24,18 @@ describe('Parser → Function', () => {
       ]
     },
     {
+      it: 'should parse empty url function with values following',
+      test: 'url() foo bar baz',
+      expected: [
+        { type: 'func', value: 'url' },
+        { type: 'paren', value: '(' },
+        { type: 'paren', value: ')' },
+        { type: 'word', value: 'foo' },
+        { type: 'word', value: 'bar' },
+        { type: 'word', value: 'baz' }
+      ]
+    },
+    {
       it: 'should parse url function',
       test: 'url( /gfx/img/bg.jpg )',
       expected: [
@@ -130,8 +142,6 @@ describe('Parser → Function', () => {
     it(fixture.it, () => {
       let ast = new Parser(fixture.test).parse(),
         index = 0;
-
-      // console.log(ast.first.first.nodes);
 
       ast.first.walk((node) => {
         let expected = fixture.expected[index];

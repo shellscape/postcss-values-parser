@@ -67,19 +67,30 @@ let color = ast       // the Root node
               .first; // a Word node, containing the color value.
 ```
 
-## CSS-Like Languages
+## Loose Mode
 
-If your intent is to use this parser with a CSS-like language (eg. SASS, LESS)
-then you can instruct the parser **_not to adhere to strict CSS_** parsing rules as
-per [the spec](https://drafts.csswg.org/css-values-3/). For example, the parser
-will throw an error by default if `calc` parameters [don't adhere to the spec](https://drafts.csswg.org/css-values-3/#calc-syntax).
+Loose mode was introduced to support adherence to the W3C CSS Specification as
+well as the ability to parse noncompliant CSS for variants like LESS, SCSS, and
+CSSNext. If you're working with a noncompliant or CSS-like variant, then loose
+mode is for you.
 
-We call this `loose` mode. To enable `loose` mode, pass an options object to the
-`parser` method:
+For example, the parser
+will throw an error by default if `calc` parameters [don't adhere to the spec](https://www.w3.org/TR/css-values/#calc-syntax).
+However, with loose mode enabled, the parse will ignore spec rules and succeed.
+
+In-draft features, or CSS features in modules not yet finalized, often cause parser
+errors. eg. `url(var(--somevar))`. Loose mode supports parsing of these features.
+
+Loose Mode is enabled by passing an option of `loose: true` to the `parser` method.
 
 ```js
+const less = 'calc(2+2)'; // not valid per spec, but valid in LESS
+const cssnext = 'url(var(--somevar))'; // not valid per spec, but in spec draft
+
 const parser = require('postcss-values-parser');
-const ast = parser('#fff', { loose: true }).parse();
+const ast = parser(less, { loose: true }).parse();
+
+// parse will succeed
 ```
 
 ## Acknowledgements

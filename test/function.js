@@ -35,17 +35,20 @@ describe('Parser → Function', () => {
         { type: 'word', value: 'baz' }
       ]
     },
-    // not ready yet - #30
-    // {
-    //   it: 'should loosely parse url function with sub func',
-    //   test: 'url(var(foo))',
-    //   loose: true,
-    //   expected: [
-    //     { type: 'func', value: 'url' },
-    //     { type: 'paren', value: '(' },
-    //     { type: 'paren', value: ')' }
-    //   ]
-    // },
+    {
+      it: 'should loosely parse url function with sub func #30',
+      test: 'url(var(foo))',
+      loose: true,
+      expected: [
+        { type: 'func', value: 'url' },
+        { type: 'paren', value: '(' },
+        { type: 'func', value: 'var' },
+        { type: 'paren', value: '(' },
+        { type: 'word', value: 'foo' },
+        { type: 'paren', value: ')' },
+        { type: 'paren', value: ')' }
+      ]
+    },
     {
       it: 'should parse url function',
       test: 'url( /gfx/img/bg.jpg )',

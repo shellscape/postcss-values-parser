@@ -12,6 +12,18 @@ describe('Parser → Number', () => {
       expected: { value: '.23', unit: 'rem', length: 1 }
     },
     {
+      test: '0.5',
+      expected: { value: '0.5', unit: '', length: 1 }
+    },
+    {
+      test: '-0.5',
+      expected: { value: '-0.5', unit: '', length: 1 }
+    },
+    {
+      test: '-0.5 * 1',
+      expected: { value: '1', unit: '', length: 3 }
+    },
+    {
       test: '.2.3rem',
       expected: { value: '.2', unit: '.3rem', length: 1 }
     },

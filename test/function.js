@@ -35,6 +35,17 @@ describe('Parser → Function', () => {
         { type: 'word', value: 'baz' }
       ]
     },
+    // not ready yet - #30
+    // {
+    //   it: 'should loosely parse url function with sub func',
+    //   test: 'url(var(foo))',
+    //   loose: true,
+    //   expected: [
+    //     { type: 'func', value: 'url' },
+    //     { type: 'paren', value: '(' },
+    //     { type: 'paren', value: ')' }
+    //   ]
+    // },
     {
       it: 'should parse url function',
       test: 'url( /gfx/img/bg.jpg )',
@@ -67,6 +78,21 @@ describe('Parser → Function', () => {
         { type: 'number', value: '439', raws: { before: ' ' } },
         { type: 'comma', value: ',', raws: { before: ' ' } },
         { type: 'number', value: '29', raws: { before: ' ' } },
+        { type: 'paren', value: ')' }
+      ]
+    },
+    {
+      it: 'should parse calc function with number and var #29',
+      test: 'calc(-0.5 * var(foo))',
+      expected: [
+        { type: 'func', value: 'calc' },
+        { type: 'paren', value: '(' },
+        { type: 'number', value: '-0.5', unit: '' },
+        { type: 'operator', value: '*' },
+        { type: 'func', value: 'var' },
+        { type: 'paren', value: '(' },
+        { type: 'word', value: 'foo' },
+        { type: 'paren', value: ')' },
         { type: 'paren', value: ')' }
       ]
     },
@@ -140,7 +166,7 @@ describe('Parser → Function', () => {
 
   fixtures.forEach((fixture) => {
     it(fixture.it, () => {
-      let ast = new Parser(fixture.test).parse(),
+      let ast = new Parser(fixture.test, { loose: fixture.loose }).parse(),
         index = 0;
 
       ast.first.walk((node) => {

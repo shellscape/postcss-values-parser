@@ -134,6 +134,23 @@ describe('Parser → Function', () => {
       ]
     },
     {
+      it: 'should parse calc function with scss interpolation #23',
+      test: 'calc(100% - #{$margin * 2px})',
+      expected: [
+        { type: 'func', value: 'calc' },
+        { type: 'paren', value: '(' },
+        { type: 'number', value: '100', unit: '%' },
+        { type: 'operator', value: '-' },
+        { type: 'word', value: '#' },
+        { type: 'word', value: '{' },
+        { type: 'word', value: '$margin' },
+        { type: 'operator', value: '*' },
+        { type: 'number', value: '2', unit: 'px' },
+        { type: 'word', value: '}' },
+        { type: 'paren', value: ')' }
+      ]
+    },
+    {
       it: 'should parse nested functions',
       test: 'bar(baz(black, 10%), 10%)',
       expected: [

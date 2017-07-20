@@ -67,6 +67,15 @@ describe('Parser → Word', () => {
       expected: [
         { type: 'word', value: '-webkit-transition' }
       ]
+    },
+    {
+      it: 'should parse hex colors',
+      test: '#123 #abcdef #a2b3c4d5',
+      expected: [
+        { type: 'word', value: '#123', isHex: true, isColor: true },
+        { type: 'word', value: '#abcdef', isHex: true, isColor: true },
+        { type: 'word', value: '#a2b3c4d5', isHex: true, isColor: true  }
+      ]
     }
   ];
 

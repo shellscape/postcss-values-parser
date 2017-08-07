@@ -3,6 +3,17 @@
 const chai = require('chai');
 const Parser = require('../lib/parser');
 
+const AtWord = require('../lib/atword');
+const Colon = require('../lib/colon');
+const Comma = require('../lib/comma');
+const Comment = require('../lib/comment');
+const Func = require('../lib/function');
+const Numbr = require('../lib/number');
+const Operator = require('../lib/operator');
+const Paren = require('../lib/paren');
+const Str = require('../lib/string');
+const Word = require('../lib/word');
+
 let expect = chai.expect;
 
 describe('Parser → API', () => {
@@ -14,6 +25,34 @@ describe('Parser → API', () => {
 
     ast.first.walk((node, index) => {
       expect(node.type).to.equal(expected[index]);
+    });
+  });
+
+  it('should register walkers', () => {
+    let source = '5px solid blue',
+      ast = new Parser(source).parse(),
+      expected = ['number', 'word', 'word'],
+      types = [
+        AtWord,
+        Colon,
+        Comma,
+        Comment,
+        Func,
+        Numbr,
+        Operator,
+        Paren,
+        Str,
+        Word
+      ];
+
+    types.forEach((type) => {
+      let name = 'walk' + type.name;
+
+      if (name.lastIndexOf('s') !== name.length - 1) {
+        name += 's';
+      }
+
+      expect(ast.first[name]).to.be.a('function');
     });
   });
 

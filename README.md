@@ -1,4 +1,4 @@
-# postcss-values-parser  [![Build Status](https://travis-ci.org/lesshint/postcss-values-parser.svg?branch=master)](https://travis-ci.org/lesshint/postcss-values-parser)
+# postcss-values-parser  [![Build Status](https://travis-ci.org/shellscape/postcss-values-parser.svg?branch=master)](https://travis-ci.org/shellscape/postcss-values-parser)
 
 <img align="right" width="95" height="95"
      title="Philosopher’s stone, logo of PostCSS"

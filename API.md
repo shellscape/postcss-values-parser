@@ -445,11 +445,11 @@ methods are:
 * `container.walkColons`
 * `container.walkCommas`
 * `container.walkComments`
-* `container.walkFunctions`
-* `container.walkNumbers`
+* `container.walkFunctionNodes`
+* `container.walkNumberNodes`
 * `container.walkOperators`
 * `container.walkParenthesis`
-* `container.walkStrings`
+* `container.walkStringNodes`
 * `container.walkWords`
 
 

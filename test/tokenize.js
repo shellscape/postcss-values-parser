@@ -15,7 +15,8 @@ describe('Tokenize', () => {
     { value: 'Bond\\ 007', expectedLength: 4 },
     { value: ' \\"word\\\'"\\ \\\t ', expectedLength: 7 },
     { value: 'bar(baz(black, 10%), 10%)', expectedLength: 13 },
-    { value: '-16px -1px -1px -16px', expectedLength: 11 }
+    { value: '-16px -1px -1px -16px', expectedLength: 11 },
+    { value: '.56E-0123', expectedLength: 1 }
   ];
 
   fixtures.forEach((fixture) => {

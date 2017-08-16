@@ -134,6 +134,14 @@ describe('Parser → Number', () => {
     {
       test: '-.567800E-0012780em',
       expected: { value: '-.567800E-0012780', unit: 'em', length: 1 }
+    },
+    {
+      test: '.1E-10',
+      expected: { value: '.1E-10', unit: '', length: 1 }
+    },
+    {
+      test: '.1E+10',
+      expected: { value: '.1E+10', unit: '', length: 1 }
     }
   ];
 

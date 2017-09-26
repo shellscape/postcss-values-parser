@@ -98,6 +98,50 @@ describe('Parser → Number', () => {
     {
       test: '-16px -1px -1px -16px',
       expected: { value: '-16', unit: 'px', length: 4 }
+    },
+    {
+      test: '1e10',
+      expected: { value: '1e10', unit: '', length: 1 }
+    },
+    {
+      test: '1E10',
+      expected: { value: '1E10', unit: '', length: 1 }
+    },
+    {
+      test: '1e-10',
+      expected: { value: '1e-10', unit: '', length: 1 }
+    },
+    {
+      test: '1E-10',
+      expected: { value: '1E-10', unit: '', length: 1 }
+    },
+    {
+      test: '1e+10',
+      expected: { value: '1e+10', unit: '', length: 1 }
+    },
+    {
+      test: '1E+10',
+      expected: { value: '1E+10', unit: '', length: 1 }
+    },
+    {
+      test: '1e -10',
+      expected: { value: '-10', unit: '', length: 2 }
+    },
+    {
+      test: '1e',
+      expected: { value: '1', unit: 'e', length: 1 }
+    },
+    {
+      test: '-.567800E-0012780em',
+      expected: { value: '-.567800E-0012780', unit: 'em', length: 1 }
+    },
+    {
+      test: '.1E-10',
+      expected: { value: '.1E-10', unit: '', length: 1 }
+    },
+    {
+      test: '.1E+10',
+      expected: { value: '.1E+10', unit: '', length: 1 }
     }
   ];
 
@@ -174,6 +218,10 @@ describe('Parser → Number : Loose', () => {
     {
       test: '-16px -1px -1px 16px',
       expected: { value: '16', unit: 'px', length: 6 }
+    },
+    {
+      test: '5e+5',
+      expected: { value: '5e+5', unit: '', length: 1 }
     }
   ];
 

@@ -100,3 +100,11 @@ and utilized many patterns and logical constructs from the project.
 
 Tests and some tokenizing techniques found in [postcss-value-parser](https://github.com/TrySound/postcss-value-parser)
 were used.
+
+## Contributing
+
+- `git fork/clone`
+- `npm i`
+- Before PR'ing, make sure `npm test` still pass. Add test if you're adding features.
+
+When you tweak [API.md](API.md), please run `npm run toc` before PR'ing.

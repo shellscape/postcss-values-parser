@@ -3,6 +3,49 @@
 *Please use only this documented API when working with the parser. Methods
 not documented here are subject to change at any point.*
 
+<!-- toc -->
+
+- [`parser` function](#parser-function)
+  * [`parser.atword([props])`](#parseratwordprops)
+  * [`parser.colon([props])`](#parsercolonprops)
+  * [`parser.comma([props])`](#parsercommaprops)
+  * [`parser.comment([props])`](#parsercommentprops)
+  * [`parser.func([props])`](#parserfuncprops)
+  * [`parser.number([props])`](#parsernumberprops)
+  * [`parser.operator([props])`](#parseroperatorprops)
+  * [`parser.paren([props])`](#parserparenprops)
+  * [`parser.string([props])`](#parserstringprops)
+  * [`parser.value([props])`](#parservalueprops)
+  * [`parser.word([props])`](#parserwordprops)
+- [Node types](#node-types)
+  * [`node.type`](#nodetype)
+  * [`node.parent`](#nodeparent)
+  * [`node.toString()`, `String(node)`, or `'' + node`](#nodetostring-stringnode-or---node)
+  * [`node.next()` & `node.prev()`](#nodenext--nodeprev)
+  * [`node.replaceWith(node)`](#nodereplacewithnode)
+  * [`node.remove()`](#noderemove)
+  * [`node.clone()`](#nodeclone)
+  * [`node.raws`](#noderaws)
+  * [`node.source`](#nodesource)
+  * [`node.sourceIndex`](#nodesourceindex)
+- [Container types](#container-types)
+  * [`container.nodes`](#containernodes)
+  * [`container.first` & `container.last`](#containerfirst--containerlast)
+  * [`container.at(index)`](#containeratindex)
+  * [`container.index(node)`](#containerindexnode)
+  * [`container.length`](#containerlength)
+  * [`container.each(callback)`](#containereachcallback)
+  * [`container.walk(callback)`](#containerwalkcallback)
+  * [`container.walk` proxies](#containerwalk-proxies)
+  * [`container.prepend(node)` & `container.append(node)`](#containerprependnode--containerappendnode)
+  * [`container.insertBefore(old, new)` & `container.insertAfter(old, new)`](#containerinsertbeforeold-new--containerinsertafterold-new)
+  * [`container.removeChild(node)`](#containerremovechildnode)
+  * [`container.removeAll()` or `container.empty()`](#containerremoveall-or-containerempty)
+- [Root nodes`](#root-nodes)
+- [Value nodes](#value-nodes)
+
+<!-- tocstop -->
+
 ## `parser` function
 
   This is the module's main entry point, and returns a `new Parser`.

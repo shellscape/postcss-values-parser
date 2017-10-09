@@ -14,7 +14,8 @@
     "node": ">=4"
   },
   "scripts": {
-    "test": "gulp"
+    "test": "gulp",
+    "toc": "markdown-toc -i API.md"
   },
   "keywords": [
     "css",
@@ -38,6 +39,7 @@
     "eslint": "^3.11.1",
     "gulp": "^3.9.1",
     "gulp-eslint": "^3.0.1",
-    "gulp-mocha": "^4.0.1"
+    "gulp-mocha": "^4.0.1",
+    "markdown-toc": "^1.2.0"
   }
 }

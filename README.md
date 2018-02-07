@@ -37,10 +37,6 @@ postcss-selector-parser.
 So we needed an alternative, and drew upon all three projects to put together a
 value parser that met and exceeded our needs. The improvements include:
 
-- Written using ES6
-- Uses the same Gulp toolchain as PostCSS
-- Doesn't strip characters; eg. parenthesis
-- Full AST traversal
 - AST traversal based on node type
 - Simple methods to derive strings from the parsed result
 - Follows PostCSS patterns for whitespace between Nodes

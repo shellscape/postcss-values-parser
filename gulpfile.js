@@ -12,9 +12,9 @@ gulp.task('lint', () => {
   ];
 
   return gulp.src(glob)
-          .pipe(eslint())
-          .pipe(eslint.format())
-          .pipe(eslint.failAfterError());
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError());
 });
 
 gulp.task('test', ['lint'], () => {

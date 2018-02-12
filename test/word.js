@@ -70,9 +70,10 @@ describe('Parser → Word', () => {
     },
     {
       it: 'should parse hex colors',
-      test: '#123 #abcdef #a2b3c4d5',
+      test: '#123 #f09f #abcdef #a2b3c4d5',
       expected: [
         { type: 'word', value: '#123', isHex: true, isColor: true },
+        { type: 'word', value: '#f09f', isHex: true, isColor: true },
         { type: 'word', value: '#abcdef', isHex: true, isColor: true },
         { type: 'word', value: '#a2b3c4d5', isHex: true, isColor: true  }
       ]

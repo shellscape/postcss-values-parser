@@ -69,6 +69,15 @@ describe('Parser → Word', () => {
       ]
     },
     {
+      it: 'should parse browser prefixes as second value in loose',
+      test: 'opacity -webkit-filter',
+      loose: true,
+      expected: [
+        { type: 'word', value: 'opacity' },
+        { type: 'word', value: '-webkit-filter' }
+      ]
+    },
+    {
       it: 'should parse hex colors',
       test: '#123 #f09f #abcdef #a2b3c4d5',
       expected: [
@@ -82,7 +91,7 @@ describe('Parser → Word', () => {
 
   fixtures.forEach((fixture) => {
     it(fixture.it, () => {
-      let ast = new Parser(fixture.test).parse();
+      let ast = new Parser(fixture.test, { loose: fixture.loose }).parse();
 
       ast.first.walk((node, index) => {
         let expected = fixture.expected[index];

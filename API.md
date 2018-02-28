@@ -17,6 +17,7 @@ not documented here are subject to change at any point.*
   * [`parser.string([props])`](#parserstringprops)
   * [`parser.value([props])`](#parservalueprops)
   * [`parser.word([props])`](#parserwordprops)
+  * [`parser.unicodeRange([props])`](#parserunicoderangeprops)
 - [Node types](#node-types)
   * [`node.type`](#nodetype)
   * [`node.parent`](#nodeparent)
@@ -214,13 +215,26 @@ not documented here are subject to change at any point.*
 
   * `props (object)`: The new node's properties.
 
+### `parser.unicodeRange([props])`
+
+  Creates a new unicode range Node.
+
+  ```js
+  parser.unicodeRange({ value: 'U+26' });
+  // → U+26
+  ```
+
+  Arguments:
+
+  * `props (object)`: The new node's properties.
+  
 ## Node types
 
 ### `node.type`
 
   A string representation of the node type. It can be one of the following;
   `atword`, `colon`, `comma`, `comment`, `func`, `number`, `operator`,
-  `paren`, `string`, `value`, `word`.
+  `paren`, `string`, `unicoderange`, `value`, `word`.
 
   ```js
   parser.word({ value: '#fff' }).type;
@@ -493,8 +507,8 @@ methods are:
 * `container.walkOperators`
 * `container.walkParenthesis`
 * `container.walkStringNodes`
+* `container.walkUnicodeRanges`
 * `container.walkWords`
-
 
 ### `container.prepend(node)` & `container.append(node)`
 

@@ -107,6 +107,11 @@ not documented here are subject to change at any point.*
   parser.comment({ value: 'Affirmative, Dave. I read you.' });
   // → /* Affirmative, Dave. I read you. */
   ```
+  
+  ```js
+  parser.comment({ value: 'Affirmative, Dave. I read you.', inline: true });
+  // → // Affirmative, Dave. I read you.
+  ```
 
   Arguments:
 

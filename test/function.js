@@ -60,12 +60,122 @@ describe('Parser → Function', () => {
       ]
     },
     {
-      it: 'should  parse url function with quoted first argument',
+      it: 'should parse url function with single quotes',
+      test: 'url( \'/gfx/img/bg.jpg\' )',
+      expected: [
+        { type: 'func', value: 'url' },
+        { type: 'paren', value: '(' },
+        { type: 'word', value: ' \'/gfx/img/bg.jpg\' ' },
+        { type: 'paren', value: ')' }
+      ]
+    },
+    {
+      it: 'should parse url function with single quotes (loose)',
+      test: 'url( \'/gfx/img/bg.jpg\' )',
+      loose: true,
+      expected: [
+        { type: 'func', value: 'url' },
+        { type: 'paren', value: '(' },
+        { type: 'string', value: '/gfx/img/bg.jpg', raws: { before: ' ', after: " ", quote: '\'' } },
+        { type: 'paren', value: ')' }
+      ]
+    },
+    {
+      it: 'should parse url function with double quotes',
+      test: 'url( "/gfx/img/bg.jpg" )',
+      expected: [
+        { type: 'func', value: 'url' },
+        { type: 'paren', value: '(' },
+        { type: 'word', value: ' "/gfx/img/bg.jpg" ' },
+        { type: 'paren', value: ')' }
+      ]
+    },
+    {
+      it: 'should parse url function with double quotes (loose)',
+      test: 'url( "/gfx/img/bg.jpg" )',
+      loose: true,
+      expected: [
+        { type: 'func', value: 'url' },
+        { type: 'paren', value: '(' },
+        { type: 'string', value: '/gfx/img/bg.jpg', raws: { before: ' ', after: " ", quote: '"' } },
+        { type: 'paren', value: ')' }
+      ]
+    },
+    {
+      it: 'should parse absolute url function',
+      test: 'url( http://domain.com/gfx/img/bg.jpg )',
+      expected: [
+        { type: 'func', value: 'url' },
+        { type: 'paren', value: '(' },
+        { type: 'word', value: ' http://domain.com/gfx/img/bg.jpg ' },
+        { type: 'paren', value: ')' }
+      ]
+    },
+    {
+      it: 'should parse absolute url function (loose)',
+      test: 'url( http://domain.com/gfx/img/bg.jpg )',
+      loose: true,
+      expected: [
+        { type: 'func', value: 'url' },
+        { type: 'paren', value: '(' },
+        { type: 'word', value: 'http' },
+        { type: 'colon', value: ':' },
+        { type: 'operator', value: '/' },
+        { type: 'operator', value: '/' },
+        { type: 'word', value: 'domain.com/gfx/img/bg.jpg' },
+        { type: 'paren', value: ')' }
+      ]
+    },
+    {
+      it: 'should parse absolute url function with single quotes',
+      test: 'url( \'http://domain.com/gfx/img/bg.jpg\' )',
+      expected: [
+        { type: 'func', value: 'url' },
+        { type: 'paren', value: '(' },
+        { type: 'word', value: ' \'http://domain.com/gfx/img/bg.jpg\' ' },
+        { type: 'paren', value: ')' }
+      ]
+    },
+    {
+      it: 'should parse absolute url function with double quotes',
+      test: 'url( "http://domain.com/gfx/img/bg.jpg" )',
+      expected: [
+        { type: 'func', value: 'url' },
+        { type: 'paren', value: '(' },
+        { type: 'word', value: ' "http://domain.com/gfx/img/bg.jpg" ' },
+        { type: 'paren', value: ')' }
+      ]
+    },
+    {
+      it: 'should parse url function with quoted first argument',
       test: 'url("/gfx/img/bg.jpg" hello )',
       expected: [
         { type: 'func', value: 'url' },
         { type: 'paren', value: '(' },
         { type: 'string', value: '/gfx/img/bg.jpg', raws: { quote: '"' } },
+        { type: 'word', value: 'hello' },
+        { type: 'paren', value: ')' }
+      ]
+    },
+    {
+      it: 'should parse absolute url function with quoted first argument',
+      test: 'url("http://domain.com/gfx/img/bg.jpg" hello )',
+      expected: [
+        { type: 'func', value: 'url' },
+        { type: 'paren', value: '(' },
+        { type: 'string', value: 'http://domain.com/gfx/img/bg.jpg', raws: { quote: '"' } },
+        { type: 'word', value: 'hello' },
+        { type: 'paren', value: ')' }
+      ]
+    },
+    {
+      it: 'should parse absolute url function with quoted first argument (loose)',
+      test: 'url("http://domain.com/gfx/img/bg.jpg" hello )',
+      loose: true,
+      expected: [
+        { type: 'func', value: 'url' },
+        { type: 'paren', value: '(' },
+        { type: 'string', value: 'http://domain.com/gfx/img/bg.jpg', raws: { quote: '"' } },
         { type: 'word', value: 'hello' },
         { type: 'paren', value: ')' }
       ]

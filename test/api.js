@@ -71,7 +71,7 @@ describe('Parser → API', () => {
   it('should walk a type constructor', () => {
     let source = '/*1*/ 5px /* 2 */',
       ast = new Parser(source).parse(),
-      expected = ['1', '2'],
+      expected = ['1', ' 2 '],
       index = 0;
 
     expect(ast.first.walkComments).to.exist;

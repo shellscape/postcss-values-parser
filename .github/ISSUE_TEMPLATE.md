@@ -1,36 +1,13 @@
 <!--
-  Please note: This template is *not* optional. Please fill in all fields and
-  questions, otherwise *the issue may be closed*. Please provide actual technical
-  information about errors, if an error has occurred.
+  👉🏽 Need help or support? Open a SUPPORT issue instead.
+
+  Ahoy!
+
+  You're seeing this because you felt none of the other options fit the type of
+  issue you'd like to create. Please use this opportunity to tell us about the
+  type of issue you were looking for, so we can try to accommodate similar
+  issues in the future.
+
+  If you're using this template to report an issue covered by an existing issue
+  type, we'll close it as invalid faster than you can spell 'Mississippi'.
 -->
-
-* Node Version:
-* NPM Version:
-* postcss-values-parser Version:
-
-This issue is regarding a problem with:
-- [ ] Standard CSS
-- [ ] LESS
-- [ ] SCSS
-- [ ] SASS
-
-If you have a large amount of code to share which demonstrates the problem you're experiencing, please provide a link to your
-repository rather than pasting code. Otherwise, please paste relevant short snippets below.
-
-```css
-// offending or problematic css
-```
-
-```js
-// any js you'd like to add. this section can be removed if none
-```
-
-```
-// actual error output, if error was thrown
-```
-
-### Expected Behavior
-
-### Actual Behavior
-
-### How can we reproduce the behavior?

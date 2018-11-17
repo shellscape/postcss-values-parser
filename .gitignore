@@ -6,3 +6,10 @@ npm-debug.log
 
 dist
 old-lib
+
+s.js
+.eslintcache
+
+old-test
+old-lib
+next

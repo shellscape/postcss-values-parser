@@ -3,7 +3,7 @@
   "version": "3.0.0-alpha.1",
   "description": "A CSS property value parser for use with PostCSS",
   "license": "MPL-2.0",
-  "repository": "lesshint/postcss-values-parser",
+  "repository": "shellscape/postcss-values-parser",
   "author": {
     "name": "Andrew Powell (shellscape)",
     "email": "andrew@shellscape.org",

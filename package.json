@@ -28,10 +28,8 @@
     "test": "ava"
   },
   "dependencies": {
-    "flatten": "^1.0.2",
-    "indexes-of": "^1.0.1",
-    "postcss": "^7.0.5",
-    "uniq": "^1.0.1"
+    "is-number": "^7.0.0",
+    "postcss": "^7.0.5"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.2.1",

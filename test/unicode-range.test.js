@@ -8,17 +8,17 @@
   The above copyright notice and this permission notice shall be
   included in all copies or substantial portions of this Source Code Form.
 */
-const Node = require('postcss/lib/node');
+const test = require('ava');
 
-class UnicodeRange extends Node {
-  constructor(options) {
-    super(options);
-    this.type = 'unicodeRange';
-  }
+const { nodeToString, parse } = require('../lib');
 
-  static test(what) {
-    return /U\+(\d|\w)+(-\w+)?(\?+)?/.test(what);
-  }
+const { snapshot } = require('./fixtures/unicode-range');
+
+for (const fixture of snapshot) {
+  test(fixture, (t) => {
+    const root = parse(fixture);
+
+    t.snapshot(nodeToString(root));
+    t.snapshot(root);
+  });
 }
-
-module.exports = UnicodeRange;

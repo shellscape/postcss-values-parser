@@ -8,17 +8,6 @@
   The above copyright notice and this permission notice shall be
   included in all copies or substantial portions of this Source Code Form.
 */
-const Node = require('postcss/lib/node');
-
-class UnicodeRange extends Node {
-  constructor(options) {
-    super(options);
-    this.type = 'unicodeRange';
-  }
-
-  static test(what) {
-    return /U\+(\d|\w)+(-\w+)?(\?+)?/.test(what);
-  }
-}
-
-module.exports = UnicodeRange;
+module.exports = {
+  snapshot: ['U+26', 'U+0-7F', 'U+0025-00FF', 'U+4??', 'U+0025-00FF, U+4??']
+};

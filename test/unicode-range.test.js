@@ -17,8 +17,12 @@ const { snapshot } = require('./fixtures/unicode-range');
 for (const fixture of snapshot) {
   test(fixture, (t) => {
     const root = parse(fixture);
+    const nodes = root.nodes.map((node) => {
+      delete node.parent; // eslint-disable-line no-param-reassign
+      return node;
+    });
 
     t.snapshot(nodeToString(root));
-    t.snapshot(root);
+    t.snapshot(nodes);
   });
 }

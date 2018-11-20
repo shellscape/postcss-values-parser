@@ -12,7 +12,7 @@ const test = require('ava');
 
 const { nodeToString, parse } = require('../lib');
 
-const { snapshot, throws } = require('./fixtures/numeric');
+const { snapshot, throws } = require('./fixtures/comment');
 
 for (const fixture of snapshot) {
   test(fixture, (t) => {

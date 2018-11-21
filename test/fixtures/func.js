@@ -1,0 +1,34 @@
+/*
+  Copyright © 2018 Andrew Powell
+
+  This Source Code Form is subject to the terms of the Mozilla Public
+  License, v. 2.0. If a copy of the MPL was not distributed with this
+  file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+  The above copyright notice and this permission notice shall be
+  included in all copies or substantial portions of this Source Code Form.
+*/
+module.exports = {
+  snapshot: [
+    'url()',
+    'url() foo bar baz',
+    'url(var(foo))',
+    // 'url( /gfx/img/bg.jpg )',
+    "url( '/gfx/img/bg.jpg' )",
+    'url( "/gfx/img/bg.jpg" )',
+    'should parse absolute url function',
+    "url( 'http://domain.com/gfx/img/bg.jpg' )",
+    'url( "http://domain.com/gfx/img/bg.jpg" )',
+    'url("/gfx/img/bg.jpg" hello )',
+    'url("http://domain.com/gfx/img/bg.jpg" hello )',
+    'rgba( 29, 439 , 29 )',
+    'calc(-0.5 * var(foo))',
+    'calc(1px + -2vw - 4px)',
+    // 'calc(((768px - 100vw) / 2) - 15px)',
+    // 'calc(100% - #{$margin * 2px})',
+    'bar(baz(black, 10%), 10%)',
+    '-webkit-linear-gradient(0)'
+  ],
+
+  throws: ['url( /gfx/img/bg.jpg ']
+};

@@ -29,7 +29,8 @@
   },
   "dependencies": {
     "is-number": "^7.0.0",
-    "postcss": "^7.0.5"
+    "postcss": "^7.0.5",
+    "url-regex": "^4.1.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.2.1",

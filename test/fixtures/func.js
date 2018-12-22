@@ -13,7 +13,7 @@ module.exports = {
     'url()',
     'url() foo bar baz',
     'url(var(foo))',
-    // 'url( /gfx/img/bg.jpg )',
+    'url( /gfx/img/bg.jpg )',
     "url( '/gfx/img/bg.jpg' )",
     'url( "/gfx/img/bg.jpg" )',
     'should parse absolute url function',

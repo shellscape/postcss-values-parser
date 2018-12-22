@@ -108,6 +108,37 @@ describe('Parser → Comment', () => {
       ]
     },
     {
+      it: 'should parse double slash comments after nested function inside url function',
+      test: 'url(var()//comment\n)',
+      loose: true,
+      expected: [
+        { type: 'func', value: 'url' },
+        { type: 'paren', value: '(' },
+        { type: 'func', value: 'var' },
+        { type: 'paren', value: '(' },
+        { type: 'paren', value: ')' },
+        { type: 'comment', value: 'comment' },
+        { type: 'paren', value: ')' }
+      ]
+    },
+    {
+      it: 'should parse double slash comments inside Sass maps',
+      test: '(a:(b:c)//comment\n)',
+      loose: true,
+      expected: [
+        { type: 'paren', value: '(' },
+        { type: 'word', value: 'a' },
+        { type: 'colon', value: ':' },
+        { type: 'paren', value: '(' },
+        { type: 'word', value: 'b' },
+        { type: 'colon', value: ':' },
+        { type: 'word', value: 'c' },
+        { type: 'paren', value: ')' },
+        { type: 'comment', value: 'comment' },
+        { type: 'paren', value: ')' }
+      ]
+    },
+    {
       it: 'should parse only one double slash empty comment',
       test: '//\n',
       loose: true,

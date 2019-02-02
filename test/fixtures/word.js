@@ -10,11 +10,12 @@
 */
 module.exports = {
   snapshot: [
-    'bold italic 12px \t /3 \'Open Sans\', Arial, "Helvetica Neue", sans-serif',
-    '(min-width: 700px) and (orientation: \\$landscape)',
-    'Bond\\ 007',
-    '--color',
-    '-webkit-transition',
+    // 'bold italic 12px \t /3 \'Open Sans\', Arial, "Helvetica Neue", sans-serif',
+    // '(min-width: 700px) and (orientation: \\$landscape)',
+    // 'Bond\\ 007',
+    // '--color',
+    // '-webkit-transition',
+    '#fff',
     '#123 #f09f #abcdef #a2b3c4d5'
   ]
 };

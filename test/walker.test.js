@@ -25,7 +25,7 @@ for (const { value, walkers } of values) {
         nodes.push(node);
       });
 
-      t.is(length, nodes.length);
+      t.is(length, nodes.length, type);
     });
   }
 }

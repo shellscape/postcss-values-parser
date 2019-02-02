@@ -8,22 +8,17 @@
   The above copyright notice and this permission notice shall be
   included in all copies or substantial portions of this Source Code Form.
 */
-const Node = require('postcss/lib/node');
-
-const { registerWalker } = require('../walker');
-
-class Quoted extends Node {
-  constructor(options) {
-    super(options);
-    this.type = 'quoted';
-    [this.quote] = options.value;
-  }
-
-  static fromTokens(tokens, parser) {
-    parser.fromFirst(tokens, Quoted);
-  }
-}
-
-registerWalker(Quoted);
-
-module.exports = Quoted;
+module.exports = {
+  values: [
+    {
+      value: 'calc((foo(768px - 100vw) / 2) - 15px) // batman\n//joker',
+      walkers: [
+        { length: 2, type: 'Comments' },
+        { length: 2, type: 'Funcs' },
+        { length: 4, type: 'Numerics' },
+        { length: 2, type: 'Punctuations' },
+        { length: 0, type: 'Words' }
+      ]
+    }
+  ]
+};

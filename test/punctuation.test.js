@@ -21,8 +21,10 @@ for (const fixture of snapshot) {
       delete node.parent; // eslint-disable-line no-param-reassign
       return node;
     });
+    const string = nodeToString(root);
 
-    t.snapshot(nodeToString(root));
+    t.is(string, fixture);
+    t.snapshot(string);
     t.snapshot(nodes);
   });
 }

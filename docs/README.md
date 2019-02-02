@@ -21,14 +21,14 @@ This module provides several unique Node types, in addition to the built-in Node
 
 [AtWord](./AtWord.md)<br/>
 [Comment](./Comment.md)<br/>
-[Func](./Comment.md)<br/>
-[Interpolation](./Comment.md)<br/>
-[Numeric](./Comment.md)<br/>
-[Operator](./Comment.md)<br/>
-[Punctuation](./Comment.md)<br/>
-[Quoted](./Comment.md)<br/>
-[UnicodeRange](./Comment.md)<br/>
-[Word](./Comment.md)<br/>
+[Func](./Func.md)<br/>
+[Interpolation](./Interpolation.md)<br/>
+[Numeric](./Numeric.md)<br/>
+[Operator](./Operator.md)<br/>
+[Punctuation](./Punctuation.md)<br/>
+[Quoted](./Quoted.md)<br/>
+[UnicodeRange](./UnicodeRange.md)<br/>
+[Word](./Word.md)<br/>
 
 All unique Node types listed above inherit from `Node` or `Container` in PostCSS. Please see each Node's documentation for the inherited type. Methods for the base types can be found in the [PostCSS Documentation](https://github.com/postcss/postcss/tree/master/docs).
 

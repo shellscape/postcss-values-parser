@@ -9,6 +9,6 @@
   included in all copies or substantial portions of this Source Code Form.
 */
 module.exports = {
-  snapshot: [],
+  snapshot: ['2 * 10', '2 / 10', '10 % modulo'],
   throws: ['5+ 5', '5px+5px']
 };

@@ -24,7 +24,7 @@ module.exports = {
     'rgba( 29, 439 , 29 )',
     'calc(-0.5 * var(foo))',
     'calc(1px + -2vw - 4px)',
-    // 'calc(((768px - 100vw) / 2) - 15px)',
+    'calc(((768px - 100vw) / 2) - 15px)',
     'bar(baz(black, 10%), 10%)',
     '-webkit-linear-gradient(0)'
   ],

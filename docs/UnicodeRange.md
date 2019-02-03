@@ -1,4 +1,4 @@
-# AtWord Node
+# UnicodeRange Node
 
 The `UnicodeRange` node inherits directly from `Node` in PostCSS. This node represents a valid unicode range declaration.
 

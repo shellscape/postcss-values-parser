@@ -1,6 +1,6 @@
 {
   "name": "postcss-values-parser",
-  "version": "3.0.0-beta.2",
+  "version": "3.0.0-beta.3",
   "publishConfig": {
     "tag": "next"
   },

@@ -4,6 +4,11 @@ The `Func` node inherits directly from `Container` in PostCSS. This node represe
 
 ## Properties
 
+### `isColor`
+Type: `Boolean`<br>
+
+If `true`, denotes that the function represents a color-producing function. Valid color-producing functions are: `hsl()`, `hsla()`, `rgb()`, and `rgba()`.
+
 ### `name`
 Type: `String`<br>
 

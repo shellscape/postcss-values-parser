@@ -36,6 +36,7 @@
     "README.md"
   ],
   "dependencies": {
+    "color-name": "^1.1.4",
     "is-number": "^7.0.0",
     "postcss": "^7.0.5",
     "url-regex": "^4.1.1"

@@ -17,6 +17,7 @@ module.exports = {
     '--color',
     '-webkit-transition',
     '#fff',
-    '#123 #f09f #abcdef #a2b3c4d5'
+    '#123 #f09f #abcdef #a2b3c4d5',
+    'blanchedalmond'
   ]
 };

@@ -9,5 +9,8 @@
   included in all copies or substantial portions of this Source Code Form.
 */
 module.exports = {
+  options: {
+    interpolation: { prefix: '#' }
+  },
   snapshot: ['#{batman}', '#{2px}', '#{2 * 2px}']
 };

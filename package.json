@@ -46,13 +46,20 @@
     "@commitlint/cli": "^7.2.1",
     "@commitlint/config-conventional": "^7.1.2",
     "ava": "^1.2.0",
+    "chalk": "^2.4.2",
     "eslint": "^5.6.0",
     "eslint-config-shellscape": "^2.0.2",
+    "globby": "^9.0.0",
     "lint-staged": "^8.0.4",
     "nyc": "^13.1.0",
+    "perfy": "^1.1.5",
+    "postcss-value-parser": "^3.3.1",
+    "postcss-values-parser": "^2.0.1",
     "pre-commit": "^1.2.2",
     "prettier": "^1.15.2",
-    "standard-version": "^4.4.0"
+    "standard-version": "^4.4.0",
+    "strip-ansi": "^5.0.0",
+    "text-table": "^0.2.0"
   },
   "keywords": [
     "css",

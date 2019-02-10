@@ -9,5 +9,8 @@
   included in all copies or substantial portions of this Source Code Form.
 */
 module.exports = {
+  options: {
+    variables: { prefixes: ['\\$', '--'] }
+  },
   snapshot: ['--batman', '--main-bg-color', '$batman', '$main-bg-color']
 };

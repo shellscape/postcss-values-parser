@@ -12,11 +12,7 @@ const test = require('ava');
 
 const { nodeToString, parse } = require('../lib');
 
-const { snapshot } = require('./fixtures/interpolation');
-
-const options = {
-  interpolation: { prefix: '#' }
-};
+const { options, snapshot } = require('./fixtures/interpolation');
 
 for (const fixture of snapshot) {
   test(fixture, (t) => {

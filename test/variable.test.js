@@ -12,11 +12,7 @@ const test = require('ava');
 
 const { nodeToString, parse } = require('../lib');
 
-const { snapshot } = require('./fixtures/variable');
-
-const options = {
-  variables: { prefixes: ['\\$', '--'] }
-};
+const { options, snapshot } = require('./fixtures/variable');
 
 for (const fixture of snapshot) {
   test(fixture, (t) => {

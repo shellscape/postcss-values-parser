@@ -14,6 +14,11 @@ Type: `Boolean`<br>
 
 If `true`, denotes that the word represents a hexadecimal value.
 
+### `isUrl`
+Type: `Boolean`<br>
+
+If `true`, denotes that the word represents a Universal Resource Locator (URL).
+
 ### `isVariable`
 Type: `Boolean`<br>
 

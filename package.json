@@ -51,7 +51,7 @@
     "eslint-config-shellscape": "^2.0.2",
     "globby": "^9.0.0",
     "lint-staged": "^8.0.4",
-    "nyc": "^13.1.0",
+    "nyc": "^13.3.0",
     "perfy": "^1.1.5",
     "postcss-value-parser": "^3.3.1",
     "postcss-values-parser": "^2.0.1",

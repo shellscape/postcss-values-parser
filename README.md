@@ -1,110 +1,74 @@
-# postcss-values-parser  [![Build Status](https://travis-ci.org/shellscape/postcss-values-parser.svg?branch=master)](https://travis-ci.org/shellscape/postcss-values-parser)
+[tests]: 	https://img.shields.io/circleci/project/github/shellscape/postcss-values-parser.svg
+[tests-url]: https://circleci.com/gh/shellscape/postcss-values-parser
 
-<img align="right" width="95" height="95"
-     title="Philosopher’s stone, logo of PostCSS"
-     src="http://postcss.github.io/postcss/logo.svg">
+[cover]: https://codecov.io/gh/shellscape/postcss-values-parser/branch/master/graph/badge.svg
+[cover-url]: https://codecov.io/gh/shellscape/postcss-values-parser
 
-A CSS property value parser for use with [PostCSS](https://github.com/postcss/postcss),
-following the same node, container, and traversal patterns as PostCSS.
+[size]: https://packagephobia.now.sh/badge?p=postcss-values-parser
+[size-url]: https://packagephobia.now.sh/result?p=postcss-values-parser
 
-## &nbsp;
-<p align="center">
-  <b>:rocket: &nbsp; Are you ready to tackle ES6 and hone your JavaScript Skills?</b> &nbsp; :rocket:<br/>
-  Check out these outstanding <a href="https://es6.io/">ES6 courses</a> by <a href="https://github.com/wesbos">@wesbos</a>
-</p>
+<div align="center">
+  <img width="95" height="95" title="Philosopher’s stone, logo of PostCSS" src="http://postcss.github.io/postcss/logo.svg"><br/><br/>
+</div>
 
----
+# postcss-values-parser [![tests][tests]][tests-url] [![cover][cover]][cover-url] [![size][size]][size-url]
 
-As with PostCSS and postcss-selector-parser, this parser generates an
-[Abstract Syntax Tree](https://en.wikipedia.org/wiki/Abstract_syntax_tree),
-(aka "AST") which allows for ease of traversal and granular inspection of each
-part of a property's value.
+A CSS property value parser built upon [PostCSS](https://github.com/postcss/postcss),
+following the same node and traversal patterns as PostCSS.
 
-## postcss-values-parser vs. postcss-value-parser
+## Install
 
-Yeah, it's a tad confusing. The [Lesshint](https://github.com/lesshint/lesshint)
-project needed a parser that would allow detailed inspection of property values
-to the same degree that PostCSS and [postcss-selector-parser](https://github.com/postcss/postcss-selector-parser)
-provided. This was especailly important for the Lesshint project, as it provides
-for very granular rules for linting LESS.
+Using npm:
 
-[postcss-value-parser](https://github.com/TrySound/postcss-value-parser)
-makes a lot of assumption about how values should be parsed and how the resulting
-AST should be organized. It was also fairly out of sync with the tokenzing and
-traversal patterns and convenience methods found in PostCSS and
-postcss-selector-parser.
+```console
+npm install postcss-values-parser --save-dev
+```
 
-So we needed an alternative, and drew upon all three projects to put together a
-value parser that met and exceeded our needs. The improvements include:
+<a href="https://www.patreon.com/shellscape">
+  <img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
+</a>
 
-- Written using ES6
-- Uses the same Gulp toolchain as PostCSS
+Please consider [becoming a patron](https://www.patreon.com/shellscape) if you find this module useful.
+
+## Requirements
+
+`postcss-values-parser` Node version v6.14.0+ and PostCSS v7.0.0+.
+
+## Benefits
+
+- Leverages PostCSS and its tokenizer under the hood
 - Doesn't strip characters; eg. parenthesis
-- Full AST traversal
-- AST traversal based on node type
-- Simple methods to derive strings from the parsed result
+- Full [AST](https://en.wikipedia.org/wiki/Abstract_syntax_tree) traversal
+- Ability to walk the AST for every Node type
+- Convenience methods to stringify Nodes
 - Follows PostCSS patterns for whitespace between Nodes
 - Provides convenience properties for number units, colors, etc.
 
 ## Usage
 
-Please see the [API Documentation](API.md) for full usage information.
-
-As with any NPM module, start with the install:
-
-```
-npm install postcss-values-parser
-```
-
-Using this parser is straightforward and doesn't require callbacks:
+Using the parser is straightforward and minimalistic:
 
 ```js
-const parser = require('postcss-values-parser');
-const ast = parser('#fff').parse();
+const { parse } = require('postcss-values-parser');
 
-let color = ast       // the Root node
-              .first  // the Value node
-              .first; // a Word node, containing the color value.
+const root = parse('#fff');
+const node = root.first;
+
+// → Word {
+//     raws: { before: '', after: '' },
+//     value: '#fff',
+//     type: 'word',
+//     isHex: true,
+//     isColor: true,
+//     isVariable: false,
+//     ...
+//   }
 ```
 
-## Loose Mode
+Please see the [Documentation](./docs/README.md) for further information on using the module.
 
-Loose mode was introduced to support adherence to the W3C CSS Specification as
-well as the ability to parse noncompliant CSS for variants like LESS, SCSS, and
-CSSNext. If you're working with a noncompliant or CSS-like variant, then loose
-mode is for you.
+## Meta
 
-For example, the parser
-will throw an error by default if `calc` parameters [don't adhere to the spec](https://www.w3.org/TR/css-values/#calc-syntax).
-However, with loose mode enabled, the parse will ignore spec rules and succeed.
+[CONTRIBUTING](./.github/CONTRIBUTING.md)
 
-In-draft features, or CSS features in modules not yet finalized, often cause parser
-errors. eg. `url(var(--somevar))`. Loose mode supports parsing of these features.
-
-Loose Mode is enabled by passing an option of `loose: true` to the `parser` method.
-
-```js
-const less = 'calc(2+2)'; // not valid per spec, but valid in LESS
-const cssnext = 'url(var(--somevar))'; // not valid per spec, but in spec draft
-
-const parser = require('postcss-values-parser');
-const ast = parser(less, { loose: true }).parse();
-
-// parse will succeed
-```
-
-## Acknowledgements
-
-This project was heavily influenced by [postcss-selector-parser](https://github.com/postcss/postcss-selector-parser)
-and utilized many patterns and logical constructs from the project.
-
-Tests and some tokenizing techniques found in [postcss-value-parser](https://github.com/TrySound/postcss-value-parser)
-were used.
-
-## Contributing
-
-- `git fork/clone`
-- `npm i`
-- Before PR'ing, make sure `npm test` still pass. Add test if you're adding features.
-
-When you tweak [API.md](API.md), please run `npm run toc` before PR'ing.
+[LICENSE (Mozilla Public License)](./LICENSE)

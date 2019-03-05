@@ -23,6 +23,8 @@ module.exports = {
     'url(http://123.example.com)',
     'url(//123.example.com)',
     'rgba( 29, 439 , 29 )',
+    'RGBA( 29, 439 , 29 )',
+    'RgBa( 29, 439 , 29 )',
     'calc(-0.5 * var(foo))',
     'calc(1px + -2vw - 4px)',
     'calc(((768px - 100vw) / 2) - 15px)',

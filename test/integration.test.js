@@ -13,7 +13,8 @@
 */
 const test = require('ava');
 
-const { parse } = require('../lib');
+const { nodeToString, parse } = require('../lib');
+const Punctuation = require('../lib/nodes/Punctuation');
 
 test('integration', (t) => {
   let root = parse(`normal normal 1em/1 'Source Sans Pro', serif`);
@@ -25,4 +26,20 @@ test('integration', (t) => {
 
   root = parse('1 / -1');
   t.is(root.nodes.length, 3);
+});
+
+test('manipulation', (t) => {
+  const source = 'rgb(100% 100% 100%)';
+  const root = parse(source);
+  const { first } = root;
+
+  let string = nodeToString(root);
+  t.is(source, string);
+
+  first.nodes.splice(1, 0, new Punctuation({ value: ',', parent: first }));
+  first.nodes.splice(3, 0, new Punctuation({ value: ',', parent: first }));
+
+  string = nodeToString(root);
+  t.not(source, string);
+  t.snapshot(string);
 });

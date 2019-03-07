@@ -12,5 +12,6 @@ module.exports = {
   options: {
     interpolation: { prefix: '#' }
   },
-  snapshot: ['#{batman}', '#{2px}', '#{2 * 2px}']
+  snapshot: ['#{batman}', '#{2px}', '#{2 * 2px}'],
+  throws: ['#{batman']
 };

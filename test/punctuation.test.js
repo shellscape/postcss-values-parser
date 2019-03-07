@@ -24,7 +24,8 @@ for (const fixture of snapshot) {
     const string = nodeToString(root);
 
     t.is(string, fixture);
-    t.is(fixture, fixture.toString());
+    t.is(fixture, root.toString());
+    t.snapshot(root.first.toString());
     t.snapshot(string);
     t.snapshot(nodes);
   });

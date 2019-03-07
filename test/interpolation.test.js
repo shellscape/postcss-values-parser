@@ -12,7 +12,7 @@ const test = require('ava');
 
 const { nodeToString, parse } = require('../lib');
 
-const { options, snapshot } = require('./fixtures/interpolation');
+const { options, snapshot, throws } = require('./fixtures/interpolation');
 
 for (const fixture of snapshot) {
   test(fixture, (t) => {
@@ -24,7 +24,15 @@ for (const fixture of snapshot) {
     const string = nodeToString(root);
 
     t.is(string, fixture);
+    t.is(fixture, root.toString());
+    t.snapshot(root.first.toString());
     t.snapshot(string);
     t.snapshot(nodes);
+  });
+}
+
+for (const fixture of throws) {
+  test(fixture, (t) => {
+    t.throws(() => parse(fixture));
   });
 }

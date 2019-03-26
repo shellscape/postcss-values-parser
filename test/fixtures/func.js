@@ -30,7 +30,10 @@ module.exports = {
     'calc(((768px - 100vw) / 2) - 15px)',
     'bar(baz(black, 10%), 10%)',
     '-webkit-linear-gradient(0)',
-    'var(--foo)'
+    'var(--foo)',
+    'var( --foo)',
+    'var(--foo )',
+    'var(  --foo   )'
   ],
 
   throws: ['url( /gfx/img/bg.jpg ']

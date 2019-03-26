@@ -31,7 +31,7 @@ Default: `false`
 Set this option to enable parsing of interpolated values for languages such as SCSS. For example:
 `interpolation: { prefix: '@' }` will allow parsing of the interpolated value `@{batman}` which uses `@` as the "prefix". For SCSS one might use `interpolation: { prefix: '#' }`.
 
-##### `interpolation`
+##### `variables`
 Type: `Object`<br>
 Default: `{ prefixes: ['--'] }`
 

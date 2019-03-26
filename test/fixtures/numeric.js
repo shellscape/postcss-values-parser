@@ -22,6 +22,7 @@ module.exports = {
     '-2px',
     '-16px',
     '-16px -1px -1px -16px',
+    '10q',
     '1e10',
     '1E10',
     '1e-10',

@@ -11,7 +11,7 @@ If `true`, indicates that the type of comment is "inline," or a comment that beg
 
 ### `type`
 Type: `String`
-Value: `'func'`
+Value: `'comment'`
 
 ### `value`
 Type: `String`<br>

@@ -33,7 +33,8 @@ module.exports = {
     'var(--foo)',
     'var( --foo)',
     'var(--foo )',
-    'var(  --foo   )'
+    'var(  --foo   )',
+    'var(--foo, default-value)'
   ],
 
   throws: ['url( /gfx/img/bg.jpg ']

@@ -9,6 +9,11 @@ Type: `Boolean`<br>
 
 If `true`, denotes that the function represents a color-producing function. Valid color-producing functions are: `hsl()`, `hsla()`, `rgb()`, and `rgba()`.
 
+### `isVar`
+Type: `Boolean`<br>
+
+If `true`, denotes that the function represents a CSS variable usage function. Valid var function is: `var( <custom-property-name> , <declaration-value>? )`.
+
 ### `name`
 Type: `String`<br>
 

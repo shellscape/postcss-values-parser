@@ -35,9 +35,9 @@
   "dependencies": {
     "color-name": "^1.1.4",
     "is-number": "^7.0.0",
-    "is-url-superb": "^2.0.0",
+    "is-url-superb": "^3.0.0",
     "postcss": "^7.0.5",
-    "url-regex": "^4.1.1"
+    "url-regex": "^5.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.2.1",
@@ -48,13 +48,13 @@
     "eslint-config-shellscape": "^2.0.2",
     "globby": "^9.0.0",
     "lint-staged": "^8.0.4",
-    "nyc": "^13.3.0",
+    "nyc": "^14.1.0",
     "perfy": "^1.1.5",
     "postcss-value-parser": "^3.3.1",
-    "postcss-values-parser": "^2.0.1",
+    "postcss-values-parser": "^3.0.3",
     "pre-commit": "^1.2.2",
     "prettier": "^1.15.2",
-    "standard-version": "^4.4.0",
+    "standard-version": "^5.0.2",
     "strip-ansi": "^5.0.0",
     "text-table": "^0.2.0"
   },

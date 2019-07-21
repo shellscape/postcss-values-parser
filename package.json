@@ -40,21 +40,20 @@
     "url-regex": "^5.0.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^7.2.1",
-    "@commitlint/config-conventional": "^7.1.2",
-    "ava": "^1.2.0",
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "ava": "^2.2.0",
     "chalk": "^2.4.2",
-    "eslint": "^5.6.0",
     "eslint-config-shellscape": "^2.0.2",
-    "globby": "^9.0.0",
-    "lint-staged": "^8.0.4",
+    "globby": "^10.0.1",
+    "lint-staged": "^9.2.0",
     "nyc": "^14.1.0",
     "perfy": "^1.1.5",
-    "postcss-value-parser": "^3.3.1",
+    "postcss-value-parser": "^4.0.0",
     "postcss-values-parser": "^3.0.3",
     "pre-commit": "^1.2.2",
     "prettier": "^1.15.2",
-    "standard-version": "^5.0.2",
+    "standard-version": "^6.0.1",
     "strip-ansi": "^5.0.0",
     "text-table": "^0.2.0"
   },
@@ -69,7 +68,12 @@
     "parsing",
     "properties"
   ],
-  "pre-commit": "lint-staged",
+  "ava": {
+    "files": [
+      "!**/fixtures/**",
+      "!**/helpers/**"
+    ]
+  },
   "lint-staged": {
     "*.js": [
       "eslint --fix",
@@ -77,8 +81,12 @@
     ]
   },
   "nyc": {
+    "include": [
+      "lib/*.js"
+    ],
     "exclude": [
       "test/"
     ]
-  }
+  },
+  "pre-commit": "lint-staged"
 }

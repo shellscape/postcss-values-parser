@@ -14,7 +14,6 @@ about: Something went awry and you'd like to tell us about it.
   👉🏽 Need help or support? Open a SUPPORT issue instead.
 -->
 
-- Webpack Version:
 - Operating System (or Browser):
 - Node Version:
 - postcss-values-parser Version:

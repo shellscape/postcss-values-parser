@@ -18,12 +18,12 @@ import * as postcss from "postcss";
 
 export interface NodeBase {
   // Inherited from postcss.ContainerBase, but with our Node type.
-  next(): Node | void;
-  prev(): Node | void;
-  before(newNode: Node | object | string | Node[]): this;
-  after(newNode: Node | object | string | Node[]): this;
+  next(): ChildNode | void;
+  prev(): ChildNode | void;
+  before(newNode: ChildNode | object | string | ChildNode[]): this;
+  after(newNode: ChildNode | object | string | ChildNode[]): this;
   root(): Root;
-  replaceWith(...nodes: Array<Node | object>): this;
+  replaceWith(...nodes: Array<ChildNode | object>): this;
 
   // Inherited from postcss.ContainerBase with no changes.
   source?: postcss.NodeSource;
@@ -66,33 +66,39 @@ export interface ContainerBase extends NodeBase {
   walkWords(callback: (word: Word, index: number) => any): boolean | void;
   walkType(
     type: string,
-    callback: (node: Node, index: number) => any
+    callback: (node: ChildNode, index: number) => any
   ): boolean | void;
 
   // Inherited from postcss.ContainerBase, but with our Node type.
-  nodes: Node[];
-  first?: Node;
-  last?: Node;
-  index(child: Node | number): number;
+  nodes: ChildNode[];
+  first?: ChildNode;
+  last?: ChildNode;
+  index(child: ChildNode | number): number;
   every(
-    callback: (node: Node, index: number, nodes: Node[]) => any,
+    callback: (node: ChildNode, index: number, nodes: ChildNode[]) => any,
     thisArg?: any
   ): boolean;
   some(
-    callback: (node: Node, index: number, nodes: Node[]) => boolean,
+    callback: (node: ChildNode, index: number, nodes: ChildNode[]) => boolean,
     thisArg?: any
   ): boolean;
-  each(callback: (node: Node, index: number) => any): boolean | void;
-  walk(callback: (node: Node, index: number) => any): boolean | void;
+  each(callback: (node: ChildNode, index: number) => any): boolean | void;
+  walk(callback: (node: ChildNode, index: number) => any): boolean | void;
   walkAtWords(callback: (atWord: AtWord, index: number) => any): boolean | void;
   walkComments(
     callback: (comment: Comment, index: number) => any
   ): boolean | void;
-  prepend(...nodes: Array<Node | object | string>): this;
-  append(...nodes: Array<Node | object | string>): this;
-  insertBefore(oldNode: Node | number, newNode: Node | object | string): this;
-  insertAfter(oldNode: Node | number, newNode: Node | object | string): this;
-  removeChild(child: Node | number): this;
+  prepend(...nodes: Array<ChildNode | object | string>): this;
+  append(...nodes: Array<ChildNode | object | string>): this;
+  insertBefore(
+    oldNode: ChildNode | number,
+    newNode: ChildNode | object | string
+  ): this;
+  insertAfter(
+    oldNode: ChildNode | number,
+    newNode: ChildNode | object | string
+  ): this;
+  removeChild(child: ChildNode | number): this;
 
   // Inherited from postcss.ContainerBase with no changes.
   clone(overrides?: object): this;
@@ -109,7 +115,9 @@ export interface Root extends ContainerBase {
   }): postcss.Result;
 }
 
-export type Node =
+export type Node = Root | ChildNode;
+
+export type ChildNode =
   | AtWord
   | Comment
   | Func

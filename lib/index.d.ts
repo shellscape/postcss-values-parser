@@ -28,7 +28,7 @@ export interface NodeBase {
   // Inherited from postcss.ContainerBase with no changes.
   source?: postcss.NodeSource;
   raws: postcss.NodeRaws;
-  toString(stringifier?: postcss.Stringifier | postcss.Syntax): string;
+  toString(stringifier?: Stringifier | Syntax): string;
   error(
     message: string,
     options?: postcss.NodeErrorOptions
@@ -210,6 +210,18 @@ export interface VariablesOptions {
   prefixes: string[];
 }
 
-export const stringify: postcss.Stringifier;
+interface Syntax {
+  stringify?: Stringifier;
+}
+
+interface Builder {
+  (part: string, node?: Node, type?: "start" | "end"): void;
+}
+
+export interface Stringifier {
+  (node: Node, builder: Builder): void;
+}
+
+export const stringify: Stringifier;
 
 export function nodeToString(node: Node): string;

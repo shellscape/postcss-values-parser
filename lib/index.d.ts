@@ -141,6 +141,7 @@ export interface Func extends ContainerBase {
   type: "func";
   parent: Container;
   isColor: boolean;
+  isVar: boolean;
   name: string;
   params: string;
 }

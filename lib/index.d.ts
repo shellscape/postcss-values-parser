@@ -129,7 +129,7 @@ export type ChildNode =
   | UnicodeRange
   | Word;
 
-export type Container = Func | Interpolation;
+export type Container = Root | Func | Interpolation;
 
 export interface AtWord extends NodeBase {
   type: "atrule";

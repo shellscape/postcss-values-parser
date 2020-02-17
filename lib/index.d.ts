@@ -205,10 +205,26 @@ export interface Word extends NodeBase {
 
 export function parse(css: string, options?: ParseOptions): Root;
 
-export interface ParseOptions {
+export function parseDeclValue(
+  decl: postcss.Declaration,
+  options?: ParseOptionsWithoutContext
+): Root;
+
+export function parseAtRuleParams(
+  rule: postcss.AtRule,
+  options?: ParseOptions
+): Root;
+
+export interface ParseOptionsWithoutContext {
   ignoreUnknownWords?: boolean;
   interpolation?: boolean | InterpolationOptions;
   variables?: VariablesOptions;
+}
+
+export interface ParseOptions extends ParseOptionsWithoutContext {
+  context: postcss.Input;
+  lineInContext: Number;
+  columnInContext: Number;
 }
 
 export interface InterpolationOptions {

@@ -43,19 +43,18 @@
   "devDependencies": {
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
-    "ava": "^2.2.0",
-    "chalk": "^2.4.2",
+    "ava": "^3.5.1",
+    "chalk": "^3.0.0",
     "eslint-config-shellscape": "^2.0.2",
-    "globby": "^10.0.1",
-    "lint-staged": "^9.2.0",
-    "nyc": "^14.1.0",
+    "globby": "^11.0.0",
+    "lint-staged": "^10.0.8",
+    "nyc": "^15.0.0",
     "perfy": "^1.1.5",
     "postcss-value-parser": "^4.0.0",
     "postcss-values-parser": "^3.0.3",
     "pre-commit": "^1.2.2",
-    "prettier": "^1.15.2",
-    "standard-version": "^6.0.1",
-    "strip-ansi": "^5.0.0",
+    "prettier": "^2.0.1",
+    "strip-ansi": "^6.0.0",
     "text-table": "^0.2.0"
   },
   "keywords": [
@@ -77,8 +76,7 @@
   },
   "lint-staged": {
     "*.js": [
-      "eslint --fix",
-      "git add"
+      "eslint --fix"
     ]
   },
   "nyc": {

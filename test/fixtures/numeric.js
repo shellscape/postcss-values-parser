@@ -43,7 +43,8 @@ module.exports = {
     '0.5rad',
     '.5deg',
     '0.5deg',
-    '72.3deg'
+    '72.3deg',
+    '1.5dppx'
   ],
   throws: ['+-2.', '.', '.rem', '.2.3rem']
 };

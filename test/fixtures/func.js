@@ -40,7 +40,8 @@ module.exports = {
     'rotate(.5deg)',
     'rotate(0.5rad)',
     'rotate(0.5grad)',
-    'rotate(0.5turn)'
+    'rotate(0.5turn)',
+    '1em/var(--line-height)'
   ],
 
   throws: ['url( /gfx/img/bg.jpg ']

@@ -34,7 +34,13 @@ module.exports = {
     'var( --foo)',
     'var(--foo )',
     'var(  --foo   )',
-    'var(--foo, default-value)'
+    'var(--foo, default-value)',
+    'rotate(72.3deg)',
+    'rotate(0.5deg)',
+    'rotate(.5deg)',
+    'rotate(0.5rad)',
+    'rotate(0.5grad)',
+    'rotate(0.5turn)'
   ],
 
   throws: ['url( /gfx/img/bg.jpg ']

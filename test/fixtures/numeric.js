@@ -38,7 +38,12 @@ module.exports = {
     '-.3s',
     '-.3s + 0.5s',
     '1138--thx',
-    '32deg'
+    '32deg',
+    '0.5grad',
+    '0.5rad',
+    '.5deg',
+    '0.5deg',
+    '72.3deg'
   ],
   throws: ['+-2.', '.', '.rem', '.2.3rem']
 };

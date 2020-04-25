@@ -45,7 +45,9 @@ module.exports = {
     'rotate(0.5grad)',
     'rotate(0.5turn)',
     '1em/var(--line-height)',
-    'local(foo),local(bar)'
+    'local(foo),local(bar)',
+    'derp-face(#0366d6)',
+    'conic-gradient()'
   ],
 
   throws: ['url( /gfx/img/bg.jpg ']

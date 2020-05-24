@@ -76,7 +76,7 @@ describe('Parser → Function', () => {
       expected: [
         { type: 'func', value: 'url' },
         { type: 'paren', value: '(' },
-        { type: 'string', value: '/gfx/img/bg.jpg', raws: { before: ' ', after: " ", quote: '\'' } },
+        { type: 'word', value: ' \'/gfx/img/bg.jpg\' ' },
         { type: 'paren', value: ')' }
       ]
     },
@@ -97,7 +97,7 @@ describe('Parser → Function', () => {
       expected: [
         { type: 'func', value: 'url' },
         { type: 'paren', value: '(' },
-        { type: 'string', value: '/gfx/img/bg.jpg', raws: { before: ' ', after: " ", quote: '"' } },
+        { type: 'word', value: ' "/gfx/img/bg.jpg" ', raws: { before: '', after: "" } },
         { type: 'paren', value: ')' }
       ]
     },
@@ -118,11 +118,7 @@ describe('Parser → Function', () => {
       expected: [
         { type: 'func', value: 'url' },
         { type: 'paren', value: '(' },
-        { type: 'word', value: 'http' },
-        { type: 'colon', value: ':' },
-        { type: 'operator', value: '/' },
-        { type: 'operator', value: '/' },
-        { type: 'word', value: 'domain.com/gfx/img/bg.jpg' },
+        { type: 'word', value: ' http://domain.com/gfx/img/bg.jpg ' },
         { type: 'paren', value: ')' }
       ]
     },
@@ -284,6 +280,17 @@ describe('Parser → Function', () => {
         { type: 'func', value: '-webkit-linear-gradient' },
         { type: 'paren', value: '(' },
         { type: 'number', value: '0' },
+        { type: 'paren', value: ')' }
+      ]
+    },
+    {
+      it: 'should parse url function with operators in it',
+      test: "url(http://h.c)",
+      loose: true,
+      expected: [
+        { type: 'func', value: 'url' },
+        { type: 'paren', value: '(' },
+        { type: 'word', value: "http://h.c" },
         { type: 'paren', value: ')' }
       ]
     }

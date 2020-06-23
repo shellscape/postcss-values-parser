@@ -10,6 +10,6 @@ We 💛 contributions! The rules for contributing to this org are few:
 
 ## Before Committing
 
-1. Use at least Node.js v6.14.4 or higher. [NVM](https://github.com/creationix/nvm) can be handy for switching between Node versions.
+1. Use at least Node.js v10 or higher. [NVM](https://github.com/creationix/nvm) can be handy for switching between Node versions.
 1. Lint your changes via `npm run lint`. Fix any errors and warnings before committing.
 1. Test your changes via `npm run test`. Only Pull Requests with passing tests will be accepted.

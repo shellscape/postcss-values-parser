@@ -32,7 +32,7 @@ Please consider [becoming a patron](https://www.patreon.com/shellscape) if you f
 
 ## Requirements
 
-`postcss-values-parser` Node version v6.14.0+ and PostCSS v7.0.0+.
+`postcss-values-parser` Node version v10+ and PostCSS v7.0.0+.
 
 ## Benefits
 

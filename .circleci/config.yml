@@ -42,14 +42,11 @@ jobs:
           name: NPM Rebuild
           command: npm install
       - run:
-          name: Run linting.
+          name: Run Linting
           command: npm run lint
       - run:
-          name: Run NSP Security Check.
+          name: Run Security Check
           command: npm run security
-      - run:
-          name: Validate Commit Messages
-          command: npm run ci:lint:commits
 workflows:
   version: 2
   validate:

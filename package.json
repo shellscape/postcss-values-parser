@@ -25,7 +25,7 @@
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "lint": "eslint lib test --fix --cache",
     "lint-staged": "lint-staged",
-    "security": "npm audit",
+    "security": "npm audit --audit-level=moderate",
     "test": "ava"
   },
   "files": [
@@ -40,10 +40,8 @@
     "url-regex": "^5.0.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^8.1.0",
-    "@commitlint/config-conventional": "^8.1.0",
     "ava": "^3.5.1",
-    "chalk": "^3.0.0",
+    "chalk": "^4.1.0",
     "eslint-config-shellscape": "^2.0.2",
     "globby": "^11.0.0",
     "lint-staged": "^10.0.8",

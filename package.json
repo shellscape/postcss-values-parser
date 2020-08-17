@@ -31,9 +31,7 @@
   ],
   "dependencies": {
     "color-name": "^1.1.4",
-    "is-url-superb": "^3.0.0",
-    "postcss": "^7.0.5",
-    "url-regex": "^5.0.0"
+    "postcss": "^7.0.5"
   },
   "devDependencies": {
     "ava": "^3.5.1",

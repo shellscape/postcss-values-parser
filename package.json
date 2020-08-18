@@ -42,7 +42,6 @@
     "nyc": "^15.0.0",
     "perfy": "^1.1.5",
     "postcss-value-parser": "^4.0.0",
-    "postcss-values-parser": "^3.0.3",
     "pre-commit": "^1.2.2",
     "prettier": "^2.0.1",
     "strip-ansi": "^6.0.0",

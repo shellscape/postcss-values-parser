@@ -5,7 +5,7 @@ const chalk = require('chalk');
 const globby = require('globby');
 const perfy = require('perfy');
 const valueParser = require('postcss-value-parser');
-const v2Parser = require('postcss-values-parser');
+
 const strip = require('strip-ansi');
 const table = require('text-table');
 
@@ -37,14 +37,6 @@ const { parse } = require('../');
         theirs = perfy.end('value-parser');
       } catch (e) {
         theirs = { milliseconds: NaN };
-      }
-
-      perfy.start('v2');
-      try {
-        v2Parser(test).parse();
-        v2 = perfy.end('v2');
-      } catch (e) {
-        v2 = { milliseconds: NaN };
       }
 
       results.push({

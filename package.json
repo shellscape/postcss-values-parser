@@ -31,22 +31,25 @@
   ],
   "dependencies": {
     "color-name": "^1.1.4",
-    "is-url-superb": "^4.0.0",
-    "postcss": "^7.0.5"
+    "is-url-superb": "^4.0.0"
   },
   "devDependencies": {
-    "ava": "^3.5.1",
+    "ava": "^3.12.1",
     "chalk": "^4.1.0",
-    "eslint-config-shellscape": "^2.0.2",
-    "globby": "^11.0.0",
-    "lint-staged": "^10.0.8",
-    "nyc": "^15.0.0",
+    "eslint-config-shellscape": "^2.1.0",
+    "globby": "^11.0.1",
+    "lint-staged": "^10.4.0",
+    "nyc": "^15.1.0",
     "perfy": "^1.1.5",
-    "postcss-value-parser": "^4.0.0",
+    "postcss": "^8.0.9",
+    "postcss-value-parser": "^4.1.0",
     "pre-commit": "^1.2.2",
-    "prettier": "^2.0.1",
+    "prettier": "^2.1.2",
     "strip-ansi": "^6.0.0",
     "text-table": "^0.2.0"
+  },
+  "peerDependencies": {
+    "postcss": "^8.0.9"
   },
   "keywords": [
     "css",

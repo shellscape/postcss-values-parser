@@ -185,6 +185,7 @@ export interface Quoted extends NodeBase {
   parent: Container;
   quote: string;
   value: string;
+  contents: string;
 }
 
 export interface UnicodeRange extends NodeBase {

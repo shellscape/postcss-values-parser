@@ -31,7 +31,8 @@
   ],
   "dependencies": {
     "color-name": "^1.1.4",
-    "is-url-superb": "^4.0.0"
+    "is-url-superb": "^4.0.0",
+    "quote-unquote": "^1.0.0"
   },
   "devDependencies": {
     "ava": "^3.12.1",

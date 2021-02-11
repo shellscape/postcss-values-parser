@@ -16,7 +16,12 @@ Value: `'quoted'`
 ### `value`
 Type: `String`<br>
 
-The value of the string between the quote characters.
+The value of the string between the quote characters, *including* quotes.
+
+### `contents`
+Type: `String`<br>
+
+The value of the string between the quote characters, *without* quotes.
 
 ## Example Values
 

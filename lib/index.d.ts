@@ -10,7 +10,6 @@
 */
 
 import * as postcss from "postcss";
-import * as postcssNode from "postcss/lib/node";
 
 // Even though the concrete classes extend PostCSS classes, we can't extend
 // PostCSS Node types here because they refer to statements that aren't
@@ -32,7 +31,7 @@ export interface NodeBase {
   toString(stringifier?: Stringifier | Syntax): string;
   error(
     message: string,
-    options?: postcssNode.NodeErrorOptions
+    options?: postcss.NodeErrorOptions
   ): postcss.CssSyntaxError;
   warn(
     result: postcss.Result,

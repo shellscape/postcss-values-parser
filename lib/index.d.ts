@@ -10,6 +10,7 @@
 */
 
 import * as postcss from "postcss";
+import * as postcssNode from "postcss/lib/node";
 
 // Even though the concrete classes extend PostCSS classes, we can't extend
 // PostCSS Node types here because they refer to statements that aren't
@@ -26,12 +27,12 @@ export interface NodeBase {
   replaceWith(...nodes: Array<ChildNode | object>): this;
 
   // Inherited from postcss.ContainerBase with no changes.
-  source?: postcss.NodeSource;
-  raws: postcss.NodeRaws;
+  source?: postcss.Source;
+  raws: any;
   toString(stringifier?: Stringifier | Syntax): string;
   error(
     message: string,
-    options?: postcss.NodeErrorOptions
+    options?: postcssNode.NodeErrorOptions
   ): postcss.CssSyntaxError;
   warn(
     result: postcss.Result,
@@ -131,7 +132,7 @@ export type ChildNode =
 
 export type Container = Root | Func | Interpolation;
 
-export interface AtWord extends NodeBase {
+export interface AtWord extends ContainerBase {
   type: "atrule";
   parent: Container;
   name: string;

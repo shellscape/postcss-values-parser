@@ -47,7 +47,8 @@ module.exports = {
     '1em/var(--line-height)',
     'local(foo),local(bar)',
     'bat-man(#000)',
-    'conic-gradient()'
+    'conic-gradient()',
+    'color.red(#6b717f)'
   ],
 
   throws: ['url( /gfx/img/bg.jpg ']

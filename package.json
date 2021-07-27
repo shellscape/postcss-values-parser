@@ -22,7 +22,7 @@
     "lint": "eslint lib test --fix --cache",
     "check-types": "tsc --noEmit",
     "lint-staged": "lint-staged",
-    "security": "npm audit --audit-level=moderate",
+    "security": "npm audit --audit-level=high --prod",
     "test": "ava"
   },
   "files": [

@@ -13,6 +13,9 @@ module.exports = {
   snapshot: [
     'bold italic 12px \t /3 \'Open Sans\', Arial, "Helvetica Neue", sans-serif',
     '(min-width: 700px) and (orientation: \\$landscape)',
+    '(width < 700px)',
+    '(width <= 700px)',
+    '(width >= 500px) and (width <= 1200px)',
     ' \\"word\\" \\s ',
     '--color',
     '-webkit-transition',

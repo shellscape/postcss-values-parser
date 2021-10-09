@@ -1,6 +1,6 @@
 {
   "name": "postcss-values-parser",
-  "version": "6.0.0",
+  "version": "6.0.1",
   "description": "A CSS property value parser for use with PostCSS",
   "license": "MPL-2.0",
   "repository": "shellscape/postcss-values-parser",

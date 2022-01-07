@@ -65,7 +65,7 @@ root.walkNumerics((node) => nodes.push(node));
 //   ...
 // },
 // Numeric {
-//   value: '3s',
+//   value: '3',
 //   type: 'numeric',
 //   unit: 'pt',
 //   ...

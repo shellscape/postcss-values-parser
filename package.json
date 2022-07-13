@@ -22,7 +22,7 @@
     "check-types": "tsc --noEmit",
     "lint-staged": "lint-staged",
     "security": "npm audit --audit-level=high --prod",
-    "test": "ava"
+    "test": "ava test/variable.ts"
   },
   "files": [
     "dist",
@@ -30,14 +30,17 @@
     "README.md"
   ],
   "dependencies": {
+    "@types/color-name": "^1.1.1",
     "@types/css-tree": "^1.0.7",
+    "@types/node": "^18.0.3",
     "color-name": "^1.1.4",
     "css-tree": "^2.1.0",
     "is-url-superb": "^4.0.0",
-    "quote-unquote": "^1.0.0"
+    "quote-unquote": "^1.0.0",
+    "ts-node": "^10.8.2"
   },
   "devDependencies": {
-    "ava": "^3.12.1",
+    "ava": "^4.3.0",
     "chalk": "^4.1.0",
     "eslint-config-shellscape": "^5.0.2",
     "globby": "^11.0.1",
@@ -65,16 +68,6 @@
     "parsing",
     "properties"
   ],
-  "ava": {
-    "files": [
-      "!**/fixtures/**",
-      "!**/helpers/**",
-      "!**/rewiremock.js"
-    ],
-    "require": [
-      "./test/rewiremock.js"
-    ]
-  },
   "lint-staged": {
     "*.js": [
       "eslint --fix"

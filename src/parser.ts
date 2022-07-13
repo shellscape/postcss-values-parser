@@ -9,22 +9,33 @@
   included in all copies or substantial portions of this Source Code Form.
 */
 import { parse as parseAst, Value } from 'css-tree';
-import { Input, Root as PostCssRoot } from 'postcss';
+import { Input } from 'postcss';
 
 import { AstError, ParseError } from './errors';
 import * as Nodes from './nodes';
+import { WordOptions } from './nodes/Word';
 
-class Root extends PostCssRoot {
-  // Note: The PostCSS types for .push seem a bit jacked up.
-  // it incorrectly expects properties for types on Declaration for anything being pushed
-  add(node: Nodes.Node) {
-    return this.push(node as any);
-  }
+export interface ParseOptions extends Pick<WordOptions, 'variables'> {
+  ignoreUnknownWords?: boolean;
+  interpolation?: boolean | InterpolationOptions;
 }
 
-export const parse = (css: string) => {
+const defaults: ParseOptions = {
+  ignoreUnknownWords: false,
+  interpolation: false,
+  variables: {
+    prefixes: ['--']
+  }
+};
+
+export interface InterpolationOptions {
+  prefix: string;
+}
+
+export const parse = (css: string, opts?: ParseOptions) => {
+  const options = Object.assign({}, defaults, opts);
   let ast: Value;
-  const root = new Root({
+  const root = new Nodes.Root({
     source: {
       input: new Input(css),
       start: { column: 1, line: 1, offset: 0 }
@@ -55,8 +66,11 @@ export const parse = (css: string) => {
       case 'Operator':
         root.add(new Nodes.Operator({ node }));
         break;
+      case 'UnicodeRange':
+        root.add(new Nodes.UnicodeRange({ node }));
+        break;
       default:
-        root.add(new Nodes.Word({ node }));
+        root.add(new Nodes.Word({ node, variables: options.variables }));
         break;
     }
   }

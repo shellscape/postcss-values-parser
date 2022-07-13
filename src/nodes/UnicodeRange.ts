@@ -8,9 +8,14 @@
   The above copyright notice and this permission notice shall be
   included in all copies or substantial portions of this Source Code Form.
 */
-module.exports = {
-  options: {
-    variables: { prefixes: ['\\$', '--'] }
-  },
-  snapshot: ['--batman', '--main-bg-color', '$batman', '$main-bg-color']
-};
+import { UnicodeRange as UnicodeRangeNode } from 'css-tree';
+
+import { Node, NodeOptions } from './Node';
+
+export class UnicodeRange extends Node {
+  constructor(options: NodeOptions) {
+    super(options);
+    this.type = 'unicodeRange';
+    (this as any).value = (options.node as UnicodeRangeNode).value;
+  }
+}

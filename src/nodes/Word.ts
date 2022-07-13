@@ -8,25 +8,34 @@
   The above copyright notice and this permission notice shall be
   included in all copies or substantial portions of this Source Code Form.
 */
+import colors from 'color-name';
+import isUrl from 'is-url-superb';
 
 import { Node, NodeOptions } from './Node';
+
+const hexRegex = /^#(.+)/;
+const colorRegex = /^#([0-9a-f]{3}|[0-9a-f]{4}|[0-9a-f]{6}|[0-9a-f]{8})$/i;
+const colorNames = Object.keys(colors);
+
+export interface WordOptions extends NodeOptions {
+  variables: { prefixes: string[] };
+}
 
 export class Word extends Node {
   readonly isColor: boolean;
   readonly isHex: boolean;
   readonly isUrl: boolean;
   readonly isVariable: boolean;
+  private readonly options: WordOptions;
 
-  constructor(options: NodeOptions) {
+  constructor(options: WordOptions) {
     super(options);
+
+    this.options = options;
 
     const { node } = options;
 
     this.type = 'word';
-    this.isColor = false;
-    this.isHex = false;
-    this.isUrl = false;
-    this.isVariable = false;
 
     let value = '';
 
@@ -41,73 +50,19 @@ export class Word extends Node {
     }
 
     (this as any).value = value;
+
+    this.isColor = colorRegex.test(value) || colorNames.includes(value.toLowerCase());
+    this.isHex = hexRegex.test(value);
+    this.isUrl = value.startsWith('//') ? isUrl(`http:${value}`) : isUrl(value);
+    this.isVariable = this.testVariable();
+  }
+
+  testVariable() {
+    if (!this.options.variables) return false;
+
+    const { prefixes } = this.options.variables;
+    const varRegex = new RegExp(`^(${prefixes.join('|')})`);
+
+    return varRegex.test(this.value);
   }
 }
-
-// const colors = require('color-name');
-// const isUrl = require('is-url-superb');
-//
-// const { registerWalker } = require('../walker');
-//
-// const Node = require('./Node');
-//
-// const escapeRegex = /^\\(.+)/;
-// const hexRegex = /^#(.+)/;
-// const colorRegex = /^#([0-9a-f]{3}|[0-9a-f]{4}|[0-9a-f]{6}|[0-9a-f]{8})$/i;
-// const colorNames = Object.keys(colors);
-//
-// class Word extends Node {
-//   constructor(options) {
-//     super(options);
-//     this.type = 'word';
-//     this.isColor = false;
-//     this.isHex = false;
-//     this.isUrl = false;
-//     this.isVariable = false;
-//   }
-//
-//   static fromTokens(tokens, parser) {
-//     parser.fromFirst(tokens, Word);
-//
-//     const { lastNode } = parser;
-//     const { value } = lastNode;
-//     lastNode.isColor = colorRegex.test(value) || colorNames.includes(value.toLowerCase());
-//     lastNode.isHex = hexRegex.test(value);
-//     lastNode.isUrl = value.startsWith('//') ? isUrl(`http:${value}`) : isUrl(value);
-//     lastNode.isVariable = Word.testVariable(tokens[0], parser);
-//   }
-//
-//   static testEscaped(tokens) {
-//     const [first, next] = tokens;
-//     const [type, value] = first;
-//
-//     return (
-//       type === 'word' &&
-//       (escapeRegex.test(value) || (value === '\\' && next && !/^\s+$/.test(next[1])))
-//     );
-//   }
-//
-//   static testHex(token) {
-//     const [type, value] = token;
-//
-//     return type === 'word' && hexRegex.test(value);
-//   }
-//
-//   static testVariable(token, parser) {
-//     const [type, value] = token;
-//     const { prefixes } = parser.options.variables;
-//     const varRegex = new RegExp(`^(${prefixes.join('|')})`);
-//
-//     return type === 'word' && varRegex.test(value);
-//   }
-//
-//   static testWord(tokens, parser) {
-//     const [token] = tokens;
-//
-//     return Word.testEscaped(tokens) || Word.testHex(token) || Word.testVariable(token, parser);
-//   }
-// }
-//
-// registerWalker(Word);
-//
-// module.exports = Word;

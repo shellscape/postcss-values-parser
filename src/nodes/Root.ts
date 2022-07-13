@@ -8,24 +8,17 @@
   The above copyright notice and this permission notice shall be
   included in all copies or substantial portions of this Source Code Form.
 */
-import { CssNode } from 'css-tree';
-import { Input, Node as PostCssNode } from 'postcss';
+import { Root as PostCssRoot } from 'postcss';
 
 import { stringify } from '../stringify';
 
-export interface NodeOptions {
-  node: CssNode;
-}
+import { Node } from './Node';
 
-export class Node extends PostCssNode {
-  public readonly value: string = '';
-
-  constructor(options: NodeOptions) {
-    super(options);
-
-    const { end, source, start } = options.node.loc as any;
-
-    this.source = { end, input: new Input(source), start };
+export class Root extends PostCssRoot {
+  // Note: The PostCSS types for .push seem a bit jacked up.
+  // it incorrectly expects properties for types on Declaration for anything being pushed
+  add(node: Node) {
+    return this.push(node as any);
   }
 
   toString(stringifier = stringify) {

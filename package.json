@@ -26,9 +26,8 @@
     "lint:js": "eslint --cache --fix --cache src test",
     "lint:json": "prettier --write codecov.yml package.json",
     "prepublishOnly": "pnpm lint && pnpm build",
-    "pretest": "pnpm build",
     "security": "pnpm audit --audit-level=high --prod",
-    "test": "pnpm install && ava"
+    "test": "ava test/operator.ts"
   },
   "files": [
     "dist",

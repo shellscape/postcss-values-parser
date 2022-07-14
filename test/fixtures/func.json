@@ -7,6 +7,7 @@
     "url( \"/gfx/img/bg.jpg\" )",
     "url( 'http://domain.com/gfx/img/bg.jpg' )",
     "url( \"http://domain.com/gfx/img/bg.jpg\" )",
+    "url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAAL0lEQVQoz2NgCD3x//9/BhBYBWdhgFVAiVW4JBFKGIa4AqD0//9D3pt4I4tAdAMAHTQ/j5Zom30AAAAASUVORK5CYII=)",
     "url(http://123.example.com)",
     "url(//123.example.com)",
     "rgba( 29, 439 , 29 )",
@@ -20,6 +21,7 @@
     "calc(1px + -2vw - 4px)",
     "calc(((768px - 100vw) / 2) - 15px)",
     "calc(((768px - 100vw)/2) - 15px)",
+    "calc(var(--mdc-layout-grid-gutter-desktop, 24px)/2*-1)",
     "bar(baz(black, 10%), 10%)",
     "-webkit-linear-gradient(0)",
     "var(--foo)",
@@ -27,6 +29,7 @@
     "var(--foo )",
     "var(  --foo   )",
     "var(--foo, default-value)",
+    "var(--font-size)/var(--line-height)",
     "rotate(72.3deg)",
     "rotate(0.5deg)",
     "rotate(.5deg)",
@@ -38,7 +41,8 @@
     "bat-man(#000)",
     "conic-gradient()",
     "url( /gfx/img/bg.jpg ",
-    "src(var(--foo))"
+    "src(var(--foo))",
+    "clamp(1.25rem, 0.9423rem + 1.5385vw, 1.75rem)"
   ],
   "throws": [
     "url(var(--foo))",

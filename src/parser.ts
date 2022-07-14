@@ -8,7 +8,7 @@
   The above copyright notice and this permission notice shall be
   included in all copies or substantial portions of this Source Code Form.
 */
-import { parse as parseAst, Value } from 'css-tree';
+import { parse as parseAst, CssNode, CssNodePlain, List, Value } from 'css-tree';
 import { Input } from 'postcss';
 
 import { AstError, ParseError } from './errors';
@@ -27,6 +27,50 @@ const defaults: ParseOptions = {
 export interface InterpolationOptions {
   prefix: string;
 }
+
+interface MaybeParent {
+  children: List<CssNode> | CssNodePlain[];
+}
+
+const assign = (parent: Nodes.Container, nodes: CssNode[]) => {
+  for (const node of nodes) {
+    let newNode: Nodes.Container | Nodes.Node;
+
+    switch (node.type) {
+      case 'Function':
+        newNode = new Nodes.Func({ node });
+        break;
+      case 'Dimension':
+      case 'Number':
+        newNode = new Nodes.Numeric({ node });
+        break;
+      case 'Operator':
+        newNode = new Nodes.Operator({ node });
+        break;
+      case 'Parentheses':
+        newNode = new Nodes.Parens({ node });
+        break;
+      case 'UnicodeRange':
+        newNode = new Nodes.UnicodeRange({ node });
+        break;
+      default:
+        newNode = new Nodes.Word({ node });
+        break;
+    }
+
+    const maybeParent = node as unknown as MaybeParent;
+
+    if (maybeParent.children) {
+      let children: CssNode[];
+      if (maybeParent.children instanceof List) children = maybeParent.children.toArray();
+      else ({ children } = maybeParent as any);
+
+      assign(newNode as Nodes.Container, children);
+    }
+
+    parent.add(newNode);
+  }
+};
 
 export const parse = (css: string, opts?: ParseOptions) => {
   // @ts-ignore
@@ -55,23 +99,7 @@ export const parse = (css: string, opts?: ParseOptions) => {
 
   if (!nodes.length) throw new AstError();
 
-  for (const node of nodes) {
-    switch (node.type) {
-      case 'Dimension':
-      case 'Number':
-        root.add(new Nodes.Numeric({ node }));
-        break;
-      case 'Operator':
-        root.add(new Nodes.Operator({ node }));
-        break;
-      case 'UnicodeRange':
-        root.add(new Nodes.UnicodeRange({ node }));
-        break;
-      default:
-        root.add(new Nodes.Word({ node }));
-        break;
-    }
-  }
+  assign(root, nodes);
 
   return root;
 };

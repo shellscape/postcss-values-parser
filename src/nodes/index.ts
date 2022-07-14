@@ -1,6 +1,9 @@
+export { Container } from './Container';
+export { Func } from './Func';
 export { Node } from './Node';
 export { Numeric } from './Numeric';
 export { Operator } from './Operator';
+export { Parens } from './Parens';
 export { Root } from './Root';
 export { UnicodeRange } from './UnicodeRange';
 export { Word } from './Word';

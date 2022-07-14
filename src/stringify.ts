@@ -57,6 +57,11 @@ export class ValuesStringifier extends Stringifier {
     this.basic(node);
   }
 
+  // FIXME: we need to render parens correctly
+  parens(node: any) {
+    this.basic(node);
+  }
+
   punctuation(node: any) {
     this.basic(node);
   }

@@ -22,7 +22,7 @@
     "check-types": "tsc --noEmit",
     "lint-staged": "lint-staged",
     "security": "npm audit --audit-level=high --prod",
-    "test": "ava test/walker.ts"
+    "test": "ava test/word.ts"
   },
   "files": [
     "dist",

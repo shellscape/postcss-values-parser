@@ -1,0 +1,21 @@
+{
+  "values": [
+    {
+      "value": "calc((foo(768px - 100vw) / 2) - 15px) // batman\n//joker",
+      "walkers": [
+        {
+          "length": 2,
+          "type": "Funcs"
+        },
+        {
+          "length": 4,
+          "type": "Numerics"
+        },
+        {
+          "length": 2,
+          "type": "Words"
+        }
+      ]
+    }
+  ]
+}

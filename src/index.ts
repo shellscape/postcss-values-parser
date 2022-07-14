@@ -15,16 +15,18 @@
 // - Node interfaces changed
 // - Walkers must be manually registered to avoid conflicts between different installed versions of
 //   postcss
-// - `2.` is non-spec and invalid (upstream; supported by css-tree)
+// - `2.` is non-spec and invalid (upstream; css-tree)
 // - `.2.3rem` Shouldn't Be Compliant(upstream; https://github.com/csstree/csstree/issues/194)
 // - modulus operators no longer spec-compliant https://www.w3.org/TR/css3-values/#calc-notation
 // - custom variable prefix no longer supported (upstream; css-tree)
 // - at-words (@word) aren't spec compliant within css values and have been removed
 // - `variables` option has been removed. only the `--` prefix is spec compliant for variables
-// - url-modifiers (e.g. functions within url()) aren't supported (upstream; https://github.com/csstree/csstree/issues/197)
+// - url-modifiers (e.g. functions within url(), url(var(...))) aren't spec compliant and aren't supported (upstream; https://github.com/csstree/csstree/issues/197)
 // - a comma (,) is considered an operator
 // - strings (Quoted) which are quoted, but unterminated with an ending matching quote mark no longer throw
 // - interpolation had to be removed as it is not spec compliant
+// - bare parens have their own node type (upstream; css-tree)
+// - comparison operators are not spec compliant and not supported. e.g. `(width < 1px)`, `(width < 1px) and (width < 2px)`
 
 import { parse } from './parser';
 import { stringify } from './stringify';

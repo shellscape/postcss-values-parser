@@ -15,6 +15,7 @@ import { stringify } from '../stringify';
 import { Node } from './Node';
 
 export class Root extends PostCssRoot {
+  public readonly value = '';
   // Note: The PostCSS types for .push seem a bit jacked up.
   // it incorrectly expects properties for types on Declaration for anything being pushed
   add(node: Node) {

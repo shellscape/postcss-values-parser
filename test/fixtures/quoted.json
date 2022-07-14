@@ -1,0 +1,16 @@
+{
+  "snapshot": [
+    "\"\"",
+    "''",
+    "'word\\'word'",
+    "\"word\\\\\"word\"",
+    "\"word\\'word\"",
+    "'word\"word'",
+    "\"string\"",
+    "word1\"string\"word2",
+    " \"foo\" ",
+    "\"word",
+    "\"word\\",
+    " \\\"word\\'\\ \\\t "
+  ]
+}

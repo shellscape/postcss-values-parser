@@ -8,25 +8,29 @@
   The above copyright notice and this permission notice shall be
   included in all copies or substantial portions of this Source Code Form.
 */
-const test = require('ava');
+import test from 'ava';
 
-const { nodeToString, parse } = require('../lib');
+import { nodeToString, parse } from '../src';
 
-const { snapshot } = require('./fixtures/word');
+import { snapshot, throws } from './fixtures/func.json';
 
 for (const fixture of snapshot) {
   test(fixture, (t) => {
     const root = parse(fixture);
+
     const nodes = root.nodes.map((node) => {
       delete node.parent; // eslint-disable-line no-param-reassign
       return node;
     });
     const string = nodeToString(root);
-
-    t.is(string, fixture);
-    t.is(fixture, root.toString());
-    t.snapshot(root.first?.toString()); 
+    t.snapshot(root.first?.toString());
     t.snapshot(string);
     t.snapshot(nodes);
+  });
+}
+
+for (const fixture of throws) {
+  test(fixture, (t) => {
+    t.throws(() => parse(fixture));
   });
 }

@@ -17,21 +17,17 @@ const hexRegex = /^#(.+)/;
 const colorRegex = /^#([0-9a-f]{3}|[0-9a-f]{4}|[0-9a-f]{6}|[0-9a-f]{8})$/i;
 const colorNames = Object.keys(colors);
 
-export interface WordOptions extends NodeOptions {
-  variables: { prefixes: string[] };
-}
-
 export class Word extends Node {
-  readonly isColor: boolean;
-  readonly isHex: boolean;
-  readonly isUrl: boolean;
-  readonly isVariable: boolean;
-  private readonly options: WordOptions;
+  readonly isColor: boolean = false;
+  readonly isHex: boolean = false;
+  readonly isUrl: boolean = false;
+  readonly isVariable: boolean = false;
 
-  constructor(options: WordOptions) {
+  constructor(options?: NodeOptions) {
     super(options);
 
-    this.options = options;
+    // Note: in the event of something calling .clone
+    if (!options) return;
 
     const { node } = options;
 
@@ -58,9 +54,7 @@ export class Word extends Node {
   }
 
   testVariable() {
-    if (!this.options.variables) return false;
-
-    const { prefixes } = this.options.variables;
+    const prefixes = ['--'];
     const varRegex = new RegExp(`^(${prefixes.join('|')})`);
 
     return varRegex.test(this.value);

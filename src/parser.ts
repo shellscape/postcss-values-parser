@@ -13,19 +13,15 @@ import { Input } from 'postcss';
 
 import { AstError, ParseError } from './errors';
 import * as Nodes from './nodes';
-import { WordOptions } from './nodes/Word';
 
-export interface ParseOptions extends Pick<WordOptions, 'variables'> {
+export interface ParseOptions {
   ignoreUnknownWords?: boolean;
   interpolation?: boolean | InterpolationOptions;
 }
 
 const defaults: ParseOptions = {
   ignoreUnknownWords: false,
-  interpolation: false,
-  variables: {
-    prefixes: ['--']
-  }
+  interpolation: false
 };
 
 export interface InterpolationOptions {
@@ -33,6 +29,8 @@ export interface InterpolationOptions {
 }
 
 export const parse = (css: string, opts?: ParseOptions) => {
+  // @ts-ignore
+  // eslint-disable-next-line
   const options = Object.assign({}, defaults, opts);
   let ast: Value;
   const root = new Nodes.Root({
@@ -70,7 +68,7 @@ export const parse = (css: string, opts?: ParseOptions) => {
         root.add(new Nodes.UnicodeRange({ node }));
         break;
       default:
-        root.add(new Nodes.Word({ node, variables: options.variables }));
+        root.add(new Nodes.Word({ node }));
         break;
     }
   }

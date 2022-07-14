@@ -16,8 +16,10 @@ interface Container {
   prototype: any;
 }
 
+console.log(Object.values(Nodes));
+
 export const registerWalkers = (container: Container) => {
-  for (const Constructor of Nodes as any) {
+  for (const Constructor of Object.values(Nodes)) {
     let walkerName = `walk${Constructor.name}`;
 
     // plural sugar

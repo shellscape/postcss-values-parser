@@ -10,6 +10,7 @@
 */
 
 // Breaking Changes:
+// - postcss-values-parser is now using css-tree which makes its behavior closers to how browsers parse values
 // - Comments and superfluous spaces filtered out (upstream; css-tree)
 // - Node interfaces changed
 // - Walkers must be manually registered to avoid conflicts between different installed versions of
@@ -18,6 +19,12 @@
 // - `.2.3rem` Shouldn't Be Compliant(upstream; https://github.com/csstree/csstree/issues/194)
 // - modulus operators no longer spec-compliant https://www.w3.org/TR/css3-values/#calc-notation
 // - custom variable prefix no longer supported (upstream; css-tree)
+// - at-words (@word) aren't spec compliant within css values and have been removed
+// - `variables` option has been removed. only the `--` prefix is spec compliant for variables
+// - url-modifiers (e.g. functions within url()) aren't supported (upstream; https://github.com/csstree/csstree/issues/197)
+// - a comma (,) is considered an operator
+// - strings (Quoted) which are quoted, but unterminated with an ending matching quote mark no longer throw
+// - interpolation had to be removed as it is not spec compliant
 
 import { parse } from './parser';
 import { stringify } from './stringify';

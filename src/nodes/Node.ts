@@ -20,8 +20,10 @@ export interface NodeOptions {
 export class Node extends PostCssNode {
   public readonly value: string = '';
 
-  constructor(options: NodeOptions) {
+  constructor(options?: NodeOptions) {
     super(options);
+
+    if (!options) return;
 
     const { end, source, start } = options.node.loc as any;
 

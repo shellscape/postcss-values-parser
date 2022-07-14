@@ -49,7 +49,7 @@ jobs:
         run: pnpm security
 
       - name: Lint Repo
-        run: pnpm lint:js
+        run: pnpm lint
 
       - name: Run Tests
         run: pnpm ci:coverage

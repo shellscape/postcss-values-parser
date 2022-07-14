@@ -16,12 +16,19 @@
     "node": ">=12"
   },
   "scripts": {
-    "ci:coverage": "nyc npm run test && nyc report --reporter=text-lcov > coverage.lcov",
-    "ci:test": "npm run test",
-    "lint": "eslint src test --fix --cache",
+    "build": "tsc --project tsconfig.json",
+    "ci:coverage": "nyc pnpm ci:test && nyc report --reporter=text-lcov > coverage.lcov",
+    "ci:lint": "pnpm lint && pnpm security",
+    "ci:test": "pnpm test -- --verbose",
+    "lint": "pnpm lint:docs && pnpm lint:json && pnpm lint:js",
     "lint-staged": "lint-staged",
-    "security": "npm audit --audit-level=high --prod",
-    "test": "ava test/integration.ts"
+    "lint:docs": "prettier --write README.md",
+    "lint:js": "eslint --cache --fix --cache src test",
+    "lint:json": "prettier --write codecov.yml package.json",
+    "prepublishOnly": "pnpm lint && pnpm build",
+    "pretest": "pnpm build",
+    "security": "pnpm audit --audit-level=high --prod",
+    "test": "pnpm install && ava"
   },
   "files": [
     "dist",

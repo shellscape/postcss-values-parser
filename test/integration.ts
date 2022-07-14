@@ -11,10 +11,11 @@
   These tests exist because of the use-case submitted in https://github.com/shellscape/postcss-values-parser/issues/63
   Multiple successive parses yielded results that were not duplicated in ava's individual process model
 */
-const test = require('ava');
+import test from 'ava';
 
-const { nodeToString, parse } = require('../lib');
-const Punctuation = require('../lib/nodes/Punctuation');
+import { nodeToString, parse } from '../src';
+
+import { Operator } from '../src/nodes';
 
 test('integration', (t) => {
   let root = parse(`normal normal 1em/1 'Source Sans Pro', serif`);
@@ -36,8 +37,8 @@ test('manipulation', (t) => {
   let string = nodeToString(root);
   t.is(source, string);
 
-  first.nodes.splice(1, 0, new Punctuation({ value: ',', parent: first }));
-  first.nodes.splice(3, 0, new Punctuation({ value: ',', parent: first }));
+  first.nodes.splice(1, 0, new Operator({ value: ',', parent: first }));
+  first.nodes.splice(3, 0, new Operator({ value: ',', parent: first }));
 
   string = nodeToString(root);
   t.not(source, string);

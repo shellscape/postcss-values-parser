@@ -10,6 +10,7 @@
 */
 
 // Breaking Changes:
+// - Node v12+
 // - postcss-values-parser is now using css-tree which makes its behavior closers to how browsers parse values
 // - Comments and superfluous spaces filtered out (upstream; css-tree)
 // - Node interfaces changed

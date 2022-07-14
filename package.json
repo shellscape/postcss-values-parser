@@ -13,13 +13,12 @@
   "bugs": "https://github.com/shellscape/postcss-values-parser/issues",
   "main": "dist/index.js",
   "engines": {
-    "node": ">=10"
+    "node": ">=12"
   },
   "scripts": {
     "ci:coverage": "nyc npm run test && nyc report --reporter=text-lcov > coverage.lcov",
     "ci:test": "npm run test",
-    "lint": "eslint lib test --fix --cache",
-    "check-types": "tsc --noEmit",
+    "lint": "eslint src test --fix --cache",
     "lint-staged": "lint-staged",
     "security": "npm audit --audit-level=high --prod",
     "test": "ava test/word.ts"

@@ -21,7 +21,7 @@
     "lint": "eslint src test --fix --cache",
     "lint-staged": "lint-staged",
     "security": "npm audit --audit-level=high --prod",
-    "test": "ava test/word.ts"
+    "test": "ava test/integration.ts"
   },
   "files": [
     "dist",

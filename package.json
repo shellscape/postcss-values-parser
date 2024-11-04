@@ -27,7 +27,7 @@
     "lint:json": "prettier --write codecov.yml package.json",
     "prepublishOnly": "pnpm lint && pnpm build",
     "security": "pnpm audit --audit-level=high --prod",
-    "test": "ava test/operator.ts"
+    "test": "ava test/variable.ts"
   },
   "files": [
     "dist",

@@ -1,0 +1,4755 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`function parsing > should parse: -webkit-linear-gradient(0) 1`] = `"-webkit-linear-gradient(0)"`;
+
+exports[`function parsing > should parse: -webkit-linear-gradient(0) 2`] = `"-webkit-linear-gradient(0)"`;
+
+exports[`function parsing > should parse: -webkit-linear-gradient(0) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isVar": false,
+    "name": "-webkit-linear-gradient",
+    "nodes": [
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 26,
+            "line": 1,
+            "offset": 25,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 25,
+            "line": 1,
+            "offset": 24,
+          },
+        },
+        "type": "numeric",
+        "unit": "",
+        "value": "0",
+      },
+    ],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 27,
+        "line": 1,
+        "offset": 26,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+]
+`;
+
+exports[`function parsing > should parse: 1em/var(--line-height) 1`] = `"1"`;
+
+exports[`function parsing > should parse: 1em/var(--line-height) 2`] = `"1/var(--line-height)"`;
+
+exports[`function parsing > should parse: 1em/var(--line-height) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 4,
+        "line": 1,
+        "offset": 3,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "numeric",
+    "unit": "em",
+    "value": "1",
+  },
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 5,
+        "line": 1,
+        "offset": 4,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 4,
+        "line": 1,
+        "offset": 3,
+      },
+    },
+    "type": "operator",
+    "value": "/",
+  },
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isVar": true,
+    "name": "var",
+    "nodes": [
+      {
+        "isColor": false,
+        "isHex": false,
+        "isUrl": false,
+        "isVariable": true,
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 22,
+            "line": 1,
+            "offset": 21,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 9,
+            "line": 1,
+            "offset": 8,
+          },
+        },
+        "type": "word",
+        "value": "--line-height",
+      },
+    ],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 23,
+        "line": 1,
+        "offset": 22,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 5,
+        "line": 1,
+        "offset": 4,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+]
+`;
+
+exports[`function parsing > should parse: Lab( 40%  56.6   39 ) 1`] = `"Lab(40% 56.6 39)"`;
+
+exports[`function parsing > should parse: Lab( 40%  56.6   39 ) 2`] = `"Lab(40% 56.6 39)"`;
+
+exports[`function parsing > should parse: Lab( 40%  56.6   39 ) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": true,
+    "isVar": false,
+    "name": "Lab",
+    "nodes": [
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 9,
+            "line": 1,
+            "offset": 8,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 6,
+            "line": 1,
+            "offset": 5,
+          },
+        },
+        "type": "numeric",
+        "unit": "%",
+        "value": "40%",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 15,
+            "line": 1,
+            "offset": 14,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 11,
+            "line": 1,
+            "offset": 10,
+          },
+        },
+        "type": "numeric",
+        "unit": "",
+        "value": "56.6",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 20,
+            "line": 1,
+            "offset": 19,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 18,
+            "line": 1,
+            "offset": 17,
+          },
+        },
+        "type": "numeric",
+        "unit": "",
+        "value": "39",
+      },
+    ],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 22,
+        "line": 1,
+        "offset": 21,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+]
+`;
+
+exports[`function parsing > should parse: RGBA( 29, 439 , 29 ) 1`] = `"RGBA(29,439,29)"`;
+
+exports[`function parsing > should parse: RGBA( 29, 439 , 29 ) 2`] = `"RGBA(29,439,29)"`;
+
+exports[`function parsing > should parse: RGBA( 29, 439 , 29 ) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": true,
+    "isVar": false,
+    "name": "RGBA",
+    "nodes": [
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 9,
+            "line": 1,
+            "offset": 8,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 7,
+            "line": 1,
+            "offset": 6,
+          },
+        },
+        "type": "numeric",
+        "unit": "",
+        "value": "29",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 10,
+            "line": 1,
+            "offset": 9,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 9,
+            "line": 1,
+            "offset": 8,
+          },
+        },
+        "type": "operator",
+        "value": ",",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 14,
+            "line": 1,
+            "offset": 13,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 11,
+            "line": 1,
+            "offset": 10,
+          },
+        },
+        "type": "numeric",
+        "unit": "",
+        "value": "439",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 16,
+            "line": 1,
+            "offset": 15,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 15,
+            "line": 1,
+            "offset": 14,
+          },
+        },
+        "type": "operator",
+        "value": ",",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 19,
+            "line": 1,
+            "offset": 18,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 17,
+            "line": 1,
+            "offset": 16,
+          },
+        },
+        "type": "numeric",
+        "unit": "",
+        "value": "29",
+      },
+    ],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 21,
+        "line": 1,
+        "offset": 20,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+]
+`;
+
+exports[`function parsing > should parse: RgBa( 29, 439 , 29 ) 1`] = `"RgBa(29,439,29)"`;
+
+exports[`function parsing > should parse: RgBa( 29, 439 , 29 ) 2`] = `"RgBa(29,439,29)"`;
+
+exports[`function parsing > should parse: RgBa( 29, 439 , 29 ) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": true,
+    "isVar": false,
+    "name": "RgBa",
+    "nodes": [
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 9,
+            "line": 1,
+            "offset": 8,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 7,
+            "line": 1,
+            "offset": 6,
+          },
+        },
+        "type": "numeric",
+        "unit": "",
+        "value": "29",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 10,
+            "line": 1,
+            "offset": 9,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 9,
+            "line": 1,
+            "offset": 8,
+          },
+        },
+        "type": "operator",
+        "value": ",",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 14,
+            "line": 1,
+            "offset": 13,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 11,
+            "line": 1,
+            "offset": 10,
+          },
+        },
+        "type": "numeric",
+        "unit": "",
+        "value": "439",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 16,
+            "line": 1,
+            "offset": 15,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 15,
+            "line": 1,
+            "offset": 14,
+          },
+        },
+        "type": "operator",
+        "value": ",",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 19,
+            "line": 1,
+            "offset": 18,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 17,
+            "line": 1,
+            "offset": 16,
+          },
+        },
+        "type": "numeric",
+        "unit": "",
+        "value": "29",
+      },
+    ],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 21,
+        "line": 1,
+        "offset": 20,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+]
+`;
+
+exports[`function parsing > should parse: bar(baz(black, 10%), 10%) 1`] = `"bar(baz(black,10%),10%)"`;
+
+exports[`function parsing > should parse: bar(baz(black, 10%), 10%) 2`] = `"bar(baz(black,10%),10%)"`;
+
+exports[`function parsing > should parse: bar(baz(black, 10%), 10%) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isVar": false,
+    "name": "bar",
+    "nodes": [
+      {
+        "isColor": false,
+        "isVar": false,
+        "name": "baz",
+        "nodes": [
+          {
+            "isColor": true,
+            "isHex": false,
+            "isUrl": false,
+            "isVariable": false,
+            "raws": {},
+            "source": {
+              "end": {
+                "column": 14,
+                "line": 1,
+                "offset": 13,
+              },
+              "inputId": 0,
+              "start": {
+                "column": 9,
+                "line": 1,
+                "offset": 8,
+              },
+            },
+            "type": "word",
+            "value": "black",
+          },
+          {
+            "raws": {},
+            "source": {
+              "end": {
+                "column": 15,
+                "line": 1,
+                "offset": 14,
+              },
+              "inputId": 0,
+              "start": {
+                "column": 14,
+                "line": 1,
+                "offset": 13,
+              },
+            },
+            "type": "operator",
+            "value": ",",
+          },
+          {
+            "raws": {},
+            "source": {
+              "end": {
+                "column": 19,
+                "line": 1,
+                "offset": 18,
+              },
+              "inputId": 0,
+              "start": {
+                "column": 16,
+                "line": 1,
+                "offset": 15,
+              },
+            },
+            "type": "numeric",
+            "unit": "%",
+            "value": "10%",
+          },
+        ],
+        "params": "",
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 20,
+            "line": 1,
+            "offset": 19,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 5,
+            "line": 1,
+            "offset": 4,
+          },
+        },
+        "type": "func",
+        "value": "",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 21,
+            "line": 1,
+            "offset": 20,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 20,
+            "line": 1,
+            "offset": 19,
+          },
+        },
+        "type": "operator",
+        "value": ",",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 25,
+            "line": 1,
+            "offset": 24,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 22,
+            "line": 1,
+            "offset": 21,
+          },
+        },
+        "type": "numeric",
+        "unit": "%",
+        "value": "10%",
+      },
+    ],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 26,
+        "line": 1,
+        "offset": 25,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+]
+`;
+
+exports[`function parsing > should parse: bat-man(#000) 1`] = `"bat-man(#000)"`;
+
+exports[`function parsing > should parse: bat-man(#000) 2`] = `"bat-man(#000)"`;
+
+exports[`function parsing > should parse: bat-man(#000) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isVar": false,
+    "name": "bat-man",
+    "nodes": [
+      {
+        "isColor": true,
+        "isHex": true,
+        "isUrl": false,
+        "isVariable": false,
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 13,
+            "line": 1,
+            "offset": 12,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 9,
+            "line": 1,
+            "offset": 8,
+          },
+        },
+        "type": "word",
+        "value": "#000",
+      },
+    ],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 14,
+        "line": 1,
+        "offset": 13,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+]
+`;
+
+exports[`function parsing > should parse: calc(((768px - 100vw) / 2) - 15px) 1`] = `"calc(((768 - 100)/2) - 15)"`;
+
+exports[`function parsing > should parse: calc(((768px - 100vw) / 2) - 15px) 2`] = `"calc(((768 - 100)/2) - 15)"`;
+
+exports[`function parsing > should parse: calc(((768px - 100vw) / 2) - 15px) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isVar": false,
+    "name": "calc",
+    "nodes": [
+      {
+        "nodes": [
+          {
+            "nodes": [
+              {
+                "raws": {},
+                "source": {
+                  "end": {
+                    "column": 13,
+                    "line": 1,
+                    "offset": 12,
+                  },
+                  "inputId": 0,
+                  "start": {
+                    "column": 8,
+                    "line": 1,
+                    "offset": 7,
+                  },
+                },
+                "type": "numeric",
+                "unit": "px",
+                "value": "768",
+              },
+              {
+                "raws": {},
+                "source": {
+                  "end": {
+                    "column": 15,
+                    "line": 1,
+                    "offset": 14,
+                  },
+                  "inputId": 0,
+                  "start": {
+                    "column": 14,
+                    "line": 1,
+                    "offset": 13,
+                  },
+                },
+                "type": "operator",
+                "value": " - ",
+              },
+              {
+                "raws": {},
+                "source": {
+                  "end": {
+                    "column": 21,
+                    "line": 1,
+                    "offset": 20,
+                  },
+                  "inputId": 0,
+                  "start": {
+                    "column": 16,
+                    "line": 1,
+                    "offset": 15,
+                  },
+                },
+                "type": "numeric",
+                "unit": "vw",
+                "value": "100",
+              },
+            ],
+            "raws": {},
+            "source": {
+              "end": {
+                "column": 22,
+                "line": 1,
+                "offset": 21,
+              },
+              "inputId": 0,
+              "start": {
+                "column": 7,
+                "line": 1,
+                "offset": 6,
+              },
+            },
+            "type": "parentheses",
+            "value": "()",
+          },
+          {
+            "raws": {},
+            "source": {
+              "end": {
+                "column": 24,
+                "line": 1,
+                "offset": 23,
+              },
+              "inputId": 0,
+              "start": {
+                "column": 23,
+                "line": 1,
+                "offset": 22,
+              },
+            },
+            "type": "operator",
+            "value": "/",
+          },
+          {
+            "raws": {},
+            "source": {
+              "end": {
+                "column": 26,
+                "line": 1,
+                "offset": 25,
+              },
+              "inputId": 0,
+              "start": {
+                "column": 25,
+                "line": 1,
+                "offset": 24,
+              },
+            },
+            "type": "numeric",
+            "unit": "",
+            "value": "2",
+          },
+        ],
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 27,
+            "line": 1,
+            "offset": 26,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 6,
+            "line": 1,
+            "offset": 5,
+          },
+        },
+        "type": "parentheses",
+        "value": "()",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 29,
+            "line": 1,
+            "offset": 28,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 28,
+            "line": 1,
+            "offset": 27,
+          },
+        },
+        "type": "operator",
+        "value": " - ",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 34,
+            "line": 1,
+            "offset": 33,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 30,
+            "line": 1,
+            "offset": 29,
+          },
+        },
+        "type": "numeric",
+        "unit": "px",
+        "value": "15",
+      },
+    ],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 35,
+        "line": 1,
+        "offset": 34,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+]
+`;
+
+exports[`function parsing > should parse: calc(((768px - 100vw)/2) - 15px) 1`] = `"calc(((768 - 100)/2) - 15)"`;
+
+exports[`function parsing > should parse: calc(((768px - 100vw)/2) - 15px) 2`] = `"calc(((768 - 100)/2) - 15)"`;
+
+exports[`function parsing > should parse: calc(((768px - 100vw)/2) - 15px) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isVar": false,
+    "name": "calc",
+    "nodes": [
+      {
+        "nodes": [
+          {
+            "nodes": [
+              {
+                "raws": {},
+                "source": {
+                  "end": {
+                    "column": 13,
+                    "line": 1,
+                    "offset": 12,
+                  },
+                  "inputId": 0,
+                  "start": {
+                    "column": 8,
+                    "line": 1,
+                    "offset": 7,
+                  },
+                },
+                "type": "numeric",
+                "unit": "px",
+                "value": "768",
+              },
+              {
+                "raws": {},
+                "source": {
+                  "end": {
+                    "column": 15,
+                    "line": 1,
+                    "offset": 14,
+                  },
+                  "inputId": 0,
+                  "start": {
+                    "column": 14,
+                    "line": 1,
+                    "offset": 13,
+                  },
+                },
+                "type": "operator",
+                "value": " - ",
+              },
+              {
+                "raws": {},
+                "source": {
+                  "end": {
+                    "column": 21,
+                    "line": 1,
+                    "offset": 20,
+                  },
+                  "inputId": 0,
+                  "start": {
+                    "column": 16,
+                    "line": 1,
+                    "offset": 15,
+                  },
+                },
+                "type": "numeric",
+                "unit": "vw",
+                "value": "100",
+              },
+            ],
+            "raws": {},
+            "source": {
+              "end": {
+                "column": 22,
+                "line": 1,
+                "offset": 21,
+              },
+              "inputId": 0,
+              "start": {
+                "column": 7,
+                "line": 1,
+                "offset": 6,
+              },
+            },
+            "type": "parentheses",
+            "value": "()",
+          },
+          {
+            "raws": {},
+            "source": {
+              "end": {
+                "column": 23,
+                "line": 1,
+                "offset": 22,
+              },
+              "inputId": 0,
+              "start": {
+                "column": 22,
+                "line": 1,
+                "offset": 21,
+              },
+            },
+            "type": "operator",
+            "value": "/",
+          },
+          {
+            "raws": {},
+            "source": {
+              "end": {
+                "column": 24,
+                "line": 1,
+                "offset": 23,
+              },
+              "inputId": 0,
+              "start": {
+                "column": 23,
+                "line": 1,
+                "offset": 22,
+              },
+            },
+            "type": "numeric",
+            "unit": "",
+            "value": "2",
+          },
+        ],
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 25,
+            "line": 1,
+            "offset": 24,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 6,
+            "line": 1,
+            "offset": 5,
+          },
+        },
+        "type": "parentheses",
+        "value": "()",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 27,
+            "line": 1,
+            "offset": 26,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 26,
+            "line": 1,
+            "offset": 25,
+          },
+        },
+        "type": "operator",
+        "value": " - ",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 32,
+            "line": 1,
+            "offset": 31,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 28,
+            "line": 1,
+            "offset": 27,
+          },
+        },
+        "type": "numeric",
+        "unit": "px",
+        "value": "15",
+      },
+    ],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 33,
+        "line": 1,
+        "offset": 32,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+]
+`;
+
+exports[`function parsing > should parse: calc(-0.5 * var(foo)) 1`] = `"calc(-0.5*var(foo))"`;
+
+exports[`function parsing > should parse: calc(-0.5 * var(foo)) 2`] = `"calc(-0.5*var(foo))"`;
+
+exports[`function parsing > should parse: calc(-0.5 * var(foo)) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isVar": false,
+    "name": "calc",
+    "nodes": [
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 10,
+            "line": 1,
+            "offset": 9,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 6,
+            "line": 1,
+            "offset": 5,
+          },
+        },
+        "type": "numeric",
+        "unit": "",
+        "value": "-0.5",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 12,
+            "line": 1,
+            "offset": 11,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 11,
+            "line": 1,
+            "offset": 10,
+          },
+        },
+        "type": "operator",
+        "value": "*",
+      },
+      {
+        "isColor": false,
+        "isVar": true,
+        "name": "var",
+        "nodes": [
+          {
+            "isColor": false,
+            "isHex": false,
+            "isUrl": false,
+            "isVariable": false,
+            "raws": {},
+            "source": {
+              "end": {
+                "column": 20,
+                "line": 1,
+                "offset": 19,
+              },
+              "inputId": 0,
+              "start": {
+                "column": 17,
+                "line": 1,
+                "offset": 16,
+              },
+            },
+            "type": "word",
+            "value": "foo",
+          },
+        ],
+        "params": "",
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 21,
+            "line": 1,
+            "offset": 20,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 13,
+            "line": 1,
+            "offset": 12,
+          },
+        },
+        "type": "func",
+        "value": "",
+      },
+    ],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 22,
+        "line": 1,
+        "offset": 21,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+]
+`;
+
+exports[`function parsing > should parse: calc(1px + -2vw - 4px) 1`] = `"calc(1 + -2 - 4)"`;
+
+exports[`function parsing > should parse: calc(1px + -2vw - 4px) 2`] = `"calc(1 + -2 - 4)"`;
+
+exports[`function parsing > should parse: calc(1px + -2vw - 4px) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isVar": false,
+    "name": "calc",
+    "nodes": [
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 9,
+            "line": 1,
+            "offset": 8,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 6,
+            "line": 1,
+            "offset": 5,
+          },
+        },
+        "type": "numeric",
+        "unit": "px",
+        "value": "1",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 11,
+            "line": 1,
+            "offset": 10,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 10,
+            "line": 1,
+            "offset": 9,
+          },
+        },
+        "type": "operator",
+        "value": " + ",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 16,
+            "line": 1,
+            "offset": 15,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 12,
+            "line": 1,
+            "offset": 11,
+          },
+        },
+        "type": "numeric",
+        "unit": "vw",
+        "value": "-2",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 18,
+            "line": 1,
+            "offset": 17,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 17,
+            "line": 1,
+            "offset": 16,
+          },
+        },
+        "type": "operator",
+        "value": " - ",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 22,
+            "line": 1,
+            "offset": 21,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 19,
+            "line": 1,
+            "offset": 18,
+          },
+        },
+        "type": "numeric",
+        "unit": "px",
+        "value": "4",
+      },
+    ],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 23,
+        "line": 1,
+        "offset": 22,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+]
+`;
+
+exports[`function parsing > should parse: calc(var(--foo)*var(--bar)) 1`] = `"calc(var(--foo)*var(--bar))"`;
+
+exports[`function parsing > should parse: calc(var(--foo)*var(--bar)) 2`] = `"calc(var(--foo)*var(--bar))"`;
+
+exports[`function parsing > should parse: calc(var(--foo)*var(--bar)) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isVar": false,
+    "name": "calc",
+    "nodes": [
+      {
+        "isColor": false,
+        "isVar": true,
+        "name": "var",
+        "nodes": [
+          {
+            "isColor": false,
+            "isHex": false,
+            "isUrl": false,
+            "isVariable": true,
+            "raws": {},
+            "source": {
+              "end": {
+                "column": 15,
+                "line": 1,
+                "offset": 14,
+              },
+              "inputId": 0,
+              "start": {
+                "column": 10,
+                "line": 1,
+                "offset": 9,
+              },
+            },
+            "type": "word",
+            "value": "--foo",
+          },
+        ],
+        "params": "",
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 16,
+            "line": 1,
+            "offset": 15,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 6,
+            "line": 1,
+            "offset": 5,
+          },
+        },
+        "type": "func",
+        "value": "",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 17,
+            "line": 1,
+            "offset": 16,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 16,
+            "line": 1,
+            "offset": 15,
+          },
+        },
+        "type": "operator",
+        "value": "*",
+      },
+      {
+        "isColor": false,
+        "isVar": true,
+        "name": "var",
+        "nodes": [
+          {
+            "isColor": false,
+            "isHex": false,
+            "isUrl": false,
+            "isVariable": true,
+            "raws": {},
+            "source": {
+              "end": {
+                "column": 26,
+                "line": 1,
+                "offset": 25,
+              },
+              "inputId": 0,
+              "start": {
+                "column": 21,
+                "line": 1,
+                "offset": 20,
+              },
+            },
+            "type": "word",
+            "value": "--bar",
+          },
+        ],
+        "params": "",
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 27,
+            "line": 1,
+            "offset": 26,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 17,
+            "line": 1,
+            "offset": 16,
+          },
+        },
+        "type": "func",
+        "value": "",
+      },
+    ],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 28,
+        "line": 1,
+        "offset": 27,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+]
+`;
+
+exports[`function parsing > should parse: calc(var(--mdc-layout-grid-gutter-desktop, 24px)/2*-1) 1`] = `"calc(var(--mdc-layout-grid-gutter-desktop,)/2*-1)"`;
+
+exports[`function parsing > should parse: calc(var(--mdc-layout-grid-gutter-desktop, 24px)/2*-1) 2`] = `"calc(var(--mdc-layout-grid-gutter-desktop,)/2*-1)"`;
+
+exports[`function parsing > should parse: calc(var(--mdc-layout-grid-gutter-desktop, 24px)/2*-1) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isVar": false,
+    "name": "calc",
+    "nodes": [
+      {
+        "isColor": false,
+        "isVar": true,
+        "name": "var",
+        "nodes": [
+          {
+            "isColor": false,
+            "isHex": false,
+            "isUrl": false,
+            "isVariable": true,
+            "raws": {},
+            "source": {
+              "end": {
+                "column": 42,
+                "line": 1,
+                "offset": 41,
+              },
+              "inputId": 0,
+              "start": {
+                "column": 10,
+                "line": 1,
+                "offset": 9,
+              },
+            },
+            "type": "word",
+            "value": "--mdc-layout-grid-gutter-desktop",
+          },
+          {
+            "raws": {},
+            "source": {
+              "end": {
+                "column": 43,
+                "line": 1,
+                "offset": 42,
+              },
+              "inputId": 0,
+              "start": {
+                "column": 42,
+                "line": 1,
+                "offset": 41,
+              },
+            },
+            "type": "operator",
+            "value": ",",
+          },
+          {
+            "isColor": false,
+            "isHex": false,
+            "isUrl": false,
+            "isVariable": false,
+            "raws": {},
+            "source": {
+              "end": {
+                "column": 48,
+                "line": 1,
+                "offset": 47,
+              },
+              "inputId": 0,
+              "start": {
+                "column": 43,
+                "line": 1,
+                "offset": 42,
+              },
+            },
+            "type": "word",
+            "value": "",
+          },
+        ],
+        "params": "",
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 49,
+            "line": 1,
+            "offset": 48,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 6,
+            "line": 1,
+            "offset": 5,
+          },
+        },
+        "type": "func",
+        "value": "",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 50,
+            "line": 1,
+            "offset": 49,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 49,
+            "line": 1,
+            "offset": 48,
+          },
+        },
+        "type": "operator",
+        "value": "/",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 51,
+            "line": 1,
+            "offset": 50,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 50,
+            "line": 1,
+            "offset": 49,
+          },
+        },
+        "type": "numeric",
+        "unit": "",
+        "value": "2",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 52,
+            "line": 1,
+            "offset": 51,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 51,
+            "line": 1,
+            "offset": 50,
+          },
+        },
+        "type": "operator",
+        "value": "*",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 54,
+            "line": 1,
+            "offset": 53,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 52,
+            "line": 1,
+            "offset": 51,
+          },
+        },
+        "type": "numeric",
+        "unit": "",
+        "value": "-1",
+      },
+    ],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 55,
+        "line": 1,
+        "offset": 54,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+]
+`;
+
+exports[`function parsing > should parse: clamp(1.25rem, 0.9423rem + 1.5385vw, 1.75rem) 1`] = `"clamp(1.25,0.9423 + 1.5385,1.75)"`;
+
+exports[`function parsing > should parse: clamp(1.25rem, 0.9423rem + 1.5385vw, 1.75rem) 2`] = `"clamp(1.25,0.9423 + 1.5385,1.75)"`;
+
+exports[`function parsing > should parse: clamp(1.25rem, 0.9423rem + 1.5385vw, 1.75rem) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isVar": false,
+    "name": "clamp",
+    "nodes": [
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 14,
+            "line": 1,
+            "offset": 13,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 7,
+            "line": 1,
+            "offset": 6,
+          },
+        },
+        "type": "numeric",
+        "unit": "rem",
+        "value": "1.25",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 15,
+            "line": 1,
+            "offset": 14,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 14,
+            "line": 1,
+            "offset": 13,
+          },
+        },
+        "type": "operator",
+        "value": ",",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 25,
+            "line": 1,
+            "offset": 24,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 16,
+            "line": 1,
+            "offset": 15,
+          },
+        },
+        "type": "numeric",
+        "unit": "rem",
+        "value": "0.9423",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 27,
+            "line": 1,
+            "offset": 26,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 26,
+            "line": 1,
+            "offset": 25,
+          },
+        },
+        "type": "operator",
+        "value": " + ",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 36,
+            "line": 1,
+            "offset": 35,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 28,
+            "line": 1,
+            "offset": 27,
+          },
+        },
+        "type": "numeric",
+        "unit": "vw",
+        "value": "1.5385",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 37,
+            "line": 1,
+            "offset": 36,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 36,
+            "line": 1,
+            "offset": 35,
+          },
+        },
+        "type": "operator",
+        "value": ",",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 45,
+            "line": 1,
+            "offset": 44,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 38,
+            "line": 1,
+            "offset": 37,
+          },
+        },
+        "type": "numeric",
+        "unit": "rem",
+        "value": "1.75",
+      },
+    ],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 46,
+        "line": 1,
+        "offset": 45,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+]
+`;
+
+exports[`function parsing > should parse: conic-gradient() 1`] = `"conic-gradient()"`;
+
+exports[`function parsing > should parse: conic-gradient() 2`] = `"conic-gradient()"`;
+
+exports[`function parsing > should parse: conic-gradient() 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isVar": false,
+    "name": "conic-gradient",
+    "nodes": [],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 17,
+        "line": 1,
+        "offset": 16,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+]
+`;
+
+exports[`function parsing > should parse: hwb(90deg 0% 0% / 0.5) 1`] = `"hwb(90 0% 0%/0.5)"`;
+
+exports[`function parsing > should parse: hwb(90deg 0% 0% / 0.5) 2`] = `"hwb(90 0% 0%/0.5)"`;
+
+exports[`function parsing > should parse: hwb(90deg 0% 0% / 0.5) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": true,
+    "isVar": false,
+    "name": "hwb",
+    "nodes": [
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 10,
+            "line": 1,
+            "offset": 9,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 5,
+            "line": 1,
+            "offset": 4,
+          },
+        },
+        "type": "numeric",
+        "unit": "deg",
+        "value": "90",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 13,
+            "line": 1,
+            "offset": 12,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 11,
+            "line": 1,
+            "offset": 10,
+          },
+        },
+        "type": "numeric",
+        "unit": "%",
+        "value": "0%",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 16,
+            "line": 1,
+            "offset": 15,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 14,
+            "line": 1,
+            "offset": 13,
+          },
+        },
+        "type": "numeric",
+        "unit": "%",
+        "value": "0%",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 18,
+            "line": 1,
+            "offset": 17,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 17,
+            "line": 1,
+            "offset": 16,
+          },
+        },
+        "type": "operator",
+        "value": "/",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 22,
+            "line": 1,
+            "offset": 21,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 19,
+            "line": 1,
+            "offset": 18,
+          },
+        },
+        "type": "numeric",
+        "unit": "",
+        "value": "0.5",
+      },
+    ],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 23,
+        "line": 1,
+        "offset": 22,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+]
+`;
+
+exports[`function parsing > should parse: lCH(40% 68.8 34.5 / 50%) 1`] = `"lCH(40% 68.8 34.5/50%)"`;
+
+exports[`function parsing > should parse: lCH(40% 68.8 34.5 / 50%) 2`] = `"lCH(40% 68.8 34.5/50%)"`;
+
+exports[`function parsing > should parse: lCH(40% 68.8 34.5 / 50%) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": true,
+    "isVar": false,
+    "name": "lCH",
+    "nodes": [
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 8,
+            "line": 1,
+            "offset": 7,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 5,
+            "line": 1,
+            "offset": 4,
+          },
+        },
+        "type": "numeric",
+        "unit": "%",
+        "value": "40%",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 13,
+            "line": 1,
+            "offset": 12,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 9,
+            "line": 1,
+            "offset": 8,
+          },
+        },
+        "type": "numeric",
+        "unit": "",
+        "value": "68.8",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 18,
+            "line": 1,
+            "offset": 17,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 14,
+            "line": 1,
+            "offset": 13,
+          },
+        },
+        "type": "numeric",
+        "unit": "",
+        "value": "34.5",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 20,
+            "line": 1,
+            "offset": 19,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 19,
+            "line": 1,
+            "offset": 18,
+          },
+        },
+        "type": "operator",
+        "value": "/",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 24,
+            "line": 1,
+            "offset": 23,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 21,
+            "line": 1,
+            "offset": 20,
+          },
+        },
+        "type": "numeric",
+        "unit": "%",
+        "value": "50%",
+      },
+    ],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 25,
+        "line": 1,
+        "offset": 24,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+]
+`;
+
+exports[`function parsing > should parse: local(foo),local(bar) 1`] = `"local(foo)"`;
+
+exports[`function parsing > should parse: local(foo),local(bar) 2`] = `"local(foo),local(bar)"`;
+
+exports[`function parsing > should parse: local(foo),local(bar) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isVar": false,
+    "name": "local",
+    "nodes": [
+      {
+        "isColor": false,
+        "isHex": false,
+        "isUrl": false,
+        "isVariable": false,
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 10,
+            "line": 1,
+            "offset": 9,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 7,
+            "line": 1,
+            "offset": 6,
+          },
+        },
+        "type": "word",
+        "value": "foo",
+      },
+    ],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 11,
+        "line": 1,
+        "offset": 10,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 12,
+        "line": 1,
+        "offset": 11,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 11,
+        "line": 1,
+        "offset": 10,
+      },
+    },
+    "type": "operator",
+    "value": ",",
+  },
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isVar": false,
+    "name": "local",
+    "nodes": [
+      {
+        "isColor": false,
+        "isHex": false,
+        "isUrl": false,
+        "isVariable": false,
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 21,
+            "line": 1,
+            "offset": 20,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 18,
+            "line": 1,
+            "offset": 17,
+          },
+        },
+        "type": "word",
+        "value": "bar",
+      },
+    ],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 22,
+        "line": 1,
+        "offset": 21,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 12,
+        "line": 1,
+        "offset": 11,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+]
+`;
+
+exports[`function parsing > should parse: okLab( 40%  56.6   39 ) 1`] = `"okLab(40% 56.6 39)"`;
+
+exports[`function parsing > should parse: okLab( 40%  56.6   39 ) 2`] = `"okLab(40% 56.6 39)"`;
+
+exports[`function parsing > should parse: okLab( 40%  56.6   39 ) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": true,
+    "isVar": false,
+    "name": "okLab",
+    "nodes": [
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 11,
+            "line": 1,
+            "offset": 10,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 8,
+            "line": 1,
+            "offset": 7,
+          },
+        },
+        "type": "numeric",
+        "unit": "%",
+        "value": "40%",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 17,
+            "line": 1,
+            "offset": 16,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 13,
+            "line": 1,
+            "offset": 12,
+          },
+        },
+        "type": "numeric",
+        "unit": "",
+        "value": "56.6",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 22,
+            "line": 1,
+            "offset": 21,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 20,
+            "line": 1,
+            "offset": 19,
+          },
+        },
+        "type": "numeric",
+        "unit": "",
+        "value": "39",
+      },
+    ],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 24,
+        "line": 1,
+        "offset": 23,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+]
+`;
+
+exports[`function parsing > should parse: oklCH(40% 68.8 34.5 / 50%) 1`] = `"oklCH(40% 68.8 34.5/50%)"`;
+
+exports[`function parsing > should parse: oklCH(40% 68.8 34.5 / 50%) 2`] = `"oklCH(40% 68.8 34.5/50%)"`;
+
+exports[`function parsing > should parse: oklCH(40% 68.8 34.5 / 50%) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": true,
+    "isVar": false,
+    "name": "oklCH",
+    "nodes": [
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 10,
+            "line": 1,
+            "offset": 9,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 7,
+            "line": 1,
+            "offset": 6,
+          },
+        },
+        "type": "numeric",
+        "unit": "%",
+        "value": "40%",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 15,
+            "line": 1,
+            "offset": 14,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 11,
+            "line": 1,
+            "offset": 10,
+          },
+        },
+        "type": "numeric",
+        "unit": "",
+        "value": "68.8",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 20,
+            "line": 1,
+            "offset": 19,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 16,
+            "line": 1,
+            "offset": 15,
+          },
+        },
+        "type": "numeric",
+        "unit": "",
+        "value": "34.5",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 22,
+            "line": 1,
+            "offset": 21,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 21,
+            "line": 1,
+            "offset": 20,
+          },
+        },
+        "type": "operator",
+        "value": "/",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 26,
+            "line": 1,
+            "offset": 25,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 23,
+            "line": 1,
+            "offset": 22,
+          },
+        },
+        "type": "numeric",
+        "unit": "%",
+        "value": "50%",
+      },
+    ],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 27,
+        "line": 1,
+        "offset": 26,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+]
+`;
+
+exports[`function parsing > should parse: rgba( 29, 439 , 29 ) 1`] = `"rgba(29,439,29)"`;
+
+exports[`function parsing > should parse: rgba( 29, 439 , 29 ) 2`] = `"rgba(29,439,29)"`;
+
+exports[`function parsing > should parse: rgba( 29, 439 , 29 ) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": true,
+    "isVar": false,
+    "name": "rgba",
+    "nodes": [
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 9,
+            "line": 1,
+            "offset": 8,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 7,
+            "line": 1,
+            "offset": 6,
+          },
+        },
+        "type": "numeric",
+        "unit": "",
+        "value": "29",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 10,
+            "line": 1,
+            "offset": 9,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 9,
+            "line": 1,
+            "offset": 8,
+          },
+        },
+        "type": "operator",
+        "value": ",",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 14,
+            "line": 1,
+            "offset": 13,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 11,
+            "line": 1,
+            "offset": 10,
+          },
+        },
+        "type": "numeric",
+        "unit": "",
+        "value": "439",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 16,
+            "line": 1,
+            "offset": 15,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 15,
+            "line": 1,
+            "offset": 14,
+          },
+        },
+        "type": "operator",
+        "value": ",",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 19,
+            "line": 1,
+            "offset": 18,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 17,
+            "line": 1,
+            "offset": 16,
+          },
+        },
+        "type": "numeric",
+        "unit": "",
+        "value": "29",
+      },
+    ],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 21,
+        "line": 1,
+        "offset": 20,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+]
+`;
+
+exports[`function parsing > should parse: rotate(.5deg) 1`] = `"rotate(.5)"`;
+
+exports[`function parsing > should parse: rotate(.5deg) 2`] = `"rotate(.5)"`;
+
+exports[`function parsing > should parse: rotate(.5deg) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isVar": false,
+    "name": "rotate",
+    "nodes": [
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 13,
+            "line": 1,
+            "offset": 12,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 8,
+            "line": 1,
+            "offset": 7,
+          },
+        },
+        "type": "numeric",
+        "unit": "deg",
+        "value": ".5",
+      },
+    ],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 14,
+        "line": 1,
+        "offset": 13,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+]
+`;
+
+exports[`function parsing > should parse: rotate(0.5deg) 1`] = `"rotate(0.5)"`;
+
+exports[`function parsing > should parse: rotate(0.5deg) 2`] = `"rotate(0.5)"`;
+
+exports[`function parsing > should parse: rotate(0.5deg) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isVar": false,
+    "name": "rotate",
+    "nodes": [
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 14,
+            "line": 1,
+            "offset": 13,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 8,
+            "line": 1,
+            "offset": 7,
+          },
+        },
+        "type": "numeric",
+        "unit": "deg",
+        "value": "0.5",
+      },
+    ],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 15,
+        "line": 1,
+        "offset": 14,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+]
+`;
+
+exports[`function parsing > should parse: rotate(0.5grad) 1`] = `"rotate(0.5)"`;
+
+exports[`function parsing > should parse: rotate(0.5grad) 2`] = `"rotate(0.5)"`;
+
+exports[`function parsing > should parse: rotate(0.5grad) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isVar": false,
+    "name": "rotate",
+    "nodes": [
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 15,
+            "line": 1,
+            "offset": 14,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 8,
+            "line": 1,
+            "offset": 7,
+          },
+        },
+        "type": "numeric",
+        "unit": "grad",
+        "value": "0.5",
+      },
+    ],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 16,
+        "line": 1,
+        "offset": 15,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+]
+`;
+
+exports[`function parsing > should parse: rotate(0.5rad) 1`] = `"rotate(0.5)"`;
+
+exports[`function parsing > should parse: rotate(0.5rad) 2`] = `"rotate(0.5)"`;
+
+exports[`function parsing > should parse: rotate(0.5rad) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isVar": false,
+    "name": "rotate",
+    "nodes": [
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 14,
+            "line": 1,
+            "offset": 13,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 8,
+            "line": 1,
+            "offset": 7,
+          },
+        },
+        "type": "numeric",
+        "unit": "rad",
+        "value": "0.5",
+      },
+    ],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 15,
+        "line": 1,
+        "offset": 14,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+]
+`;
+
+exports[`function parsing > should parse: rotate(0.5turn) 1`] = `"rotate(0.5)"`;
+
+exports[`function parsing > should parse: rotate(0.5turn) 2`] = `"rotate(0.5)"`;
+
+exports[`function parsing > should parse: rotate(0.5turn) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isVar": false,
+    "name": "rotate",
+    "nodes": [
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 15,
+            "line": 1,
+            "offset": 14,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 8,
+            "line": 1,
+            "offset": 7,
+          },
+        },
+        "type": "numeric",
+        "unit": "turn",
+        "value": "0.5",
+      },
+    ],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 16,
+        "line": 1,
+        "offset": 15,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+]
+`;
+
+exports[`function parsing > should parse: rotate(72.3deg) 1`] = `"rotate(72.3)"`;
+
+exports[`function parsing > should parse: rotate(72.3deg) 2`] = `"rotate(72.3)"`;
+
+exports[`function parsing > should parse: rotate(72.3deg) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isVar": false,
+    "name": "rotate",
+    "nodes": [
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 15,
+            "line": 1,
+            "offset": 14,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 8,
+            "line": 1,
+            "offset": 7,
+          },
+        },
+        "type": "numeric",
+        "unit": "deg",
+        "value": "72.3",
+      },
+    ],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 16,
+        "line": 1,
+        "offset": 15,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+]
+`;
+
+exports[`function parsing > should parse: src(var(--foo)) 1`] = `"src(var(--foo))"`;
+
+exports[`function parsing > should parse: src(var(--foo)) 2`] = `"src(var(--foo))"`;
+
+exports[`function parsing > should parse: src(var(--foo)) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isVar": false,
+    "name": "src",
+    "nodes": [
+      {
+        "isColor": false,
+        "isVar": true,
+        "name": "var",
+        "nodes": [
+          {
+            "isColor": false,
+            "isHex": false,
+            "isUrl": false,
+            "isVariable": true,
+            "raws": {},
+            "source": {
+              "end": {
+                "column": 14,
+                "line": 1,
+                "offset": 13,
+              },
+              "inputId": 0,
+              "start": {
+                "column": 9,
+                "line": 1,
+                "offset": 8,
+              },
+            },
+            "type": "word",
+            "value": "--foo",
+          },
+        ],
+        "params": "",
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 15,
+            "line": 1,
+            "offset": 14,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 5,
+            "line": 1,
+            "offset": 4,
+          },
+        },
+        "type": "func",
+        "value": "",
+      },
+    ],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 16,
+        "line": 1,
+        "offset": 15,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+]
+`;
+
+exports[`function parsing > should parse: url( "/gfx/img/bg.jpg" ) 1`] = `"/gfx/img/bg.jpg"`;
+
+exports[`function parsing > should parse: url( "/gfx/img/bg.jpg" ) 2`] = `"/gfx/img/bg.jpg"`;
+
+exports[`function parsing > should parse: url( "/gfx/img/bg.jpg" ) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isHex": false,
+    "isUrl": false,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 25,
+        "line": 1,
+        "offset": 24,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "word",
+    "value": "/gfx/img/bg.jpg",
+  },
+]
+`;
+
+exports[`function parsing > should parse: url( "http://domain.com/gfx/img/bg.jpg" ) 1`] = `"http://domain.com/gfx/img/bg.jpg"`;
+
+exports[`function parsing > should parse: url( "http://domain.com/gfx/img/bg.jpg" ) 2`] = `"http://domain.com/gfx/img/bg.jpg"`;
+
+exports[`function parsing > should parse: url( "http://domain.com/gfx/img/bg.jpg" ) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isHex": false,
+    "isUrl": true,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 42,
+        "line": 1,
+        "offset": 41,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "word",
+    "value": "http://domain.com/gfx/img/bg.jpg",
+  },
+]
+`;
+
+exports[`function parsing > should parse: url( '/gfx/img/bg.jpg' ) 1`] = `"/gfx/img/bg.jpg"`;
+
+exports[`function parsing > should parse: url( '/gfx/img/bg.jpg' ) 2`] = `"/gfx/img/bg.jpg"`;
+
+exports[`function parsing > should parse: url( '/gfx/img/bg.jpg' ) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isHex": false,
+    "isUrl": false,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 25,
+        "line": 1,
+        "offset": 24,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "word",
+    "value": "/gfx/img/bg.jpg",
+  },
+]
+`;
+
+exports[`function parsing > should parse: url( 'http://domain.com/gfx/img/bg.jpg' ) 1`] = `"http://domain.com/gfx/img/bg.jpg"`;
+
+exports[`function parsing > should parse: url( 'http://domain.com/gfx/img/bg.jpg' ) 2`] = `"http://domain.com/gfx/img/bg.jpg"`;
+
+exports[`function parsing > should parse: url( 'http://domain.com/gfx/img/bg.jpg' ) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isHex": false,
+    "isUrl": true,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 42,
+        "line": 1,
+        "offset": 41,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "word",
+    "value": "http://domain.com/gfx/img/bg.jpg",
+  },
+]
+`;
+
+exports[`function parsing > should parse: url( /gfx/img/bg.jpg  1`] = `"/gfx/img/bg.jpg"`;
+
+exports[`function parsing > should parse: url( /gfx/img/bg.jpg  2`] = `"/gfx/img/bg.jpg"`;
+
+exports[`function parsing > should parse: url( /gfx/img/bg.jpg  3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isHex": false,
+    "isUrl": false,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 22,
+        "line": 1,
+        "offset": 21,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "word",
+    "value": "/gfx/img/bg.jpg",
+  },
+]
+`;
+
+exports[`function parsing > should parse: url( /gfx/img/bg.jpg ) 1`] = `"/gfx/img/bg.jpg"`;
+
+exports[`function parsing > should parse: url( /gfx/img/bg.jpg ) 2`] = `"/gfx/img/bg.jpg"`;
+
+exports[`function parsing > should parse: url( /gfx/img/bg.jpg ) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isHex": false,
+    "isUrl": false,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 23,
+        "line": 1,
+        "offset": 22,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "word",
+    "value": "/gfx/img/bg.jpg",
+  },
+]
+`;
+
+exports[`function parsing > should parse: url() 1`] = `""`;
+
+exports[`function parsing > should parse: url() 2`] = `""`;
+
+exports[`function parsing > should parse: url() 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isHex": false,
+    "isUrl": false,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 6,
+        "line": 1,
+        "offset": 5,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "word",
+    "value": "",
+  },
+]
+`;
+
+exports[`function parsing > should parse: url() foo bar baz 1`] = `""`;
+
+exports[`function parsing > should parse: url() foo bar baz 2`] = `" foo bar baz"`;
+
+exports[`function parsing > should parse: url() foo bar baz 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isHex": false,
+    "isUrl": false,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 6,
+        "line": 1,
+        "offset": 5,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "word",
+    "value": "",
+  },
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isHex": false,
+    "isUrl": false,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 10,
+        "line": 1,
+        "offset": 9,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 7,
+        "line": 1,
+        "offset": 6,
+      },
+    },
+    "type": "word",
+    "value": "foo",
+  },
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isHex": false,
+    "isUrl": false,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 14,
+        "line": 1,
+        "offset": 13,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 11,
+        "line": 1,
+        "offset": 10,
+      },
+    },
+    "type": "word",
+    "value": "bar",
+  },
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isHex": false,
+    "isUrl": false,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 18,
+        "line": 1,
+        "offset": 17,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 15,
+        "line": 1,
+        "offset": 14,
+      },
+    },
+    "type": "word",
+    "value": "baz",
+  },
+]
+`;
+
+exports[`function parsing > should parse: url(//123.example.com) 1`] = `"//123.example.com"`;
+
+exports[`function parsing > should parse: url(//123.example.com) 2`] = `"//123.example.com"`;
+
+exports[`function parsing > should parse: url(//123.example.com) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isHex": false,
+    "isUrl": false,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 23,
+        "line": 1,
+        "offset": 22,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "word",
+    "value": "//123.example.com",
+  },
+]
+`;
+
+exports[`function parsing > should parse: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAAL0lEQVQoz2NgCD3x//9/BhBYBWdhgFVAiVW4JBFKGIa4AqD0//9D3pt4I4tAdAMAHTQ/j5Zom30AAAAASUVORK5CYII=) 1`] = `"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAAL0lEQVQoz2NgCD3x//9/BhBYBWdhgFVAiVW4JBFKGIa4AqD0//9D3pt4I4tAdAMAHTQ/j5Zom30AAAAASUVORK5CYII="`;
+
+exports[`function parsing > should parse: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAAL0lEQVQoz2NgCD3x//9/BhBYBWdhgFVAiVW4JBFKGIa4AqD0//9D3pt4I4tAdAMAHTQ/j5Zom30AAAAASUVORK5CYII=) 2`] = `"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAAL0lEQVQoz2NgCD3x//9/BhBYBWdhgFVAiVW4JBFKGIa4AqD0//9D3pt4I4tAdAMAHTQ/j5Zom30AAAAASUVORK5CYII="`;
+
+exports[`function parsing > should parse: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAAL0lEQVQoz2NgCD3x//9/BhBYBWdhgFVAiVW4JBFKGIa4AqD0//9D3pt4I4tAdAMAHTQ/j5Zom30AAAAASUVORK5CYII=) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isHex": false,
+    "isUrl": true,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 168,
+        "line": 1,
+        "offset": 167,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "word",
+    "value": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAAL0lEQVQoz2NgCD3x//9/BhBYBWdhgFVAiVW4JBFKGIa4AqD0//9D3pt4I4tAdAMAHTQ/j5Zom30AAAAASUVORK5CYII=",
+  },
+]
+`;
+
+exports[`function parsing > should parse: url(http://123.example.com) 1`] = `"http://123.example.com"`;
+
+exports[`function parsing > should parse: url(http://123.example.com) 2`] = `"http://123.example.com"`;
+
+exports[`function parsing > should parse: url(http://123.example.com) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isHex": false,
+    "isUrl": true,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 28,
+        "line": 1,
+        "offset": 27,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "word",
+    "value": "http://123.example.com",
+  },
+]
+`;
+
+exports[`function parsing > should parse: var(  --foo   ) 1`] = `"var(--foo)"`;
+
+exports[`function parsing > should parse: var(  --foo   ) 2`] = `"var(--foo)"`;
+
+exports[`function parsing > should parse: var(  --foo   ) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isVar": true,
+    "name": "var",
+    "nodes": [
+      {
+        "isColor": false,
+        "isHex": false,
+        "isUrl": false,
+        "isVariable": true,
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 12,
+            "line": 1,
+            "offset": 11,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 7,
+            "line": 1,
+            "offset": 6,
+          },
+        },
+        "type": "word",
+        "value": "--foo",
+      },
+    ],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 16,
+        "line": 1,
+        "offset": 15,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+]
+`;
+
+exports[`function parsing > should parse: var( --foo) 1`] = `"var(--foo)"`;
+
+exports[`function parsing > should parse: var( --foo) 2`] = `"var(--foo)"`;
+
+exports[`function parsing > should parse: var( --foo) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isVar": true,
+    "name": "var",
+    "nodes": [
+      {
+        "isColor": false,
+        "isHex": false,
+        "isUrl": false,
+        "isVariable": true,
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 11,
+            "line": 1,
+            "offset": 10,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 6,
+            "line": 1,
+            "offset": 5,
+          },
+        },
+        "type": "word",
+        "value": "--foo",
+      },
+    ],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 12,
+        "line": 1,
+        "offset": 11,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+]
+`;
+
+exports[`function parsing > should parse: var(--font-size)/var(--line-height) 1`] = `"var(--font-size)"`;
+
+exports[`function parsing > should parse: var(--font-size)/var(--line-height) 2`] = `"var(--font-size)/var(--line-height)"`;
+
+exports[`function parsing > should parse: var(--font-size)/var(--line-height) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isVar": true,
+    "name": "var",
+    "nodes": [
+      {
+        "isColor": false,
+        "isHex": false,
+        "isUrl": false,
+        "isVariable": true,
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 16,
+            "line": 1,
+            "offset": 15,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 5,
+            "line": 1,
+            "offset": 4,
+          },
+        },
+        "type": "word",
+        "value": "--font-size",
+      },
+    ],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 17,
+        "line": 1,
+        "offset": 16,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 18,
+        "line": 1,
+        "offset": 17,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 17,
+        "line": 1,
+        "offset": 16,
+      },
+    },
+    "type": "operator",
+    "value": "/",
+  },
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isVar": true,
+    "name": "var",
+    "nodes": [
+      {
+        "isColor": false,
+        "isHex": false,
+        "isUrl": false,
+        "isVariable": true,
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 35,
+            "line": 1,
+            "offset": 34,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 22,
+            "line": 1,
+            "offset": 21,
+          },
+        },
+        "type": "word",
+        "value": "--line-height",
+      },
+    ],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 36,
+        "line": 1,
+        "offset": 35,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 18,
+        "line": 1,
+        "offset": 17,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+]
+`;
+
+exports[`function parsing > should parse: var(--foo ) 1`] = `"var(--foo)"`;
+
+exports[`function parsing > should parse: var(--foo ) 2`] = `"var(--foo)"`;
+
+exports[`function parsing > should parse: var(--foo ) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isVar": true,
+    "name": "var",
+    "nodes": [
+      {
+        "isColor": false,
+        "isHex": false,
+        "isUrl": false,
+        "isVariable": true,
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 10,
+            "line": 1,
+            "offset": 9,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 5,
+            "line": 1,
+            "offset": 4,
+          },
+        },
+        "type": "word",
+        "value": "--foo",
+      },
+    ],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 12,
+        "line": 1,
+        "offset": 11,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+]
+`;
+
+exports[`function parsing > should parse: var(--foo) 1`] = `"var(--foo)"`;
+
+exports[`function parsing > should parse: var(--foo) 2`] = `"var(--foo)"`;
+
+exports[`function parsing > should parse: var(--foo) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isVar": true,
+    "name": "var",
+    "nodes": [
+      {
+        "isColor": false,
+        "isHex": false,
+        "isUrl": false,
+        "isVariable": true,
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 10,
+            "line": 1,
+            "offset": 9,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 5,
+            "line": 1,
+            "offset": 4,
+          },
+        },
+        "type": "word",
+        "value": "--foo",
+      },
+    ],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 11,
+        "line": 1,
+        "offset": 10,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+]
+`;
+
+exports[`function parsing > should parse: var(--foo, default-value) 1`] = `"var(--foo,)"`;
+
+exports[`function parsing > should parse: var(--foo, default-value) 2`] = `"var(--foo,)"`;
+
+exports[`function parsing > should parse: var(--foo, default-value) 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isVar": true,
+    "name": "var",
+    "nodes": [
+      {
+        "isColor": false,
+        "isHex": false,
+        "isUrl": false,
+        "isVariable": true,
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 10,
+            "line": 1,
+            "offset": 9,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 5,
+            "line": 1,
+            "offset": 4,
+          },
+        },
+        "type": "word",
+        "value": "--foo",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 11,
+            "line": 1,
+            "offset": 10,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 10,
+            "line": 1,
+            "offset": 9,
+          },
+        },
+        "type": "operator",
+        "value": ",",
+      },
+      {
+        "isColor": false,
+        "isHex": false,
+        "isUrl": false,
+        "isVariable": false,
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 25,
+            "line": 1,
+            "offset": 24,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 11,
+            "line": 1,
+            "offset": 10,
+          },
+        },
+        "type": "word",
+        "value": "",
+      },
+    ],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 26,
+        "line": 1,
+        "offset": 25,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+]
+`;

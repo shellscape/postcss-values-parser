@@ -70,5 +70,4 @@ root.walkNumerics((node) => nodes.push(node));
 //   unit: 'pt',
 //   ...
 // } ]
-
 ```

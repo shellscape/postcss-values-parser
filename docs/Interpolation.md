@@ -5,19 +5,21 @@ The `Interpolation` node inherits directly from `Container` in PostCSS. This nod
 ## Properties
 
 ### `type`
+
 Type: `String`
 Value: `'interpolation'`
 
 ### `params`
+
 Type: `String`<br>
 
 A `String` representation of the body of the interpolation statement. This value will be parsed and the result placed into the `nodes` property.
 
 ### `prefix`
+
 Type: `String`<br>
 
 A `String` representation of the first/signifying character of the interpolation statement.
-
 
 ## Example Values
 

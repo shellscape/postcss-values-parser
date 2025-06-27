@@ -1,0 +1,13 @@
+{
+  "snapshot": [
+    "bold italic 12px \t /3 'Open Sans', Arial, \"Helvetica Neue\", sans-serif",
+    " \\\"word\\\" \\s ",
+    "--color",
+    "-webkit-transition",
+    "#fff",
+    "#123 #f09f #abcdef #a2b3c4d5",
+    "blanchedalmond",
+    "BLANCHEDALMOND",
+    "blAncHedaLmoNd"
+  ]
+}

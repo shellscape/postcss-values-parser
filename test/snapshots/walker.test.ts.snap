@@ -1,0 +1,533 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`walker functionality > should walk Funcs in: calc((foo(768px - 100vw) / 2) - 15px) // batman
+//joker 1`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isVar": false,
+    "name": "calc",
+    "nodes": [
+      {
+        "nodes": [
+          {
+            "isColor": false,
+            "isVar": false,
+            "name": "foo",
+            "nodes": [
+              {
+                "raws": {},
+                "source": {
+                  "end": {
+                    "column": 16,
+                    "line": 1,
+                    "offset": 15,
+                  },
+                  "inputId": 0,
+                  "start": {
+                    "column": 11,
+                    "line": 1,
+                    "offset": 10,
+                  },
+                },
+                "type": "numeric",
+                "unit": "px",
+                "value": "768",
+              },
+              {
+                "raws": {},
+                "source": {
+                  "end": {
+                    "column": 18,
+                    "line": 1,
+                    "offset": 17,
+                  },
+                  "inputId": 0,
+                  "start": {
+                    "column": 17,
+                    "line": 1,
+                    "offset": 16,
+                  },
+                },
+                "type": "operator",
+                "value": " - ",
+              },
+              {
+                "raws": {},
+                "source": {
+                  "end": {
+                    "column": 24,
+                    "line": 1,
+                    "offset": 23,
+                  },
+                  "inputId": 0,
+                  "start": {
+                    "column": 19,
+                    "line": 1,
+                    "offset": 18,
+                  },
+                },
+                "type": "numeric",
+                "unit": "vw",
+                "value": "100",
+              },
+            ],
+            "params": "",
+            "raws": {},
+            "source": {
+              "end": {
+                "column": 25,
+                "line": 1,
+                "offset": 24,
+              },
+              "inputId": 0,
+              "start": {
+                "column": 7,
+                "line": 1,
+                "offset": 6,
+              },
+            },
+            "type": "func",
+            "value": "",
+          },
+          {
+            "raws": {},
+            "source": {
+              "end": {
+                "column": 27,
+                "line": 1,
+                "offset": 26,
+              },
+              "inputId": 0,
+              "start": {
+                "column": 26,
+                "line": 1,
+                "offset": 25,
+              },
+            },
+            "type": "operator",
+            "value": "/",
+          },
+          {
+            "raws": {},
+            "source": {
+              "end": {
+                "column": 29,
+                "line": 1,
+                "offset": 28,
+              },
+              "inputId": 0,
+              "start": {
+                "column": 28,
+                "line": 1,
+                "offset": 27,
+              },
+            },
+            "type": "numeric",
+            "unit": "",
+            "value": "2",
+          },
+        ],
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 30,
+            "line": 1,
+            "offset": 29,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 6,
+            "line": 1,
+            "offset": 5,
+          },
+        },
+        "type": "parentheses",
+        "value": "()",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 32,
+            "line": 1,
+            "offset": 31,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 31,
+            "line": 1,
+            "offset": 30,
+          },
+        },
+        "type": "operator",
+        "value": " - ",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 37,
+            "line": 1,
+            "offset": 36,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 33,
+            "line": 1,
+            "offset": 32,
+          },
+        },
+        "type": "numeric",
+        "unit": "px",
+        "value": "15",
+      },
+    ],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 38,
+        "line": 1,
+        "offset": 37,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isVar": false,
+    "name": "foo",
+    "nodes": [
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 16,
+            "line": 1,
+            "offset": 15,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 11,
+            "line": 1,
+            "offset": 10,
+          },
+        },
+        "type": "numeric",
+        "unit": "px",
+        "value": "768",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 18,
+            "line": 1,
+            "offset": 17,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 17,
+            "line": 1,
+            "offset": 16,
+          },
+        },
+        "type": "operator",
+        "value": " - ",
+      },
+      {
+        "raws": {},
+        "source": {
+          "end": {
+            "column": 24,
+            "line": 1,
+            "offset": 23,
+          },
+          "inputId": 0,
+          "start": {
+            "column": 19,
+            "line": 1,
+            "offset": 18,
+          },
+        },
+        "type": "numeric",
+        "unit": "vw",
+        "value": "100",
+      },
+    ],
+    "params": "",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 25,
+        "line": 1,
+        "offset": 24,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 7,
+        "line": 1,
+        "offset": 6,
+      },
+    },
+    "type": "func",
+    "value": "",
+  },
+]
+`;
+
+exports[`walker functionality > should walk Numerics in: calc((foo(768px - 100vw) / 2) - 15px) // batman
+//joker 1`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 16,
+        "line": 1,
+        "offset": 15,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 11,
+        "line": 1,
+        "offset": 10,
+      },
+    },
+    "type": "numeric",
+    "unit": "px",
+    "value": "768",
+  },
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 24,
+        "line": 1,
+        "offset": 23,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 19,
+        "line": 1,
+        "offset": 18,
+      },
+    },
+    "type": "numeric",
+    "unit": "vw",
+    "value": "100",
+  },
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 29,
+        "line": 1,
+        "offset": 28,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 28,
+        "line": 1,
+        "offset": 27,
+      },
+    },
+    "type": "numeric",
+    "unit": "",
+    "value": "2",
+  },
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 37,
+        "line": 1,
+        "offset": 36,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 33,
+        "line": 1,
+        "offset": 32,
+      },
+    },
+    "type": "numeric",
+    "unit": "px",
+    "value": "15",
+  },
+]
+`;
+
+exports[`walker functionality > should walk Words in: calc((foo(768px - 100vw) / 2) - 15px) // batman
+//joker 1`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isHex": false,
+    "isUrl": false,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 48,
+        "line": 1,
+        "offset": 47,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 42,
+        "line": 1,
+        "offset": 41,
+      },
+    },
+    "type": "word",
+    "value": "batman",
+  },
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isHex": false,
+    "isUrl": false,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 8,
+        "line": 2,
+        "offset": 55,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 3,
+        "line": 2,
+        "offset": 50,
+      },
+    },
+    "type": "word",
+    "value": "joker",
+  },
+]
+`;

@@ -1,0 +1,7 @@
+{
+  "options": {
+    "variables": { "prefixes": ["--"] }
+  },
+  "snapshot": ["--batman", "--main-bg-color"],
+  "throws": []
+}

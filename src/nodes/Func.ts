@@ -13,7 +13,7 @@ import { FunctionNode } from 'css-tree';
 import { Container } from './Container.js';
 import { NodeOptions } from './Node.js';
 
-const reColorFunctions = /^(hsla?|hwb|lab|lch|rgba?)$/i;
+const reColorFunctions = /^(hsla?|hwb|(ok)?lab|(ok)?lch|rgba?)$/i;
 const reVar = /^var$/i;
 
 export class Func extends Container {

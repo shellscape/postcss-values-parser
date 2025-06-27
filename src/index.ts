@@ -29,10 +29,10 @@
 // - bare parens have their own node type (upstream; css-tree)
 // - comparison operators are not spec compliant and not supported. e.g. `(width < 1px)`, `(width < 1px) and (width < 2px)`
 
-import { parse } from './parser';
-import { stringify } from './stringify';
+import { parse } from './parser.js';
+import { stringify } from './stringify.js';
 
-export { registerWalkers } from './walker';
+export { registerWalkers } from './walker.js';
 
 interface Builder {
   (part: string, node?: Node, type?: 'start' | 'end'): void;

@@ -10,8 +10,8 @@
 */
 import { FunctionNode } from 'css-tree';
 
-import { Container } from './Container';
-import { NodeOptions } from './Node';
+import { Container } from './Container.js';
+import { NodeOptions } from './Node.js';
 
 const reColorFunctions = /^(hsla?|hwb|lab|lch|rgba?)$/i;
 const reVar = /^var$/i;
@@ -20,6 +20,7 @@ export class Func extends Container {
   readonly isColor: boolean = false;
   readonly isVar: boolean = false;
   readonly name: string = '<unknown>';
+  declare type: string;
   constructor(options: NodeOptions) {
     super(options);
     this.name = (options.node as FunctionNode).name;

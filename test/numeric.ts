@@ -10,7 +10,7 @@
 */
 import test from 'ava';
 
-import { nodeToString, parse } from '../src';
+import { nodeToString, parse } from '../dist/index.js';
 import { snapshot, throws } from './fixtures/numeric.json';
 
 for (const fixture of snapshot) {

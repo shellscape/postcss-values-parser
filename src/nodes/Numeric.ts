@@ -10,14 +10,17 @@
 */
 import { NumberNode } from 'css-tree';
 
-import { Node, NodeOptions } from './Node';
+import { Node, NodeOptions } from './Node.js';
 
 export class Numeric extends Node {
-  readonly unit: string;
+  readonly unit: string = '';
+  readonly numericValue: number = 0;
+  declare type: string;
   constructor(options: NodeOptions) {
     super(options);
     this.type = 'numeric';
     this.unit = options.node.type === 'Dimension' ? options.node.unit : '';
-    (this as any).value = (options.node as NumberNode).value;
+    (this as any).value = String((options.node as NumberNode).value);
+    (this as any).numericValue = (options.node as NumberNode).value;
   }
 }

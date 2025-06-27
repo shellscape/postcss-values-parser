@@ -11,7 +11,7 @@
 import { CssNode } from 'css-tree';
 import { Input, Node as PostCssNode } from 'postcss';
 
-import { stringify } from '../stringify';
+import { stringify } from '../stringify.js';
 
 export interface NodeOptions {
   node: CssNode;

@@ -1,8 +1,31 @@
-import { AnyNode, Builder, Comment } from 'postcss';
-import Stringifier from 'postcss/lib/stringifier';
+import { AnyNode, Builder } from 'postcss';
 
-export class ValuesStringifier extends Stringifier {
-  basic(node: AnyNode, value = null) {
+export class ValuesStringifier {
+  builder: (str: string, node?: any, type?: 'start' | 'end') => void;
+
+  constructor(builder: Builder) {
+    this.builder = builder;
+  }
+
+  raw(node: any, own: string, detect?: string): string {
+    let value = '';
+    if (own) {
+      value = node.raws[own];
+      if (typeof value !== 'undefined') return value;
+    }
+    if (detect && node.raws[detect]) {
+      value = node.raws[detect];
+    }
+    return value;
+  }
+
+  stringify(node: any): void {
+    const method = (this as any)[node.type];
+    if (method && typeof method === 'function') {
+      method.call(this, node);
+    }
+  }
+  basic(node: AnyNode, value: string | null = null) {
     const print = value || (node as any).value;
     const after = node.raws.after ? this.raw(node, 'after') || '' : '';
     // NOTE: before is handled by postcss in stringifier.body
@@ -22,7 +45,10 @@ export class ValuesStringifier extends Stringifier {
       const right = this.raw(node, 'right', 'commentRight');
       this.builder(`//${left}${node.text}${right}`, node);
     } else {
-      super.comment(node as Comment);
+      // Handle regular comments
+      const left = this.raw(node, 'left', 'commentLeft');
+      const right = this.raw(node, 'right', 'commentRight');
+      this.builder(`/*${left}${node.text}${right}*/`, node);
     }
   }
 

@@ -8,14 +8,13 @@
   The above copyright notice and this permission notice shall be
   included in all copies or substantial portions of this Source Code Form.
 */
-import { Operator as OperatorNode } from 'css-tree';
 
-import { Node, NodeOptions } from './Node';
+import { Node, NodeOptions } from './Node.js';
 
 export class Operator extends Node {
+  declare type: string;
   constructor(options: NodeOptions) {
     super(options);
     this.type = 'operator';
-    (this as any).value = (options.node as OperatorNode).value;
   }
 }

@@ -1,5 +1,10 @@
 export default {
-  extensions: ['ts'],
   files: ['!**/fixtures/**', '!**/helpers/**', '!**/rewiremock.js'],
-  require: ['ts-node/register', './test/rewiremock.js']
+  require: ['./test/rewiremock.cjs'],
+  typescript: {
+    rewritePaths: {
+      'src/': 'dist/'
+    },
+    compile: false
+  }
 };

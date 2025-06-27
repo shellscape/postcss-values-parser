@@ -11,7 +11,7 @@
 import colors from 'color-name';
 import isUrl from 'is-url-superb';
 
-import { Node, NodeOptions } from './Node';
+import { Node, NodeOptions } from './Node.js';
 
 const hexRegex = /^#(.+)/;
 const colorRegex = /^#([0-9a-f]{3}|[0-9a-f]{4}|[0-9a-f]{6}|[0-9a-f]{8})$/i;
@@ -22,6 +22,8 @@ export class Word extends Node {
   readonly isHex: boolean = false;
   readonly isUrl: boolean = false;
   readonly isVariable: boolean = false;
+  declare type: string;
+  declare value: string;
 
   constructor(options?: NodeOptions) {
     super(options);

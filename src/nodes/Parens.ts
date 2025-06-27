@@ -8,10 +8,11 @@
   The above copyright notice and this permission notice shall be
   included in all copies or substantial portions of this Source Code Form.
 */
-import { Container } from './Container';
-import { NodeOptions } from './Node';
+import { Container } from './Container.js';
+import { NodeOptions } from './Node.js';
 
 export class Parens extends Container {
+  declare type: string;
   constructor(options: NodeOptions) {
     super(options);
     this.type = 'parens';

@@ -10,7 +10,7 @@
 */
 import { Node } from 'postcss';
 
-import * as Nodes from './nodes';
+import * as Nodes from './nodes/index.js';
 
 interface Container {
   prototype: any;
@@ -18,7 +18,7 @@ interface Container {
 
 export const registerWalkers = (container: Container) => {
   for (const Constructor of Object.values(Nodes)) {
-    let walkerName = `walk${Constructor.name}`;
+    let walkerName = `walk${(Constructor as any).name}`;
 
     // plural sugar
     if (walkerName.lastIndexOf('s') !== walkerName.length - 1) {

@@ -10,8 +10,8 @@
 */
 import { Root as PostCssRoot } from 'postcss';
 
-import { stringify } from '../stringify';
-import { Node } from './Node';
+import { stringify } from '../stringify.js';
+import { Node } from './Node.js';
 
 export class Root extends PostCssRoot {
   public readonly value = '';

@@ -11,8 +11,8 @@
 import { CssNode, CssNodePlain, List, parse as parseAst, Value } from 'css-tree';
 import { Input } from 'postcss';
 
-import { AstError, ParseError } from './errors';
-import * as Nodes from './nodes';
+import { AstError, ParseError } from './errors.js';
+import * as Nodes from './nodes/index.js';
 
 export interface ParseOptions {
   ignoreUnknownWords?: boolean;
@@ -34,7 +34,14 @@ interface MaybeParent {
 
 const assign = (parent: Nodes.Container, nodes: CssNode[]) => {
   for (const node of nodes) {
-    let newNode: Nodes.Container | Nodes.Node;
+    let newNode:
+      | Nodes.Container
+      | Nodes.Node
+      | Nodes.Numeric
+      | Nodes.Operator
+      | Nodes.Parens
+      | Nodes.UnicodeRange
+      | Nodes.Word;
 
     switch (node.type) {
       case 'Function':

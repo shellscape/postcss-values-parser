@@ -8,9 +8,10 @@
   The above copyright notice and this permission notice shall be
   included in all copies or substantial portions of this Source Code Form.
 */
-import { Node, NodeOptions } from './Node';
+import { Node, NodeOptions } from './Node.js';
 
 export class Quoted extends Node {
+  declare type: string;
   constructor(options?: NodeOptions) {
     super(options);
 

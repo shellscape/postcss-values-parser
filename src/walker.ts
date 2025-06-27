@@ -1,5 +1,5 @@
 /*
-  Copyright © 2018 Andrew Powell
+  Copyright © 2025 Andrew Powell
 
   This Source Code Form is subject to the terms of the Mozilla Public
   License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -8,48 +8,53 @@
   The above copyright notice and this permission notice shall be
   included in all copies or substantial portions of this Source Code Form.
 */
-import { Node } from 'postcss';
 
-import * as Nodes from './nodes/index.js';
-
-interface Container {
-  prototype: any;
+interface WalkCallback {
+  (node: any, index: number): any;
 }
 
-export const registerWalkers = (container: Container) => {
-  for (const Constructor of Object.values(Nodes)) {
-    let walkerName = `walk${(Constructor as any).name}`;
+const createWalker = (type: string) => {
+  return function (this: any, callback: WalkCallback) {
+    let index = 0;
+    const walk = (node: any): any => {
+      if (node.type === type.toLowerCase()) {
+        const result = callback(node, index++);
+        if (result === false) return false;
+      }
 
-    // plural sugar
-    if (walkerName.lastIndexOf('s') !== walkerName.length - 1) {
-      walkerName += 's';
-    }
-
-    /* istanbul ignore next */
-    if (container.prototype[walkerName]) {
-      return;
-    }
-
-    // we need access to `this` so we can't use an arrow function
-    container.prototype[walkerName] = function walker(callback: any) {
-      return this.walkType(Constructor, callback);
+      if (node.nodes && node.nodes.length > 0) {
+        for (const child of node.nodes) {
+          const result = walk(child);
+          if (result === false) return false;
+        }
+      }
     };
+
+    return walk(this);
+  };
+};
+
+export const registerWalkers = (Container: any) => {
+  const walkerTypes = [
+    'Funcs',
+    'Words',
+    'Numerics',
+    'Operators',
+    'Quoteds',
+    'UnicodeRanges',
+    'Comments',
+    'Punctuations'
+  ];
+
+  for (const walkerType of walkerTypes) {
+    const methodName = `walk${walkerType}`;
+    const nodeType = walkerType.toLowerCase().slice(0, -1); // Remove 's' and lowercase
+
+    Container.prototype[methodName] = createWalker(nodeType);
   }
 
-  container.prototype.walkType = function walkType(type: string, callback: any) {
-    /* istanbul ignore next */
-    if (!type || !callback) {
-      throw new Error('Parameters {type} and {callback} are required.');
-    }
-
-    // allow users to pass a constructor, or node type string; eg. Word.
-    const isTypeCallable = typeof type === 'function';
-
-    // eslint-disable-next-line consistent-return
-    return this.walk((node: Node, index: any) => {
-      if ((isTypeCallable && node instanceof type) || (!isTypeCallable && node.type === type)) {
-        return callback.call(this, node, index);
-      }
-    });
+  // Special case for walkType
+  Container.prototype.walkType = function (type: string, callback: WalkCallback) {
+    return createWalker(type).call(this, callback);
   };
 };

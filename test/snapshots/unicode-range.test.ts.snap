@@ -1,0 +1,227 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`unicode-range parsing > should parse: U+0-7F 1`] = `"U+0-7F"`;
+
+exports[`unicode-range parsing > should parse: U+0-7F 2`] = `"U+0-7F"`;
+
+exports[`unicode-range parsing > should parse: U+0-7F 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "name": "U+0-7F",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 7,
+        "line": 1,
+        "offset": 6,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "unicodeRange",
+    "value": "U+0-7F",
+  },
+]
+`;
+
+exports[`unicode-range parsing > should parse: U+0025-00FF 1`] = `"U+0025-00FF"`;
+
+exports[`unicode-range parsing > should parse: U+0025-00FF 2`] = `"U+0025-00FF"`;
+
+exports[`unicode-range parsing > should parse: U+0025-00FF 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "name": "U+0025-00FF",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 12,
+        "line": 1,
+        "offset": 11,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "unicodeRange",
+    "value": "U+0025-00FF",
+  },
+]
+`;
+
+exports[`unicode-range parsing > should parse: U+0025-00FF, U+4?? 1`] = `"U+0025-00FF"`;
+
+exports[`unicode-range parsing > should parse: U+0025-00FF, U+4?? 2`] = `"U+0025-00FF,U+4??"`;
+
+exports[`unicode-range parsing > should parse: U+0025-00FF, U+4?? 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "name": "U+0025-00FF",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 12,
+        "line": 1,
+        "offset": 11,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "unicodeRange",
+    "value": "U+0025-00FF",
+  },
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 13,
+        "line": 1,
+        "offset": 12,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 12,
+        "line": 1,
+        "offset": 11,
+      },
+    },
+    "type": "operator",
+    "value": ",",
+  },
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "name": "U+4??",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 19,
+        "line": 1,
+        "offset": 18,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 14,
+        "line": 1,
+        "offset": 13,
+      },
+    },
+    "type": "unicodeRange",
+    "value": "U+4??",
+  },
+]
+`;
+
+exports[`unicode-range parsing > should parse: U+4?? 1`] = `"U+4??"`;
+
+exports[`unicode-range parsing > should parse: U+4?? 2`] = `"U+4??"`;
+
+exports[`unicode-range parsing > should parse: U+4?? 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "name": "U+4??",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 6,
+        "line": 1,
+        "offset": 5,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "unicodeRange",
+    "value": "U+4??",
+  },
+]
+`;
+
+exports[`unicode-range parsing > should parse: U+26 1`] = `"U+26"`;
+
+exports[`unicode-range parsing > should parse: U+26 2`] = `"U+26"`;
+
+exports[`unicode-range parsing > should parse: U+26 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "name": "U+26",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 5,
+        "line": 1,
+        "offset": 4,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "unicodeRange",
+    "value": "U+26",
+  },
+]
+`;

@@ -1,5 +1,5 @@
 /*
-  Copyright © 2018 Andrew Powell
+  Copyright © 2025 Andrew Powell
 
   This Source Code Form is subject to the terms of the Mozilla Public
   License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -20,12 +20,18 @@ export class Func extends Container {
   readonly isColor: boolean = false;
   readonly isVar: boolean = false;
   readonly name: string = '<unknown>';
+  readonly params: string = '';
   declare type: string;
+
   constructor(options: NodeOptions) {
     super(options);
-    this.name = (options.node as FunctionNode).name;
-    this.isColor = reColorFunctions.test(this.name);
-    this.isVar = reVar.test(this.name);
     this.type = 'func';
+
+    if (options && options.node && options.node.type === 'Function') {
+      this.name = (options.node as FunctionNode).name;
+      this.isColor = reColorFunctions.test(this.name);
+      this.isVar = reVar.test(this.name);
+      (this as any).params = '';
+    }
   }
 }

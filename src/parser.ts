@@ -1,5 +1,5 @@
 /*
-  Copyright © 2018 Andrew Powell
+  Copyright © 2025 Andrew Powell
 
   This Source Code Form is subject to the terms of the Mozilla Public
   License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -9,7 +9,6 @@
   included in all copies or substantial portions of this Source Code Form.
 */
 import { CssNode, CssNodePlain, List, parse as parseAst, Value } from 'css-tree';
-import { Input } from 'postcss';
 
 import { AstError, ParseError } from './errors.js';
 import * as Nodes from './nodes/index.js';
@@ -17,60 +16,93 @@ import * as Nodes from './nodes/index.js';
 export interface ParseOptions {
   ignoreUnknownWords?: boolean;
   interpolation?: boolean | InterpolationOptions;
+  variables?: VariablesOptions;
 }
-
-const defaults: ParseOptions = {
-  ignoreUnknownWords: false,
-  interpolation: false
-};
 
 export interface InterpolationOptions {
   prefix: string;
+}
+
+export interface VariablesOptions {
+  prefixes: string[];
 }
 
 interface MaybeParent {
   children: List<CssNode> | CssNodePlain[];
 }
 
-const assign = (parent: Nodes.Container, nodes: CssNode[]) => {
+const assign = (parent: Nodes.Container | Nodes.Root, nodes: CssNode[]) => {
   for (const node of nodes) {
     let newNode:
       | Nodes.Container
       | Nodes.Node
       | Nodes.Numeric
       | Nodes.Operator
-      | Nodes.Parens
       | Nodes.UnicodeRange
-      | Nodes.Word;
+      | Nodes.Word
+      | Nodes.Func
+      | Nodes.Quoted
+      | Nodes.Comment
+      | Nodes.Punctuation
+      | Nodes.Parentheses;
 
     switch (node.type) {
       case 'Function':
         newNode = new Nodes.Func({ node });
         break;
+      case 'Url':
+        // Create a Word node for URL with the URL value for toString()
+        newNode = new Nodes.Word({
+          node: {
+            ...node,
+            type: 'Identifier' as any,
+            name: (node as any).value || ''
+          } as any
+        });
+        // Set the value property to the URL content for toString()
+        (newNode as any).value = (node as any).value || '';
+        break;
       case 'Dimension':
       case 'Number':
+      case 'Percentage':
         newNode = new Nodes.Numeric({ node });
         break;
       case 'Operator':
         newNode = new Nodes.Operator({ node });
         break;
-      case 'Parentheses':
-        newNode = new Nodes.Parens({ node });
-        break;
       case 'UnicodeRange':
         newNode = new Nodes.UnicodeRange({ node });
         break;
+      case 'String':
+        newNode = new Nodes.Quoted({ node });
+        break;
+      case 'Hash':
+      case 'Identifier':
+        newNode = new Nodes.Word({ node });
+        break;
+      case 'Parentheses':
+        newNode = new Nodes.Parentheses({ node });
+        break;
       default:
+        // Fallback to Word for unknown types
         newNode = new Nodes.Word({ node });
         break;
     }
 
     const maybeParent = node as unknown as MaybeParent;
 
-    if (maybeParent.children) {
+    if (
+      maybeParent.children &&
+      (newNode instanceof Nodes.Container ||
+        newNode instanceof Nodes.Func ||
+        newNode instanceof Nodes.Parentheses)
+    ) {
       let children: CssNode[];
-      if (maybeParent.children instanceof List) children = maybeParent.children.toArray();
-      else ({ children } = maybeParent as any);
+      if (maybeParent.children instanceof List) {
+        children = maybeParent.children.toArray();
+      } else {
+        children = maybeParent.children as CssNode[];
+      }
 
       assign(newNode as Nodes.Container, children);
     }
@@ -79,16 +111,17 @@ const assign = (parent: Nodes.Container, nodes: CssNode[]) => {
   }
 };
 
-export const parse = (css: string, opts?: ParseOptions) => {
-  // @ts-ignore
-  // eslint-disable-next-line
-  const options = Object.assign({}, defaults, opts);
+export const parse = (css: string, _opts?: ParseOptions) => {
   let ast: Value;
   const root = new Nodes.Root({
-    source: {
-      input: new Input(css),
-      start: { column: 1, line: 1, offset: 0 }
-    }
+    node: {
+      type: 'Value',
+      loc: {
+        source: css,
+        start: { line: 1, column: 1 },
+        end: { line: 1, column: css.length + 1 }
+      }
+    } as any
   });
 
   try {
@@ -100,13 +133,115 @@ export const parse = (css: string, opts?: ParseOptions) => {
     throw new ParseError(error);
   }
 
-  if (!ast?.children) throw new AstError();
+  if (!ast?.children) {
+    throw new AstError();
+  }
 
   const nodes = ast.children.toArray();
 
-  if (!nodes.length) throw new AstError();
+  if (!nodes.length) {
+    throw new AstError();
+  }
 
-  assign(root, nodes);
+  // Store original CSS input for source extraction
+  const assignWithSource = (
+    parent: Nodes.Container | Nodes.Root,
+    nodes: CssNode[],
+    originalCss: string
+  ) => {
+    for (const node of nodes) {
+      let newNode:
+        | Nodes.Container
+        | Nodes.Node
+        | Nodes.Numeric
+        | Nodes.Operator
+        | Nodes.UnicodeRange
+        | Nodes.Word
+        | Nodes.Func
+        | Nodes.Quoted
+        | Nodes.Comment
+        | Nodes.Punctuation
+        | Nodes.Parentheses;
+
+      // Create node options with original CSS for source extraction
+      const nodeOptions = {
+        node: {
+          ...node,
+          loc: node.loc
+            ? {
+                ...node.loc,
+                source: originalCss
+              }
+            : undefined
+        }
+      };
+
+      switch (node.type) {
+        case 'Function':
+          newNode = new Nodes.Func(nodeOptions);
+          break;
+        case 'Url':
+          // Create a Word node for URL with the URL value for toString()
+          newNode = new Nodes.Word({
+            node: {
+              ...nodeOptions.node,
+              type: 'Identifier' as any,
+              name: (node as any).value || ''
+            } as any
+          });
+          // Set the value property to the URL content for toString()
+          (newNode as any).value = (node as any).value || '';
+          break;
+        case 'Dimension':
+        case 'Number':
+        case 'Percentage':
+          newNode = new Nodes.Numeric(nodeOptions);
+          break;
+        case 'Operator':
+          newNode = new Nodes.Operator(nodeOptions);
+          break;
+        case 'UnicodeRange':
+          newNode = new Nodes.UnicodeRange(nodeOptions);
+          break;
+        case 'String':
+          newNode = new Nodes.Quoted(nodeOptions);
+          break;
+        case 'Hash':
+        case 'Identifier':
+          newNode = new Nodes.Word(nodeOptions);
+          break;
+        case 'Parentheses':
+          newNode = new Nodes.Parentheses(nodeOptions);
+          break;
+        default:
+          // Fallback to Word for unknown types
+          newNode = new Nodes.Word(nodeOptions);
+          break;
+      }
+
+      const maybeParent = node as unknown as MaybeParent;
+
+      if (
+        maybeParent.children &&
+        (newNode instanceof Nodes.Container ||
+          newNode instanceof Nodes.Func ||
+          newNode instanceof Nodes.Parentheses)
+      ) {
+        let children: CssNode[];
+        if (maybeParent.children instanceof List) {
+          children = maybeParent.children.toArray();
+        } else {
+          children = maybeParent.children as CssNode[];
+        }
+
+        assignWithSource(newNode as Nodes.Container, children, originalCss);
+      }
+
+      parent.add(newNode);
+    }
+  };
+
+  assignWithSource(root, nodes, css);
 
   return root;
 };

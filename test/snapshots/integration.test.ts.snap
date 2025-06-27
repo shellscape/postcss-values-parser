@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`integration tests > should handle manipulation 1`] = `"rgb(100%,100%,100%)"`;

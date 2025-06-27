@@ -1,5 +1,5 @@
 /*
-  Copyright © 2018 Andrew Powell
+  Copyright © 2025 Andrew Powell
 
   This Source Code Form is subject to the terms of the Mozilla Public
   License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -23,9 +23,18 @@ export class Container extends PostCssContainer {
 
     if (!options) return;
 
-    const { end, source, start } = options.node.loc as any;
+    if (options.value) {
+      (this as any).value = options.value;
+    }
 
-    this.source = { end, input: new Input(source), start };
+    if (options.parent) {
+      this.parent = options.parent;
+    }
+
+    if (options.node && options.node.loc) {
+      const { end, source, start } = options.node.loc as any;
+      this.source = { end, input: new Input(source), start };
+    }
   }
 
   // Note: The PostCSS types for .push seem a bit jacked up.
@@ -35,6 +44,6 @@ export class Container extends PostCssContainer {
   }
 
   toString(stringifier = stringify) {
-    return super.toString(stringifier || {});
+    return super.toString(stringifier || stringify);
   }
 }

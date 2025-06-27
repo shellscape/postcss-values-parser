@@ -8,25 +8,20 @@
   The above copyright notice and this permission notice shall be
   included in all copies or substantial portions of this Source Code Form.
 */
-import { UnicodeRange as CssUnicodeRange } from 'css-tree';
-
 import { Node, NodeOptions } from './Node.js';
 
-export class UnicodeRange extends Node {
-  readonly name: string = '';
+export class Punctuation extends Node {
   declare type: string;
 
   constructor(options: NodeOptions) {
     super(options);
-    this.type = 'unicodeRange';
+    this.type = 'punctuation';
 
-    if (options && options.node && options.node.type === 'UnicodeRange') {
-      const node = options.node as CssUnicodeRange;
+    if (options && options.node) {
+      const node = options.node as any;
       (this as any).value = node.value;
-      (this as any).name = node.value;
     } else if (options && options.value) {
       (this as any).value = options.value;
-      (this as any).name = options.value;
     }
   }
 }

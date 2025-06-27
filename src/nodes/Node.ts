@@ -1,5 +1,5 @@
 /*
-  Copyright © 2018 Andrew Powell
+  Copyright © 2025 Andrew Powell
 
   This Source Code Form is subject to the terms of the Mozilla Public
   License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -14,7 +14,9 @@ import { Input, Node as PostCssNode } from 'postcss';
 import { stringify } from '../stringify.js';
 
 export interface NodeOptions {
-  node: CssNode;
+  node?: CssNode;
+  value?: string;
+  parent?: any;
 }
 
 export class Node extends PostCssNode {
@@ -25,12 +27,21 @@ export class Node extends PostCssNode {
 
     if (!options) return;
 
-    const { end, source, start } = options.node.loc as any;
+    if (options.value) {
+      (this as any).value = options.value;
+    }
 
-    this.source = { end, input: new Input(source), start };
+    if (options.parent) {
+      this.parent = options.parent;
+    }
+
+    if (options.node && options.node.loc) {
+      const { end, source, start } = options.node.loc as any;
+      this.source = { end, input: new Input(source), start };
+    }
   }
 
   toString(stringifier = stringify) {
-    return super.toString(stringifier || {});
+    return super.toString(stringifier || stringify);
   }
 }

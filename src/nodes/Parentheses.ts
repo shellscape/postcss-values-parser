@@ -8,18 +8,20 @@
   The above copyright notice and this permission notice shall be
   included in all copies or substantial portions of this Source Code Form.
 */
+import { Container } from './Container.js';
+import { NodeOptions } from './Node.js';
 
-export class ParseError extends Error {
-  constructor(error: Error) {
-    super(error.message);
-    this.name = 'ParseError';
-    this.stack = error.stack;
-  }
-}
+export class Parentheses extends Container {
+  declare type: string;
 
-export class AstError extends Error {
-  constructor() {
-    super('Invalid or empty AST');
-    this.name = 'AstError';
+  constructor(options: NodeOptions) {
+    super(options);
+    this.type = 'parentheses';
+
+    if (options.node) {
+      (this as any).value = '()';
+    } else if (options.value) {
+      (this as any).value = options.value;
+    }
   }
 }

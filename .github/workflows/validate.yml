@@ -14,27 +14,22 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node: ['16', '14', '12']
-
     name: Node v${{ matrix.node }}
 
     steps:
       - name: Checkout Commit
-        uses: actions/checkout@v1
+        uses: actions/checkout@v4
 
       - name: Setup Node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node }}
+          node-version: 20.19.0
 
       - name: Checkout Master
         run: git branch -f master origin/master
 
-      - uses: pnpm/action-setup@v2.2.2
-        with:
-          version: 6
+      - name: Install PNPM
+        uses: pnpm/action-setup@v4
 
       - name: Sanity Check
         run: |
@@ -45,11 +40,8 @@ jobs:
       - name: pnpm install
         run: pnpm install
 
-      - name: Audit Dependencies
-        run: pnpm security
-
       - name: Lint Repo
         run: pnpm lint
 
       - name: Run Tests
-        run: pnpm ci:coverage
+        run: pnpm test

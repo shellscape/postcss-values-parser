@@ -1,6 +1,6 @@
 {
   "name": "postcss-values-parser",
-  "version": "6.0.2",
+  "version": "7.0.0",
   "description": "A CSS property value parser for use with PostCSS",
   "license": "MPL-2.0",
   "repository": "shellscape/postcss-values-parser",
@@ -28,10 +28,12 @@
     "lint:docs": "prettier --write README.md",
     "lint:js": "oxlint --format stylish --fix src test",
     "lint:json": "prettier --write codecov.yml package.json",
+    "perf": "pnpm build && tsx perf/perf.ts",
     "prepare": "husky",
     "prepublishOnly": "pnpm lint && pnpm build",
     "security": "pnpm audit --audit-level=high --prod",
-    "test": "pnpm build && ava test/numeric.ts"
+    "test": "pnpm build && vitest run",
+    "test:watch": "pnpm build && vitest"
   },
   "files": [
     "dist",
@@ -54,31 +56,36 @@
   },
   "dependencies": {
     "color-name": "^1.1.4",
-    "css-tree": "^2.1.0",
+    "css-tree": "^3.1.0",
     "husky": "^9.1.7",
     "is-url-superb": "^4.0.0",
-    "oxlint": "^1.3.0",
-    "prettier-plugin-package": "^1.4.0",
     "quote-unquote": "^1.0.0"
   },
   "devDependencies": {
     "@ava/typescript": "^6.0.0",
-    "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
+    "@ianvs/prettier-plugin-sort-imports": "^4.4.2",
     "@types/color-name": "^2.0.0",
     "@types/css-tree": "^2.3.10",
-    "@types/node": "^24.0.4",
+    "@types/node": "^24.0.6",
+    "@types/perfy": "^1.1.2",
+    "@types/text-table": "^0.2.5",
+    "@vitest/ui": "^3.2.4",
     "ava": "^6.4.0",
     "chalk": "^5.4.1",
     "globby": "^14.1.0",
     "lint-staged": "^16.1.2",
+    "oxlint": "^1.3.0",
     "perfy": "^1.1.5",
-    "postcss": "^8.4.14",
+    "postcss": "^8.5.6",
+    "postcss-value-parser": "^4.2.0",
     "pre-commit": "^1.2.2",
-    "rewiremock": "^3.14.3",
+    "prettier-plugin-package": "^1.4.0",
+    "rewiremock": "^3.14.6",
     "strip-ansi": "^7.1.0",
     "text-table": "^0.2.0",
     "tsx": "^4.20.3",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
   },
   "lint-staged": {
     "*.{ts,js}?(x)": [

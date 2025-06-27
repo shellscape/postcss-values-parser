@@ -1,111 +1,94 @@
-import { AnyNode, Builder } from 'postcss';
+/*
+  Copyright © 2025 Andrew Powell
 
-export class ValuesStringifier {
-  builder: (str: string, node?: any, type?: 'start' | 'end') => void;
+  This Source Code Form is subject to the terms of the Mozilla Public
+  License, v. 2.0. If a copy of the MPL was not distributed with this
+  file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-  constructor(builder: Builder) {
-    this.builder = builder;
-  }
+  The above copyright notice and this permission notice shall be
+  included in all copies or substantial portions of this Source Code Form.
+*/
 
-  raw(node: any, own: string, detect?: string): string {
-    let value = '';
-    if (own) {
-      value = node.raws[own];
-      if (typeof value !== 'undefined') return value;
-    }
-    if (detect && node.raws[detect]) {
-      value = node.raws[detect];
-    }
-    return value;
-  }
-
-  stringify(node: any): void {
-    const method = (this as any)[node.type];
-    if (method && typeof method === 'function') {
-      method.call(this, node);
-    }
-  }
-  basic(node: AnyNode, value: string | null = null) {
-    const print = value || (node as any).value;
-    const after = node.raws.after ? this.raw(node, 'after') || '' : '';
-    // NOTE: before is handled by postcss in stringifier.body
-
-    this.builder(print, node, 'start');
-    this.builder(after, node, 'end');
-  }
-
-  atword(...args: any) {
-    // @ts-ignore
-    this.atrule(...args);
-  }
-
-  comment(node: any) {
-    if (node.inline) {
-      const left = this.raw(node, 'left', 'commentLeft');
-      const right = this.raw(node, 'right', 'commentRight');
-      this.builder(`//${left}${node.text}${right}`, node);
-    } else {
-      // Handle regular comments
-      const left = this.raw(node, 'left', 'commentLeft');
-      const right = this.raw(node, 'right', 'commentRight');
-      this.builder(`/*${left}${node.text}${right}*/`, node);
-    }
-  }
-
-  func(node: any) {
-    const after = this.raw(node, 'after') || '';
-
-    this.builder(`${node.name}(`, node, 'start');
-
-    for (const child of node.nodes) {
-      // since we're duplicating this.body here, we have to handle `before`
-      // but we don't want the postcss default \n value, so check it's non-empty first
-      const before = child.raws.before ? this.raw(child, 'before') : '';
-      if (before) {
-        this.builder(before);
-      }
-      this.stringify(child);
-    }
-
-    this.builder(`)${after}`, node, 'end');
-  }
-
-  interpolation(node: any) {
-    this.basic(node, node.prefix + node.params);
-  }
-
-  numeric(node: any) {
-    const print = node.value + node.unit;
-    this.basic(node, print);
-  }
-
-  operator(node: any) {
-    this.basic(node);
-  }
-
-  // FIXME: we need to render parens correctly
-  parens(node: any) {
-    this.basic(node);
-  }
-
-  punctuation(node: any) {
-    this.basic(node);
-  }
-
-  quoted(node: any) {
-    this.basic(node);
-  }
-
-  unicodeRange(node: any) {
-    this.basic(node);
-  }
-
-  word(node: any) {
-    this.basic(node);
-  }
+interface Builder {
+  (part: string, node?: any, type?: 'start' | 'end'): void;
 }
 
-export const stringify = (node: any, builder: Builder) => {
-  const stringifier = new ValuesStringifier(builder);
-  stringifier.stringify(node);
+export interface Stringifier {
+  (node: any, builder: Builder): void;
+}
+
+const stringifyNode = (node: any, builder: Builder, parentNode?: any, index?: number): void => {
+  // Add space before non-operator nodes if needed
+  const needsSpaceAfter = (prevNode: any, currentNode: any) => {
+    if (!prevNode) return false;
+    if (prevNode.type === 'operator' || currentNode.type === 'operator') return false;
+    if (prevNode.type === 'punctuation' || currentNode.type === 'punctuation') return false;
+    return true;
+  };
+
+  // Add space before current node if needed
+  if (parentNode && parentNode.nodes && index !== undefined && index > 0) {
+    const prevNode = parentNode.nodes[index - 1];
+    if (needsSpaceAfter(prevNode, node)) {
+      builder(' ');
+    }
+  }
+
+  switch (node.type) {
+    case 'root':
+      if (node.nodes) {
+        for (let i = 0; i < node.nodes.length; i++) {
+          stringifyNode(node.nodes[i], builder, node, i);
+        }
+      }
+      break;
+
+    case 'func':
+      builder(node.name, node, 'start');
+      builder('(', node);
+      if (node.nodes) {
+        for (let i = 0; i < node.nodes.length; i++) {
+          stringifyNode(node.nodes[i], builder, node, i);
+        }
+      }
+      builder(')', node, 'end');
+      break;
+
+    case 'parentheses':
+      builder('(', node, 'start');
+      if (node.nodes) {
+        for (let i = 0; i < node.nodes.length; i++) {
+          stringifyNode(node.nodes[i], builder, node, i);
+        }
+      }
+      builder(')', node, 'end');
+      break;
+
+    case 'word':
+    case 'numeric':
+    case 'operator':
+    case 'quoted':
+    case 'unicodeRange':
+    case 'punctuation':
+      builder(node.value || '', node);
+      break;
+
+    case 'comment':
+      if (node.inline) {
+        builder(`//${node.text}`, node);
+      } else {
+        builder(`/*${node.text}*/`, node);
+      }
+      break;
+
+    default:
+      if (node.value) {
+        builder(node.value, node);
+      }
+      break;
+  }
+};
+
+export const stringify: Stringifier = (node: any, builder: Builder) => {
+  stringifyNode(node, builder);
 };

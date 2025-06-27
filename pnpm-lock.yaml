@@ -29,7 +29,7 @@ importers:
         version: 6.0.0
       '@ianvs/prettier-plugin-sort-imports':
         specifier: ^4.4.2
-        version: 4.4.2(prettier@2.7.1)
+        version: 4.4.2(prettier@3.6.2)
       '@types/color-name':
         specifier: ^2.0.0
         version: 2.0.0
@@ -75,9 +75,12 @@ importers:
       pre-commit:
         specifier: ^1.2.2
         version: 1.2.2
+      prettier:
+        specifier: ^3.6.2
+        version: 3.6.2
       prettier-plugin-package:
         specifier: ^1.4.0
-        version: 1.4.0(prettier@2.7.1)
+        version: 1.4.0(prettier@3.6.2)
       rewiremock:
         specifier: ^3.14.6
         version: 3.14.6
@@ -1524,9 +1527,9 @@ packages:
     peerDependencies:
       prettier: ^2.0.0 || ^3.0.0
 
-  prettier@2.7.1:
-    resolution: {integrity: sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==}
-    engines: {node: '>=10.13.0'}
+  prettier@3.6.2:
+    resolution: {integrity: sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==}
+    engines: {node: '>=14'}
     hasBin: true
 
   pretty-ms@9.2.0:
@@ -2154,13 +2157,13 @@ snapshots:
   '@esbuild/win32-x64@0.25.5':
     optional: true
 
-  '@ianvs/prettier-plugin-sort-imports@4.4.2(prettier@2.7.1)':
+  '@ianvs/prettier-plugin-sort-imports@4.4.2(prettier@3.6.2)':
     dependencies:
       '@babel/generator': 7.27.5
       '@babel/parser': 7.27.7
       '@babel/traverse': 7.27.7
       '@babel/types': 7.27.7
-      prettier: 2.7.1
+      prettier: 3.6.2
       semver: 7.7.2
     transitivePeerDependencies:
       - supports-color
@@ -3425,11 +3428,11 @@ snapshots:
       spawn-sync: 1.0.15
       which: 1.2.14
 
-  prettier-plugin-package@1.4.0(prettier@2.7.1):
+  prettier-plugin-package@1.4.0(prettier@3.6.2):
     dependencies:
-      prettier: 2.7.1
+      prettier: 3.6.2
 
-  prettier@2.7.1: {}
+  prettier@3.6.2: {}
 
   pretty-ms@9.2.0:
     dependencies:

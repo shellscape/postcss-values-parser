@@ -1,0 +1,47 @@
+name: Validate
+
+on:
+  pull_request:
+    types:
+      - edited
+      - opened
+      - synchronize
+  push:
+    branches:
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    name: Node v${{ matrix.node }}
+
+    steps:
+      - name: Checkout Commit
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.19.0
+
+      - name: Checkout Master
+        run: git branch -f master origin/master
+
+      - name: Install PNPM
+        uses: pnpm/action-setup@v4
+
+      - name: Sanity Check
+        run: |
+          echo branch `git branch --show-current`;
+          echo node `node --version`;
+          echo yarn `pnpm --version`
+
+      - name: pnpm install
+        run: pnpm install
+
+      - name: Lint Repo
+        run: pnpm lint
+
+      - name: Run Tests
+        run: pnpm test

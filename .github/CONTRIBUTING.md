@@ -7,7 +7,6 @@ We 💛 contributions! The rules for contributing to this org are few:
 1. Lint and run tests locally before submitting a PR
 1. Adhere to the code style the org has chosen
 
-
 ## Before Committing
 
 1. Use at least Node.js v6.14.4 or higher. [NVM](https://github.com/creationix/nvm) can be handy for switching between Node versions.

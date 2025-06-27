@@ -1,9 +1,7 @@
-[tests]: 	https://img.shields.io/circleci/project/github/shellscape/postcss-values-parser.svg
+[tests]: https://img.shields.io/circleci/project/github/shellscape/postcss-values-parser.svg
 [tests-url]: https://circleci.com/gh/shellscape/postcss-values-parser
-
 [cover]: https://codecov.io/gh/shellscape/postcss-values-parser/branch/master/graph/badge.svg
 [cover-url]: https://codecov.io/gh/shellscape/postcss-values-parser
-
 [size]: https://packagephobia.now.sh/badge?p=postcss-values-parser
 [size-url]: https://packagephobia.now.sh/result?p=postcss-values-parser
 

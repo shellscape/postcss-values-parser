@@ -1,0 +1,13 @@
+**/@codegen
+**/cdk.out
+**/dist/
+**/fixtures/
+**/snapshots/
+
+.cdk
+.github/PULL_REQUEST_TEMPLATE.md
+.moon/cache
+cdk.out
+dist
+
+pnpm-lock.yaml

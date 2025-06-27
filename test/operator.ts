@@ -11,7 +11,6 @@
 import test from 'ava';
 
 import { nodeToString, parse } from '../src';
-
 import { snapshot, throws } from './fixtures/operator.json';
 
 for (const fixture of snapshot) {

@@ -12,7 +12,6 @@ import test from 'ava';
 import { Container } from 'postcss';
 
 import { parse, registerWalkers } from '../src';
-
 import { values } from './fixtures/walker.json';
 
 registerWalkers(Container);

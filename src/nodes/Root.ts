@@ -11,7 +11,6 @@
 import { Root as PostCssRoot } from 'postcss';
 
 import { stringify } from '../stringify';
-
 import { Node } from './Node';
 
 export class Root extends PostCssRoot {

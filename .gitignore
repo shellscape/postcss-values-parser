@@ -1,10 +1,4 @@
 .DS_Store
-.eslintcache
-.nyc_output
-*~
-dist
-
-coverage.*
-node_modules/
 npm-debug.log
-test.ts
+dist
+node_modules

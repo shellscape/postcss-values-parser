@@ -9,7 +9,7 @@
   included in all copies or substantial portions of this Source Code Form.
 */
 
-import * as postcss from "postcss";
+import * as postcss from 'postcss';
 
 // Even though the concrete classes extend PostCSS classes, we can't extend
 // PostCSS Node types here because they refer to statements that aren't
@@ -29,15 +29,8 @@ export interface NodeBase {
   source?: postcss.Source;
   raws: any;
   toString(stringifier?: Stringifier | Syntax): string;
-  error(
-    message: string,
-    options?: postcss.NodeErrorOptions
-  ): postcss.CssSyntaxError;
-  warn(
-    result: postcss.Result,
-    text: string,
-    opts?: postcss.WarningOptions
-  ): void;
+  error(message: string, options?: postcss.NodeErrorOptions): postcss.CssSyntaxError;
+  warn(result: postcss.Result, text: string, opts?: postcss.WarningOptions): void;
   remove(): this;
   clone(overrides?: object): this;
   cloneBefore(overrides?: object): this;
@@ -50,24 +43,13 @@ export interface ContainerBase extends NodeBase {
   walkInterpolations(
     callback: (interpolation: Interpolation, index: number) => any
   ): boolean | void;
-  walkNumerics(
-    callback: (numeric: Numeric, index: number) => any
-  ): boolean | void;
-  walkOperators(
-    callback: (operator: Operator, index: number) => any
-  ): boolean | void;
-  walkPunctuations(
-    callback: (punctuation: Punctuation, index: number) => any
-  ): boolean | void;
+  walkNumerics(callback: (numeric: Numeric, index: number) => any): boolean | void;
+  walkOperators(callback: (operator: Operator, index: number) => any): boolean | void;
+  walkPunctuations(callback: (punctuation: Punctuation, index: number) => any): boolean | void;
   walkQuoteds(callback: (quoted: Quoted, index: number) => any): boolean | void;
-  walkUnicodeRanges(
-    callback: (unicodeRange: UnicodeRange, index: number) => any
-  ): boolean | void;
+  walkUnicodeRanges(callback: (unicodeRange: UnicodeRange, index: number) => any): boolean | void;
   walkWords(callback: (word: Word, index: number) => any): boolean | void;
-  walkType(
-    type: string,
-    callback: (node: ChildNode, index: number) => any
-  ): boolean | void;
+  walkType(type: string, callback: (node: ChildNode, index: number) => any): boolean | void;
 
   // Inherited from postcss.ContainerBase, but with our Node type.
   nodes: ChildNode[];
@@ -85,19 +67,11 @@ export interface ContainerBase extends NodeBase {
   each(callback: (node: ChildNode, index: number) => any): boolean | void;
   walk(callback: (node: ChildNode, index: number) => any): boolean | void;
   walkAtWords(callback: (atWord: AtWord, index: number) => any): boolean | void;
-  walkComments(
-    callback: (comment: Comment, index: number) => any
-  ): boolean | void;
+  walkComments(callback: (comment: Comment, index: number) => any): boolean | void;
   prepend(...nodes: Array<ChildNode | object | string>): this;
   append(...nodes: Array<ChildNode | object | string>): this;
-  insertBefore(
-    oldNode: ChildNode | number,
-    newNode: ChildNode | object | string
-  ): this;
-  insertAfter(
-    oldNode: ChildNode | number,
-    newNode: ChildNode | object | string
-  ): this;
+  insertBefore(oldNode: ChildNode | number, newNode: ChildNode | object | string): this;
+  insertAfter(oldNode: ChildNode | number, newNode: ChildNode | object | string): this;
   removeChild(child: ChildNode | number): this;
 
   // Inherited from postcss.ContainerBase with no changes.
@@ -107,12 +81,9 @@ export interface ContainerBase extends NodeBase {
 }
 
 export interface Root extends ContainerBase {
-  type: "root";
+  type: 'root';
   parent: undefined;
-  toResult(options?: {
-    to?: string;
-    map?: postcss.SourceMapOptions;
-  }): postcss.Result;
+  toResult(options?: { to?: string; map?: postcss.SourceMapOptions }): postcss.Result;
 }
 
 export type Node = Root | ChildNode;
@@ -132,21 +103,21 @@ export type ChildNode =
 export type Container = Root | Func | Interpolation;
 
 export interface AtWord extends ContainerBase {
-  type: "atrule";
+  type: 'atrule';
   parent: Container;
   name: string;
   params: string;
 }
 
 export interface Comment extends NodeBase {
-  type: "comment";
+  type: 'comment';
   parent: Container;
   inline: boolean;
   text: string;
 }
 
 export interface Func extends ContainerBase {
-  type: "func";
+  type: 'func';
   parent: Container;
   isColor: boolean;
   isVar: boolean;
@@ -155,33 +126,33 @@ export interface Func extends ContainerBase {
 }
 
 export interface Interpolation extends ContainerBase {
-  type: "interpolation";
+  type: 'interpolation';
   parent: Container;
   params: string;
   prefix: string;
 }
 
 export interface Numeric extends NodeBase {
-  type: "numeric";
+  type: 'numeric';
   parent: Container;
   unit: string;
   value: string;
 }
 
 export interface Operator extends NodeBase {
-  type: "operator";
+  type: 'operator';
   parent: Container;
   value: string;
 }
 
 export interface Punctuation extends NodeBase {
-  type: "punctuation";
+  type: 'punctuation';
   parent: Container;
   value: string;
 }
 
 export interface Quoted extends NodeBase {
-  type: "quoted";
+  type: 'quoted';
   parent: Container;
   quote: string;
   value: string;
@@ -189,13 +160,13 @@ export interface Quoted extends NodeBase {
 }
 
 export interface UnicodeRange extends NodeBase {
-  type: "unicodeRange";
+  type: 'unicodeRange';
   parent: Container;
   name: string;
 }
 
 export interface Word extends NodeBase {
-  type: "word";
+  type: 'word';
   parent: Container;
   isColor: boolean;
   isHex: boolean;
@@ -225,7 +196,7 @@ interface Syntax {
 }
 
 interface Builder {
-  (part: string, node?: Node, type?: "start" | "end"): void;
+  (part: string, node?: Node, type?: 'start' | 'end'): void;
 }
 
 export interface Stringifier {

@@ -11,7 +11,6 @@
 import { Input, Container as PostCssContainer } from 'postcss';
 
 import { stringify } from '../stringify';
-
 import { Node, NodeOptions } from './Node';
 
 export class Container extends PostCssContainer {

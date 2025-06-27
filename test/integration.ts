@@ -14,7 +14,6 @@
 import test from 'ava';
 
 import { nodeToString, parse } from '../src';
-
 import { Operator } from '../src/nodes';
 
 test('integration', (t) => {

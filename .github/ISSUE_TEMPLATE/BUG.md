@@ -1,7 +1,6 @@
 ---
 name: 🐞 Bug Report
 about: Something went awry and you'd like to tell us about it.
-
 ---
 
 <!--
@@ -26,9 +25,7 @@ about: Something went awry and you'd like to tell us about it.
   3. Provide a minimal repository link (Read https://git.io/fNzHA for instructions). These may take more time to triage than the other options.
 -->
 
-
 ### Expected Behavior
-
 
 ### Actual Behavior
 

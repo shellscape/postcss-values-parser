@@ -1,7 +1,7 @@
-const rewiremock = require('rewiremock/node');
+import rewiremock from 'rewiremock/node';
 
 // Configure and enable Rewiremock
-rewiremock.overrideEntryPoint(module);
+rewiremock.overrideEntryPoint(import.meta.url);
 rewiremock.enable();
 
 // Override the nanoid/non-secure module to produce a predictable nonrandom ID
@@ -9,4 +9,4 @@ rewiremock.enable();
 // Random IDs and this breaks snapshots since these are different at each run.
 rewiremock('nanoid/non-secure').with({ nanoid: () => 1 });
 
-module.exports = rewiremock;
+export default rewiremock;

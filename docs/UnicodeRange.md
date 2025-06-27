@@ -5,10 +5,12 @@ The `UnicodeRange` node inherits directly from `Node` in PostCSS. This node repr
 ## Properties
 
 ### `type`
+
 Type: `String`
 Value: `'unicodeRange'`
 
 ### `name`
+
 Type: `String`<br>
 
 A `String` representation of the unicode range specified.

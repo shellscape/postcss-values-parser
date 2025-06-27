@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   extensions: ['ts'],
   files: ['!**/fixtures/**', '!**/helpers/**', '!**/rewiremock.js'],
   require: ['ts-node/register', './test/rewiremock.js']

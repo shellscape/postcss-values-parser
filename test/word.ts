@@ -11,7 +11,6 @@
 import test from 'ava';
 
 import { nodeToString, parse } from '../src';
-
 import { snapshot } from './fixtures/word.json';
 
 for (const fixture of snapshot) {

@@ -5,30 +5,36 @@ The `Word` node inherits directly from `Node` in PostCSS. This node is a catch-a
 ## Properties
 
 ### `isColor`
+
 Type: `Boolean`<br>
 
 If `true`, denotes that the word represents a color.
 
 ### `isHex`
+
 Type: `Boolean`<br>
 
 If `true`, denotes that the word represents a hexadecimal value.
 
 ### `isUrl`
+
 Type: `Boolean`<br>
 
 If `true`, denotes that the word represents a Universal Resource Locator (URL).
 
 ### `isVariable`
+
 Type: `Boolean`<br>
 
 If `true`, denotes that the word represents a CSS variable.
 
 ### `type`
+
 Type: `String`
 Value: `'word'`
 
 ### `value`
+
 Type: `String`<br>
 
 The value of the word.
@@ -42,7 +48,6 @@ The value of the word.
   -webkit-transition
   #fff
 ```
-
 
 this.isColor = false;
 this.isHex = false;

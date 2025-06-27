@@ -11,57 +11,33 @@
   },
   "homepage": "https://github.com/shellscape/postcss-values-parser",
   "bugs": "https://github.com/shellscape/postcss-values-parser/issues",
-  "main": "dist/index.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
   "engines": {
-    "node": ">=12"
+    "node": ">=20.19.0"
   },
   "scripts": {
     "build": "tsc --project tsconfig.json",
-    "ci:coverage": "nyc pnpm ci:test && nyc report --reporter=text-lcov > coverage.lcov",
-    "ci:lint": "pnpm lint && pnpm security",
-    "ci:test": "pnpm test -- --verbose",
     "lint": "pnpm lint:docs && pnpm lint:json && pnpm lint:js",
     "lint-staged": "lint-staged",
     "lint:docs": "prettier --write README.md",
-    "lint:js": "eslint --cache --fix --cache src test",
+    "lint:js": "oxlint --format stylish --fix src test",
     "lint:json": "prettier --write codecov.yml package.json",
+    "prepare": "husky",
     "prepublishOnly": "pnpm lint && pnpm build",
     "security": "pnpm audit --audit-level=high --prod",
-    "test": "ava test/variable.ts"
+    "test": "ava test/numeric.ts"
   },
   "files": [
     "dist",
-    "LICENSE",
-    "README.md"
+    "README.md",
+    "LICENSE"
   ],
-  "dependencies": {
-    "color-name": "^1.1.4",
-    "css-tree": "^2.1.0",
-    "is-url-superb": "^4.0.0",
-    "quote-unquote": "^1.0.0",
-    "ts-node": "^10.8.2"
-  },
-  "devDependencies": {
-    "@types/color-name": "^1.1.1",
-    "@types/css-tree": "^1.0.7",
-    "@types/node": "^18.0.3",
-    "ava": "^4.3.0",
-    "chalk": "^4.1.0",
-    "eslint-config-shellscape": "^5.0.2",
-    "globby": "^11.0.1",
-    "lint-staged": "^10.4.0",
-    "nyc": "^15.1.0",
-    "perfy": "^1.1.5",
-    "postcss": "^8.4.14",
-    "pre-commit": "^1.2.2",
-    "rewiremock": "^3.14.3",
-    "strip-ansi": "^6.0.0",
-    "text-table": "^0.2.0",
-    "typescript": "^4.2.3"
-  },
-  "peerDependencies": {
-    "postcss": "^8.4.14"
-  },
   "keywords": [
     "css",
     "less",
@@ -73,18 +49,53 @@
     "parsing",
     "properties"
   ],
+  "peerDependencies": {
+    "postcss": "^8.4.14"
+  },
+  "dependencies": {
+    "color-name": "^1.1.4",
+    "css-tree": "^2.1.0",
+    "husky": "^9.1.7",
+    "is-url-superb": "^4.0.0",
+    "oxlint": "^1.3.0",
+    "prettier-plugin-package": "^1.4.0",
+    "quote-unquote": "^1.0.0"
+  },
+  "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
+    "@types/color-name": "^2.0.0",
+    "@types/css-tree": "^2.3.10",
+    "@types/node": "^24.0.4",
+    "ava": "^6.4.0",
+    "chalk": "^5.4.1",
+    "globby": "^14.1.0",
+    "lint-staged": "^16.1.2",
+    "perfy": "^1.1.5",
+    "postcss": "^8.4.14",
+    "pre-commit": "^1.2.2",
+    "rewiremock": "^3.14.3",
+    "strip-ansi": "^7.1.0",
+    "text-table": "^0.2.0",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  },
   "lint-staged": {
-    "*.js": [
-      "eslint --fix"
-    ]
-  },
-  "nyc": {
-    "include": [
-      "lib/*.js"
+    "*.{ts,js}?(x)": [
+      "oxlint --format stylish --fix",
+      "prettier --write"
     ],
-    "exclude": [
-      "test/"
+    "**/(package|tsconfig(.*)?).json": [
+      "prettier --write"
+    ],
+    "(pnpm-workspace|.github/**/*).{yml,yaml}": [
+      "prettier --write"
+    ],
+    "*package.json": [
+      "prettier --write --plugin=prettier-plugin-package"
+    ],
+    "((.github/**/*)|(README|CHANGELOG)|(**/(README|CHANGELOG))).md": [
+      "prettier --write"
     ]
   },
-  "pre-commit": "lint-staged"
+  "packageManager": "pnpm@10.12.4"
 }

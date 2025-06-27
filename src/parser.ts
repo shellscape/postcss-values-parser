@@ -8,7 +8,7 @@
   The above copyright notice and this permission notice shall be
   included in all copies or substantial portions of this Source Code Form.
 */
-import { parse as parseAst, CssNode, CssNodePlain, List, Value } from 'css-tree';
+import { CssNode, CssNodePlain, List, parse as parseAst, Value } from 'css-tree';
 import { Input } from 'postcss';
 
 import { AstError, ParseError } from './errors';

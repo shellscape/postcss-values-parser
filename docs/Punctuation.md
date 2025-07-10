@@ -5,10 +5,12 @@ The `Punctuation` node inherits directly from `Node` in PostCSS. This node repre
 ## Properties
 
 ### `type`
+
 Type: `String`
 Value: `'punctuation'`
 
 ### `value`
+
 Type: `String`<br>
 
 A `String` representation of the punctuation character.

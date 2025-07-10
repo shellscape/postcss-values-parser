@@ -5,15 +5,18 @@ The `Numeric` node inherits directly from `Node` in PostCSS. This node represent
 ## Properties
 
 ### `type`
+
 Type: `String`
 Value: `'numeric'`
 
 ### `unit`
+
 Type: `String`<br>
 
 The unit of the numeric figure, if one was used. Valid units are: `%, ch, cm, em, ex, in, mm, pc, pt, px, rem, vh, vmax, vmin, vw`.
 
 ### `value`
+
 Type: `String`<br>
 
 A `String` representation of the numeric figure, without unit.

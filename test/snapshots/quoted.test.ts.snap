@@ -1,0 +1,1097 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`quoted parsing >  "foo"  should be cloned 1`] = `""foo""`;
+
+exports[`quoted parsing >  "foo"  should be cloned 2`] = `""foo""`;
+
+exports[`quoted parsing >  "foo"  should be cloned 3`] = `
+[
+  {
+    "contents": "foo",
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "quote": """,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 7,
+        "line": 1,
+        "offset": 6,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 2,
+        "line": 1,
+        "offset": 1,
+      },
+    },
+    "type": "quoted",
+    "value": ""foo"",
+  },
+]
+`;
+
+exports[`quoted parsing >  \\"word\\'\\ \\	  should be cloned 1`] = `"\\"word\\'\\ \\	"`;
+
+exports[`quoted parsing >  \\"word\\'\\ \\	  should be cloned 2`] = `"\\"word\\'\\ \\	"`;
+
+exports[`quoted parsing >  \\"word\\'\\ \\	  should be cloned 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isHex": false,
+    "isUrl": false,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 14,
+        "line": 1,
+        "offset": 13,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 2,
+        "line": 1,
+        "offset": 1,
+      },
+    },
+    "type": "word",
+    "value": "\\"word\\'\\ \\	",
+  },
+]
+`;
+
+exports[`quoted parsing > "" should be cloned 1`] = `""""`;
+
+exports[`quoted parsing > "" should be cloned 2`] = `""""`;
+
+exports[`quoted parsing > "" should be cloned 3`] = `
+[
+  {
+    "contents": "",
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "quote": """,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 3,
+        "line": 1,
+        "offset": 2,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "quoted",
+    "value": """",
+  },
+]
+`;
+
+exports[`quoted parsing > "string" should be cloned 1`] = `""string""`;
+
+exports[`quoted parsing > "string" should be cloned 2`] = `""string""`;
+
+exports[`quoted parsing > "string" should be cloned 3`] = `
+[
+  {
+    "contents": "string",
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "quote": """,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 9,
+        "line": 1,
+        "offset": 8,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "quoted",
+    "value": ""string"",
+  },
+]
+`;
+
+exports[`quoted parsing > "word should be cloned 1`] = `""word"`;
+
+exports[`quoted parsing > "word should be cloned 2`] = `""word"`;
+
+exports[`quoted parsing > "word should be cloned 3`] = `
+[
+  {
+    "contents": "word",
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "quote": """,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 6,
+        "line": 1,
+        "offset": 5,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "quoted",
+    "value": ""word",
+  },
+]
+`;
+
+exports[`quoted parsing > "word\\ should be cloned 1`] = `""word\\"`;
+
+exports[`quoted parsing > "word\\ should be cloned 2`] = `""word\\"`;
+
+exports[`quoted parsing > "word\\ should be cloned 3`] = `
+[
+  {
+    "contents": "word",
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "quote": """,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 7,
+        "line": 1,
+        "offset": 6,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "quoted",
+    "value": ""word\\",
+  },
+]
+`;
+
+exports[`quoted parsing > "word\\'word" should be cloned 1`] = `""word\\'word""`;
+
+exports[`quoted parsing > "word\\'word" should be cloned 2`] = `""word\\'word""`;
+
+exports[`quoted parsing > "word\\'word" should be cloned 3`] = `
+[
+  {
+    "contents": "word'word",
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "quote": """,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 13,
+        "line": 1,
+        "offset": 12,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "quoted",
+    "value": ""word\\'word"",
+  },
+]
+`;
+
+exports[`quoted parsing > "word\\\\"word" should be cloned 1`] = `""word\\\\""`;
+
+exports[`quoted parsing > "word\\\\"word" should be cloned 2`] = `""word\\\\" word ""`;
+
+exports[`quoted parsing > "word\\\\"word" should be cloned 3`] = `
+[
+  {
+    "contents": "word\\",
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "quote": """,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 9,
+        "line": 1,
+        "offset": 8,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "quoted",
+    "value": ""word\\\\"",
+  },
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isHex": false,
+    "isUrl": false,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 13,
+        "line": 1,
+        "offset": 12,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 9,
+        "line": 1,
+        "offset": 8,
+      },
+    },
+    "type": "word",
+    "value": "word",
+  },
+  {
+    "contents": "",
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "quote": """,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 14,
+        "line": 1,
+        "offset": 13,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 13,
+        "line": 1,
+        "offset": 12,
+      },
+    },
+    "type": "quoted",
+    "value": """,
+  },
+]
+`;
+
+exports[`quoted parsing > '' should be cloned 1`] = `"''"`;
+
+exports[`quoted parsing > '' should be cloned 2`] = `"''"`;
+
+exports[`quoted parsing > '' should be cloned 3`] = `
+[
+  {
+    "contents": "",
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "quote": "'",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 3,
+        "line": 1,
+        "offset": 2,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "quoted",
+    "value": "''",
+  },
+]
+`;
+
+exports[`quoted parsing > 'word"word' should be cloned 1`] = `"'word"word'"`;
+
+exports[`quoted parsing > 'word"word' should be cloned 2`] = `"'word"word'"`;
+
+exports[`quoted parsing > 'word"word' should be cloned 3`] = `
+[
+  {
+    "contents": "word"word",
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "quote": "'",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 12,
+        "line": 1,
+        "offset": 11,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "quoted",
+    "value": "'word"word'",
+  },
+]
+`;
+
+exports[`quoted parsing > 'word\\'word' should be cloned 1`] = `"'word\\'word'"`;
+
+exports[`quoted parsing > 'word\\'word' should be cloned 2`] = `"'word\\'word'"`;
+
+exports[`quoted parsing > 'word\\'word' should be cloned 3`] = `
+[
+  {
+    "contents": "word'word",
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "quote": "'",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 13,
+        "line": 1,
+        "offset": 12,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "quoted",
+    "value": "'word\\'word'",
+  },
+]
+`;
+
+exports[`quoted parsing > should parse:  "foo"  1`] = `""foo""`;
+
+exports[`quoted parsing > should parse:  "foo"  2`] = `""foo""`;
+
+exports[`quoted parsing > should parse:  "foo"  3`] = `
+[
+  {
+    "contents": "foo",
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "quote": """,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 7,
+        "line": 1,
+        "offset": 6,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 2,
+        "line": 1,
+        "offset": 1,
+      },
+    },
+    "type": "quoted",
+    "value": ""foo"",
+  },
+]
+`;
+
+exports[`quoted parsing > should parse:  \\"word\\'\\ \\	  1`] = `"\\"word\\'\\ \\	"`;
+
+exports[`quoted parsing > should parse:  \\"word\\'\\ \\	  2`] = `"\\"word\\'\\ \\	"`;
+
+exports[`quoted parsing > should parse:  \\"word\\'\\ \\	  3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isHex": false,
+    "isUrl": false,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 14,
+        "line": 1,
+        "offset": 13,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 2,
+        "line": 1,
+        "offset": 1,
+      },
+    },
+    "type": "word",
+    "value": "\\"word\\'\\ \\	",
+  },
+]
+`;
+
+exports[`quoted parsing > should parse: "" 1`] = `""""`;
+
+exports[`quoted parsing > should parse: "" 2`] = `""""`;
+
+exports[`quoted parsing > should parse: "" 3`] = `
+[
+  {
+    "contents": "",
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "quote": """,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 3,
+        "line": 1,
+        "offset": 2,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "quoted",
+    "value": """",
+  },
+]
+`;
+
+exports[`quoted parsing > should parse: "string" 1`] = `""string""`;
+
+exports[`quoted parsing > should parse: "string" 2`] = `""string""`;
+
+exports[`quoted parsing > should parse: "string" 3`] = `
+[
+  {
+    "contents": "string",
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "quote": """,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 9,
+        "line": 1,
+        "offset": 8,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "quoted",
+    "value": ""string"",
+  },
+]
+`;
+
+exports[`quoted parsing > should parse: "word 1`] = `""word"`;
+
+exports[`quoted parsing > should parse: "word 2`] = `""word"`;
+
+exports[`quoted parsing > should parse: "word 3`] = `
+[
+  {
+    "contents": "word",
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "quote": """,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 6,
+        "line": 1,
+        "offset": 5,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "quoted",
+    "value": ""word",
+  },
+]
+`;
+
+exports[`quoted parsing > should parse: "word\\ 1`] = `""word\\"`;
+
+exports[`quoted parsing > should parse: "word\\ 2`] = `""word\\"`;
+
+exports[`quoted parsing > should parse: "word\\ 3`] = `
+[
+  {
+    "contents": "word",
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "quote": """,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 7,
+        "line": 1,
+        "offset": 6,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "quoted",
+    "value": ""word\\",
+  },
+]
+`;
+
+exports[`quoted parsing > should parse: "word\\'word" 1`] = `""word\\'word""`;
+
+exports[`quoted parsing > should parse: "word\\'word" 2`] = `""word\\'word""`;
+
+exports[`quoted parsing > should parse: "word\\'word" 3`] = `
+[
+  {
+    "contents": "word'word",
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "quote": """,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 13,
+        "line": 1,
+        "offset": 12,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "quoted",
+    "value": ""word\\'word"",
+  },
+]
+`;
+
+exports[`quoted parsing > should parse: "word\\\\"word" 1`] = `""word\\\\""`;
+
+exports[`quoted parsing > should parse: "word\\\\"word" 2`] = `""word\\\\" word ""`;
+
+exports[`quoted parsing > should parse: "word\\\\"word" 3`] = `
+[
+  {
+    "contents": "word\\",
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "quote": """,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 9,
+        "line": 1,
+        "offset": 8,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "quoted",
+    "value": ""word\\\\"",
+  },
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isHex": false,
+    "isUrl": false,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 13,
+        "line": 1,
+        "offset": 12,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 9,
+        "line": 1,
+        "offset": 8,
+      },
+    },
+    "type": "word",
+    "value": "word",
+  },
+  {
+    "contents": "",
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "quote": """,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 14,
+        "line": 1,
+        "offset": 13,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 13,
+        "line": 1,
+        "offset": 12,
+      },
+    },
+    "type": "quoted",
+    "value": """,
+  },
+]
+`;
+
+exports[`quoted parsing > should parse: '' 1`] = `"''"`;
+
+exports[`quoted parsing > should parse: '' 2`] = `"''"`;
+
+exports[`quoted parsing > should parse: '' 3`] = `
+[
+  {
+    "contents": "",
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "quote": "'",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 3,
+        "line": 1,
+        "offset": 2,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "quoted",
+    "value": "''",
+  },
+]
+`;
+
+exports[`quoted parsing > should parse: 'word"word' 1`] = `"'word"word'"`;
+
+exports[`quoted parsing > should parse: 'word"word' 2`] = `"'word"word'"`;
+
+exports[`quoted parsing > should parse: 'word"word' 3`] = `
+[
+  {
+    "contents": "word"word",
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "quote": "'",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 12,
+        "line": 1,
+        "offset": 11,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "quoted",
+    "value": "'word"word'",
+  },
+]
+`;
+
+exports[`quoted parsing > should parse: 'word\\'word' 1`] = `"'word\\'word'"`;
+
+exports[`quoted parsing > should parse: 'word\\'word' 2`] = `"'word\\'word'"`;
+
+exports[`quoted parsing > should parse: 'word\\'word' 3`] = `
+[
+  {
+    "contents": "word'word",
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "quote": "'",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 13,
+        "line": 1,
+        "offset": 12,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "quoted",
+    "value": "'word\\'word'",
+  },
+]
+`;
+
+exports[`quoted parsing > should parse: word1"string"word2 1`] = `"word1"`;
+
+exports[`quoted parsing > should parse: word1"string"word2 2`] = `"word1 "string" word2"`;
+
+exports[`quoted parsing > should parse: word1"string"word2 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isHex": false,
+    "isUrl": false,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 6,
+        "line": 1,
+        "offset": 5,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "word",
+    "value": "word1",
+  },
+  {
+    "contents": "string",
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "quote": """,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 14,
+        "line": 1,
+        "offset": 13,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 6,
+        "line": 1,
+        "offset": 5,
+      },
+    },
+    "type": "quoted",
+    "value": ""string"",
+  },
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isHex": false,
+    "isUrl": false,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 19,
+        "line": 1,
+        "offset": 18,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 14,
+        "line": 1,
+        "offset": 13,
+      },
+    },
+    "type": "word",
+    "value": "word2",
+  },
+]
+`;
+
+exports[`quoted parsing > word1"string"word2 should be cloned 1`] = `"word1"`;
+
+exports[`quoted parsing > word1"string"word2 should be cloned 2`] = `"word1 "string" word2"`;
+
+exports[`quoted parsing > word1"string"word2 should be cloned 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isHex": false,
+    "isUrl": false,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 6,
+        "line": 1,
+        "offset": 5,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "word",
+    "value": "word1",
+  },
+  {
+    "contents": "string",
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "quote": """,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 14,
+        "line": 1,
+        "offset": 13,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 6,
+        "line": 1,
+        "offset": 5,
+      },
+    },
+    "type": "quoted",
+    "value": ""string"",
+  },
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isHex": false,
+    "isUrl": false,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 19,
+        "line": 1,
+        "offset": 18,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 14,
+        "line": 1,
+        "offset": 13,
+      },
+    },
+    "type": "word",
+    "value": "word2",
+  },
+]
+`;

@@ -3,6 +3,7 @@
 This module exports the following methods:
 
 ### `parse(css, options)`
+
 Returns: `Root<Node>`<br>
 
 Parses a given `String` and returns an AST with a `Root` node. If the input is an invalid CSS value, a `CSSSyntaxError` is thrown.
@@ -10,21 +11,25 @@ Parses a given `String` and returns an AST with a `Root` node. If the input is a
 #### Parameters
 
 #### `css`
+
 Type: `String`<br>
 _Required_
 
 #### `options`
+
 Type: `Object`
 
 ##### Properties
 
 ##### `ignoreUnknownWords`
+
 Type: `Boolean`<br>
 Default: `false`
 
 If `true`, will allow all unknown parts of the value to be parsed and added to the AST. Similar functionality in the previous version went by the `loose` option name. If `false`, unknown values will throw `CssSyntaxError`.
 
 ##### `interpolation`
+
 Type: `Boolean|Object`<br>
 Default: `false`
 
@@ -32,6 +37,7 @@ Set this option to enable parsing of interpolated values for languages such as S
 `interpolation: { prefix: '@' }` will allow parsing of the interpolated value `@{batman}` which uses `@` as the "prefix". For SCSS one might use `interpolation: { prefix: '#' }`.
 
 ##### `variables`
+
 Type: `Object`<br>
 Default: `{ prefixes: ['--'] }`
 
@@ -44,12 +50,14 @@ A `Function` with a signature matching `(bit) => {}` used to concatenate or mani
 #### Parameters
 
 #### `node`
+
 Type: `Node`<br>
 _Required_
 
 The `Node` to stringify.
 
 #### `builder`
+
 Type: `Function`
 _Required_
 
@@ -60,5 +68,6 @@ Transforms a `Node` into its `String` representation.
 #### Parameters
 
 #### `node`
+
 Type: `Node`<br>
 _Required_

@@ -1,6 +1,6 @@
 {
   "name": "postcss-values-parser",
-  "version": "6.0.2",
+  "version": "7.0.0",
   "description": "A CSS property value parser for use with PostCSS",
   "license": "MPL-2.0",
   "repository": "shellscape/postcss-values-parser",
@@ -11,50 +11,35 @@
   },
   "homepage": "https://github.com/shellscape/postcss-values-parser",
   "bugs": "https://github.com/shellscape/postcss-values-parser/issues",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
   "engines": {
-    "node": ">=10"
+    "node": ">=20.19.0"
   },
   "scripts": {
-    "ci:coverage": "nyc npm run test && nyc report --reporter=text-lcov > coverage.lcov",
-    "ci:test": "npm run test",
-    "lint": "eslint lib test --fix --cache",
-    "check-types": "tsc --noEmit",
+    "build": "tsc --project tsconfig.json",
+    "lint": "pnpm lint:docs && pnpm lint:json && pnpm lint:js",
     "lint-staged": "lint-staged",
-    "security": "npm audit --audit-level=high --prod",
-    "test": "ava"
+    "lint:docs": "prettier --write README.md",
+    "lint:js": "oxlint --format stylish --fix src test",
+    "lint:json": "prettier --write package.json",
+    "perf": "pnpm build && tsx perf/perf.ts",
+    "prepare": "husky",
+    "prepublishOnly": "pnpm lint && pnpm build",
+    "security": "pnpm audit --audit-level=high --prod",
+    "test": "pnpm build && vitest run",
+    "test:watch": "pnpm build && vitest"
   },
   "files": [
-    "lib",
-    "LICENSE",
-    "README.md"
+    "dist",
+    "README.md",
+    "LICENSE"
   ],
-  "dependencies": {
-    "color-name": "^1.1.4",
-    "is-url-superb": "^4.0.0",
-    "quote-unquote": "^1.0.0"
-  },
-  "devDependencies": {
-    "ava": "^3.12.1",
-    "chalk": "^4.1.0",
-    "eslint-config-shellscape": "^2.1.0",
-    "globby": "^11.0.1",
-    "lint-staged": "^10.4.0",
-    "nyc": "^15.1.0",
-    "perfy": "^1.1.5",
-    "postcss": "^8.2.9",
-    "postcss-value-parser": "^4.1.0",
-    "pre-commit": "^1.2.2",
-    "prettier": "^2.1.2",
-    "rewiremock": "^3.14.3",
-    "strip-ansi": "^6.0.0",
-    "text-table": "^0.2.0",
-    "typescript": "^4.2.3"
-  },
-  "peerDependencies": {
-    "postcss": "^8.2.9"
-  },
   "keywords": [
     "css",
     "less",
@@ -66,28 +51,60 @@
     "parsing",
     "properties"
   ],
-  "ava": {
-    "files": [
-      "!**/fixtures/**",
-      "!**/helpers/**",
-      "!**/rewiremock.js"
-    ],
-    "require": [
-      "./test/rewiremock.js"
-    ]
+  "peerDependencies": {
+    "postcss": "^8.4.14"
+  },
+  "dependencies": {
+    "color-name": "^1.1.4",
+    "css-tree": "^3.1.0",
+    "husky": "^9.1.7",
+    "is-url-superb": "^4.0.0",
+    "quote-unquote": "^1.0.0"
+  },
+  "devDependencies": {
+    "@ava/typescript": "^6.0.0",
+    "@ianvs/prettier-plugin-sort-imports": "^4.4.2",
+    "@types/color-name": "^2.0.0",
+    "@types/css-tree": "^2.3.10",
+    "@types/node": "^24.0.6",
+    "@types/perfy": "^1.1.2",
+    "@types/text-table": "^0.2.5",
+    "@vitest/ui": "^3.2.4",
+    "ava": "^6.4.0",
+    "chalk": "^5.4.1",
+    "globby": "^14.1.0",
+    "lint-staged": "^16.1.2",
+    "oxlint": "^1.3.0",
+    "perfy": "^1.1.5",
+    "postcss": "^8.5.6",
+    "postcss-value-parser": "^4.2.0",
+    "pre-commit": "^1.2.2",
+    "prettier": "^3.6.2",
+    "prettier-plugin-package": "^1.4.0",
+    "rewiremock": "^3.14.6",
+    "strip-ansi": "^7.1.0",
+    "text-table": "^0.2.0",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
   },
   "lint-staged": {
-    "*.js": [
-      "eslint --fix"
-    ]
-  },
-  "nyc": {
-    "include": [
-      "lib/*.js"
+    "*.{ts,js}?(x)": [
+      "oxlint --format stylish --fix",
+      "prettier --write"
     ],
-    "exclude": [
-      "test/"
+    "**/(package|tsconfig(.*)?).json": [
+      "prettier --write"
+    ],
+    "(pnpm-workspace|.github/**/*).{yml,yaml}": [
+      "prettier --write"
+    ],
+    "*package.json": [
+      "prettier --write --plugin=prettier-plugin-package"
+    ],
+    "((.github/**/*)|(README|CHANGELOG)|(**/(README|CHANGELOG))).md": [
+      "prettier --write"
     ]
   },
-  "pre-commit": "lint-staged"
+  "packageManager": "pnpm@10.12.4"
 }

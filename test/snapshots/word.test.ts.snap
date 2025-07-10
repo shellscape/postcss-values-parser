@@ -1,0 +1,752 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`word parsing > should parse:  \\"word\\" \\s  1`] = `"\\"word\\""`;
+
+exports[`word parsing > should parse:  \\"word\\" \\s  2`] = `"\\"word\\" \\s"`;
+
+exports[`word parsing > should parse:  \\"word\\" \\s  3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isHex": false,
+    "isUrl": false,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 10,
+        "line": 1,
+        "offset": 9,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 2,
+        "line": 1,
+        "offset": 1,
+      },
+    },
+    "type": "word",
+    "value": "\\"word\\"",
+  },
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isHex": false,
+    "isUrl": false,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 13,
+        "line": 1,
+        "offset": 12,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 11,
+        "line": 1,
+        "offset": 10,
+      },
+    },
+    "type": "word",
+    "value": "\\s",
+  },
+]
+`;
+
+exports[`word parsing > should parse: #123 #f09f #abcdef #a2b3c4d5 1`] = `"#123"`;
+
+exports[`word parsing > should parse: #123 #f09f #abcdef #a2b3c4d5 2`] = `"#123 #f09f #abcdef #a2b3c4d5"`;
+
+exports[`word parsing > should parse: #123 #f09f #abcdef #a2b3c4d5 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": true,
+    "isHex": true,
+    "isUrl": false,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 5,
+        "line": 1,
+        "offset": 4,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "word",
+    "value": "#123",
+  },
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": true,
+    "isHex": true,
+    "isUrl": false,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 11,
+        "line": 1,
+        "offset": 10,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 6,
+        "line": 1,
+        "offset": 5,
+      },
+    },
+    "type": "word",
+    "value": "#f09f",
+  },
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": true,
+    "isHex": true,
+    "isUrl": false,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 19,
+        "line": 1,
+        "offset": 18,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 12,
+        "line": 1,
+        "offset": 11,
+      },
+    },
+    "type": "word",
+    "value": "#abcdef",
+  },
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": true,
+    "isHex": true,
+    "isUrl": false,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 29,
+        "line": 1,
+        "offset": 28,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 20,
+        "line": 1,
+        "offset": 19,
+      },
+    },
+    "type": "word",
+    "value": "#a2b3c4d5",
+  },
+]
+`;
+
+exports[`word parsing > should parse: #fff 1`] = `"#fff"`;
+
+exports[`word parsing > should parse: #fff 2`] = `"#fff"`;
+
+exports[`word parsing > should parse: #fff 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": true,
+    "isHex": true,
+    "isUrl": false,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 5,
+        "line": 1,
+        "offset": 4,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "word",
+    "value": "#fff",
+  },
+]
+`;
+
+exports[`word parsing > should parse: --color 1`] = `"--color"`;
+
+exports[`word parsing > should parse: --color 2`] = `"--color"`;
+
+exports[`word parsing > should parse: --color 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isHex": false,
+    "isUrl": false,
+    "isVariable": true,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 8,
+        "line": 1,
+        "offset": 7,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "word",
+    "value": "--color",
+  },
+]
+`;
+
+exports[`word parsing > should parse: -webkit-transition 1`] = `"-webkit-transition"`;
+
+exports[`word parsing > should parse: -webkit-transition 2`] = `"-webkit-transition"`;
+
+exports[`word parsing > should parse: -webkit-transition 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isHex": false,
+    "isUrl": false,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 19,
+        "line": 1,
+        "offset": 18,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "word",
+    "value": "-webkit-transition",
+  },
+]
+`;
+
+exports[`word parsing > should parse: BLANCHEDALMOND 1`] = `"BLANCHEDALMOND"`;
+
+exports[`word parsing > should parse: BLANCHEDALMOND 2`] = `"BLANCHEDALMOND"`;
+
+exports[`word parsing > should parse: BLANCHEDALMOND 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": true,
+    "isHex": false,
+    "isUrl": false,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 15,
+        "line": 1,
+        "offset": 14,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "word",
+    "value": "BLANCHEDALMOND",
+  },
+]
+`;
+
+exports[`word parsing > should parse: blAncHedaLmoNd 1`] = `"blAncHedaLmoNd"`;
+
+exports[`word parsing > should parse: blAncHedaLmoNd 2`] = `"blAncHedaLmoNd"`;
+
+exports[`word parsing > should parse: blAncHedaLmoNd 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": true,
+    "isHex": false,
+    "isUrl": false,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 15,
+        "line": 1,
+        "offset": 14,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "word",
+    "value": "blAncHedaLmoNd",
+  },
+]
+`;
+
+exports[`word parsing > should parse: blanchedalmond 1`] = `"blanchedalmond"`;
+
+exports[`word parsing > should parse: blanchedalmond 2`] = `"blanchedalmond"`;
+
+exports[`word parsing > should parse: blanchedalmond 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": true,
+    "isHex": false,
+    "isUrl": false,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 15,
+        "line": 1,
+        "offset": 14,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "word",
+    "value": "blanchedalmond",
+  },
+]
+`;
+
+exports[`word parsing > should parse: bold italic 12px 	 /3 'Open Sans', Arial, "Helvetica Neue", sans-serif 1`] = `"bold"`;
+
+exports[`word parsing > should parse: bold italic 12px 	 /3 'Open Sans', Arial, "Helvetica Neue", sans-serif 2`] = `"bold italic 12/3 'Open Sans',Arial,"Helvetica Neue",sans-serif"`;
+
+exports[`word parsing > should parse: bold italic 12px 	 /3 'Open Sans', Arial, "Helvetica Neue", sans-serif 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isHex": false,
+    "isUrl": false,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 5,
+        "line": 1,
+        "offset": 4,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "word",
+    "value": "bold",
+  },
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isHex": false,
+    "isUrl": false,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 12,
+        "line": 1,
+        "offset": 11,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 6,
+        "line": 1,
+        "offset": 5,
+      },
+    },
+    "type": "word",
+    "value": "italic",
+  },
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 17,
+        "line": 1,
+        "offset": 16,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 13,
+        "line": 1,
+        "offset": 12,
+      },
+    },
+    "type": "numeric",
+    "unit": "px",
+    "value": "12",
+  },
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 21,
+        "line": 1,
+        "offset": 20,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 20,
+        "line": 1,
+        "offset": 19,
+      },
+    },
+    "type": "operator",
+    "value": "/",
+  },
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 22,
+        "line": 1,
+        "offset": 21,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 21,
+        "line": 1,
+        "offset": 20,
+      },
+    },
+    "type": "numeric",
+    "unit": "",
+    "value": "3",
+  },
+  {
+    "contents": "Open Sans",
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "quote": "'",
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 34,
+        "line": 1,
+        "offset": 33,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 23,
+        "line": 1,
+        "offset": 22,
+      },
+    },
+    "type": "quoted",
+    "value": "'Open Sans'",
+  },
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 35,
+        "line": 1,
+        "offset": 34,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 34,
+        "line": 1,
+        "offset": 33,
+      },
+    },
+    "type": "operator",
+    "value": ",",
+  },
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isHex": false,
+    "isUrl": false,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 41,
+        "line": 1,
+        "offset": 40,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 36,
+        "line": 1,
+        "offset": 35,
+      },
+    },
+    "type": "word",
+    "value": "Arial",
+  },
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 42,
+        "line": 1,
+        "offset": 41,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 41,
+        "line": 1,
+        "offset": 40,
+      },
+    },
+    "type": "operator",
+    "value": ",",
+  },
+  {
+    "contents": "Helvetica Neue",
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "quote": """,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 59,
+        "line": 1,
+        "offset": 58,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 43,
+        "line": 1,
+        "offset": 42,
+      },
+    },
+    "type": "quoted",
+    "value": ""Helvetica Neue"",
+  },
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 60,
+        "line": 1,
+        "offset": 59,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 59,
+        "line": 1,
+        "offset": 58,
+      },
+    },
+    "type": "operator",
+    "value": ",",
+  },
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isHex": false,
+    "isUrl": false,
+    "isVariable": false,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 71,
+        "line": 1,
+        "offset": 70,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 61,
+        "line": 1,
+        "offset": 60,
+      },
+    },
+    "type": "word",
+    "value": "sans-serif",
+  },
+]
+`;

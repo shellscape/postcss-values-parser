@@ -5,19 +5,20 @@ The `AtWord` node inherits directly from `AtRule` in PostCSS, and is purely cosm
 ## Properties
 
 ### `name`
+
 Type: `String`<br>
 
 The portion of the at-word which identifies it, minus the leading `@` character.
 
 ### `type`
+
 Type: `String`
 Value: `'atword'`
 
 ## Example Values
 
 ```css
-  @batman
-  @color
+@batman @color;
 ```
 
 _Note: Using the `variables` property, `AtWords` may instead be treated as variables._

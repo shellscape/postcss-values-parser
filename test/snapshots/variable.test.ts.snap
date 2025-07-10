@@ -1,0 +1,77 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`variable parsing > should parse: --batman 1`] = `"--batman"`;
+
+exports[`variable parsing > should parse: --batman 2`] = `"--batman"`;
+
+exports[`variable parsing > should parse: --batman 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isHex": false,
+    "isUrl": false,
+    "isVariable": true,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 9,
+        "line": 1,
+        "offset": 8,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "word",
+    "value": "--batman",
+  },
+]
+`;
+
+exports[`variable parsing > should parse: --main-bg-color 1`] = `"--main-bg-color"`;
+
+exports[`variable parsing > should parse: --main-bg-color 2`] = `"--main-bg-color"`;
+
+exports[`variable parsing > should parse: --main-bg-color 3`] = `
+[
+  {
+    "inputs": [
+      {
+        "css": "<unknown>",
+        "hasBOM": false,
+        "id": "<input css [ID]>",
+      },
+    ],
+    "isColor": false,
+    "isHex": false,
+    "isUrl": false,
+    "isVariable": true,
+    "raws": {},
+    "source": {
+      "end": {
+        "column": 16,
+        "line": 1,
+        "offset": 15,
+      },
+      "inputId": 0,
+      "start": {
+        "column": 1,
+        "line": 1,
+        "offset": 0,
+      },
+    },
+    "type": "word",
+    "value": "--main-bg-color",
+  },
+]
+`;

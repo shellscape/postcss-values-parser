@@ -13,13 +13,13 @@ Value: `'numeric'`
 
 Type: `String`<br>
 
-The unit of the numeric figure, if one was used. Valid units are: `%, ch, cm, em, ex, in, mm, pc, pt, px, rem, vh, vmax, vmin, vw`.
+The unit of the numeric figure, if one was used. For dimensions, this contains the unit (e.g., `px`, `em`, `rem`). For percentages, this contains `%`. For plain numbers, this is an empty string. Valid units include: `%, ch, cm, em, ex, in, mm, pc, pt, px, rem, vh, vmax, vmin, vw`.
 
 ### `value`
 
 Type: `String`<br>
 
-A `String` representation of the numeric figure, without unit.
+A `String` representation of the numeric figure. For dimensions, this contains only the numeric value without the unit. For plain numbers, this contains only the numeric value. For percentages, this contains the numeric value followed by the `%` symbol.
 
 ## Example Values
 

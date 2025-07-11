@@ -1,6 +1,6 @@
 # Comment Node
 
-The `Comment` node inherits directly from `Comment` in PostCSS. This node represents a CSS comment; either inline (`//`) or block (`/* */`).
+The `Comment` node inherits directly from `Node` in PostCSS. This node represents a CSS comment; either inline (`//`) or block (`/* */`).
 
 ## Properties
 
@@ -9,6 +9,12 @@ The `Comment` node inherits directly from `Comment` in PostCSS. This node repres
 Type: `Boolean`<br>
 
 If `true`, indicates that the type of comment is "inline," or a comment that begins with `//`. If `false`, indicates that the comment is a traditional block comment.
+
+### `text`
+
+Type: `String`<br>
+
+A `String` representation of the body of the comment, with comment markers removed and trimmed.
 
 ### `type`
 
@@ -19,7 +25,7 @@ Value: `'comment'`
 
 Type: `String`<br>
 
-A `String` representation of the body of the comment.
+A `String` representation of the original comment including comment markers.
 
 ## Example Values
 

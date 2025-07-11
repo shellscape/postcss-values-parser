@@ -27,11 +27,21 @@ export const registerWalkers = (Container) => {
         'Quoteds',
         'UnicodeRanges',
         'Comments',
-        'Punctuations'
+        'Punctuations',
+        'Parentheses'
     ];
     for (const walkerType of walkerTypes) {
         const methodName = `walk${walkerType}`;
-        const nodeType = walkerType.toLowerCase().slice(0, -1);
+        let nodeType = walkerType.toLowerCase().slice(0, -1);
+        if (nodeType === 'quote') {
+            nodeType = 'quoted';
+        }
+        else if (nodeType === 'parenthese') {
+            nodeType = 'parentheses';
+        }
+        else if (nodeType === 'unicoderange') {
+            nodeType = 'unicodeRange';
+        }
         Container.prototype[methodName] = createWalker(nodeType);
     }
     Container.prototype.walkType = function (type, callback) {

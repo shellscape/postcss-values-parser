@@ -19,24 +19,34 @@ The parser used in this module is derived and inherits from the PostCSS `Parser`
 
 This module provides several unique Node types, in addition to the built-in Nodes that ship with PostCSS:
 
-[AtWord](./AtWord.md)<br/>
 [Comment](./Comment.md)<br/>
+[Container](./Container.md)<br/>
 [Func](./Func.md)<br/>
-[Interpolation](./Interpolation.md)<br/>
+[Node](./Node.md)<br/>
 [Numeric](./Numeric.md)<br/>
 [Operator](./Operator.md)<br/>
+[Parentheses](./Parentheses.md)<br/>
 [Punctuation](./Punctuation.md)<br/>
 [Quoted](./Quoted.md)<br/>
+[Root](./Root.md)<br/>
 [UnicodeRange](./UnicodeRange.md)<br/>
 [Word](./Word.md)<br/>
 
 All unique Node types listed above inherit from `Node` or `Container` in PostCSS. Please see each Node's documentation for the inherited type. Methods for the base types can be found in the [PostCSS Documentation](https://github.com/postcss/postcss/tree/master/docs).
 
+Additionally, this module provides several other foundational classes:
+
+[Errors](./Errors.md) - Custom error classes for parsing failures<br/>
+[Examples](./Examples.md) - Comprehensive usage examples and patterns<br/>
+[Parser](./Parser.md) - Parser implementation and configuration options<br/>
+[Stringify](./Stringify.md) - String conversion and custom stringifiers<br/>
+[Walker](./Walker.md) - Walker registration and functionality<br/>
+
 ## Walking The AST
 
 PostCSS provides a means to walk the entire AST to examine nodes of a particular type, regardless of how they are nested in the tree. Each Node type listed above registers a custom walker function with PostCSS to allow walking on those types.
 
-Each walker function has a signature of `walk{Node}s`. If wishing to walk all of the numeric values in a value, one would accomplish that like so:
+Each walker function has a signature of `walk{Node}s` (plural). If wishing to walk all of the numeric values in a value, one would accomplish that like so:
 
 ```js
 const { parse } = require('postcss-values-parser');

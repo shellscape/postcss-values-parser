@@ -1,6 +1,6 @@
 # Func Node
 
-The `Func` node inherits directly from `Container` in PostCSS. This node represents a function call within a value. If the function call contains arguments, those arguments will be represented as parsed child nodes.
+The `Func` node inherits from `Container` in PostCSS. This node represents a function call within a value. If the function call contains arguments, those arguments will be represented as parsed child nodes.
 
 ## Properties
 
@@ -8,7 +8,7 @@ The `Func` node inherits directly from `Container` in PostCSS. This node represe
 
 Type: `Boolean`<br>
 
-If `true`, denotes that the function represents a color-producing function. Valid color-producing functions are: `hsl()`, `hsla()`, `rgb()`, and `rgba()`.
+If `true`, denotes that the function represents a color-producing function. Valid color-producing functions are: `hsl()`, `hsla()`, `hwb()`, `lab()`, `lch()`, `oklab()`, `oklch()`, `rgb()`, and `rgba()`.
 
 ### `isVar`
 
@@ -26,7 +26,7 @@ The name of the function.
 
 Type: `String`<br>
 
-A `String` representation of the body of the function, between parenthesis, including the parenthesis characters. This value will be parsed and the result placed into the `nodes` property. This value should be considered only a snapshot for reference. To manipulate function parameters, please leverage the `Container.nodes` property.
+A `String` representation of the function parameters. This property is initialized as an empty string and should be considered a placeholder. The actual function parameters are parsed and stored as child nodes in the `nodes` property. To access function parameters, use the `Container.nodes` property.
 
 ### `type`
 

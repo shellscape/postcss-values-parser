@@ -20,7 +20,7 @@ If `true`, denotes that the word represents a hexadecimal value.
 
 Type: `Boolean`<br>
 
-If `true`, denotes that the word represents a Universal Resource Locator (URL).
+If `true`, denotes that the word represents a Universal Resource Locator (URL). Note that this is only set to `true` for standalone URLs, not for URLs within function calls like `url()`.
 
 ### `isVariable`
 
@@ -47,8 +47,24 @@ The value of the word.
   --color
   -webkit-transition
   #fff
+  https://example.com
 ```
 
-this.isColor = false;
-this.isHex = false;
-this.isVariable = false;
+## URL Handling
+
+The Word node has special handling for URLs that appear outside of function contexts. When a standalone URL is encountered in a CSS value, it is parsed as a Word node with the `isUrl` property set to `true`. This is different from URLs that appear within `url()` functions.
+
+```js
+const { parse } = require('postcss-values-parser');
+
+const root = parse('https://example.com');
+const wordNode = root.nodes[0];
+
+console.log(wordNode.type); // 'word'
+console.log(wordNode.isUrl); // true
+console.log(wordNode.value); // 'https://example.com'
+```
+
+Note: URLs within `url()` functions are handled differently and create `Func` nodes instead of `Word` nodes.
+
+

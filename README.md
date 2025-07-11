@@ -14,6 +14,8 @@
 A CSS property value parser built upon [PostCSS](https://github.com/postcss/postcss),
 following the same node and traversal patterns as PostCSS.
 
+This package powers part of [Prettier](https://prettier.io/). Please consider becoming a sponsor if you find this package useful or are a Prettier user. https://github.com/sponsors/shellscape
+
 ## Install
 
 Using npm:
@@ -21,12 +23,6 @@ Using npm:
 ```console
 npm install postcss-values-parser --save-dev
 ```
-
-<a href="https://www.patreon.com/shellscape">
-  <img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
-</a>
-
-Please consider [becoming a patron](https://www.patreon.com/shellscape) if you find this module useful.
 
 ## Requirements
 
@@ -44,26 +40,7 @@ Please consider [becoming a patron](https://www.patreon.com/shellscape) if you f
 
 ## Usage
 
-Using the parser is straightforward and minimalistic:
-
-```js
-const { parse } = require('postcss-values-parser');
-
-const root = parse('#fff');
-const node = root.first;
-
-// → Word {
-//     raws: { before: '', after: '' },
-//     value: '#fff',
-//     type: 'word',
-//     isHex: true,
-//     isColor: true,
-//     isVariable: false,
-//     ...
-//   }
-```
-
-Please see the [Documentation](./docs/README.md) for further information on using the module.
+Please see the [Documentation](./docs/README.md) for general use and further information on using the package.
 
 ## Meta
 

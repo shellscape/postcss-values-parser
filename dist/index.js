@@ -1,5 +1,6 @@
 import { parse as parseInternal } from './parser.js';
 import { stringify } from './stringify.js';
+export { ParseError, AstError } from './errors.js';
 export { registerWalkers } from './walker.js';
 export * from './nodes/index.js';
 export const parse = (css, options) => {

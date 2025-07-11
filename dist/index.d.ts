@@ -1,5 +1,6 @@
 import { ParseOptions } from './parser.js';
 import { stringify } from './stringify.js';
+export { ParseError, AstError } from './errors.js';
 export { registerWalkers } from './walker.js';
 export { ParseOptions } from './parser.js';
 export * from './nodes/index.js';

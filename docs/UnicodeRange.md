@@ -15,6 +15,12 @@ Type: `String`<br>
 
 A `String` representation of the unicode range specified.
 
+### `value`
+
+Type: `String`<br>
+
+A `String` representation of the unicode range value, identical to the `name` property.
+
 ## Example Values
 
 ```css

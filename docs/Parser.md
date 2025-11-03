@@ -1,133 +1,47 @@
 # Parser
 
-The parser is the core component that converts CSS value strings into Abstract Syntax Trees (ASTs). It handles the lexical analysis and parsing of CSS values, creating appropriate node types for different value components.
+The parser converts CSS value strings into an Abstract Syntax Tree (AST). It uses [css-tree](https://github.com/csstree/csstree) under the hood, then maps css-tree nodes to this package’s node classes.
 
-## parse(css, options)
+## parse(css)
 
-The main parsing function that converts a CSS value string into an AST with a Root node.
+Converts a CSS value string into an AST with a `Root` node.
 
 ### Parameters
 
 #### `css`
 
-Type: `String`<br>
-_Required_
+Type: `string` (required)
 
-The CSS value string to parse. This can be any valid CSS value such as:
-- `'10px solid red'`
-- `'calc(100% - 20px)'`
-- `'rgba(255, 0, 0, 0.5)'`
-- `'url("image.jpg") center/cover'`
-
-#### `options`
-
-Type: `ParseOptions`<br>
-_Optional_
-
-Configuration options for the parser. See [ParseOptions](#parseoptions) below for details.
+Any valid CSS value string, such as:
+- `10px solid red`
+- `calc(100% - 20px)`
+- `rgba(255, 0, 0, 0.5)`
+- `url("image.jpg") center/cover`
 
 ### Returns
 
-Type: `Root`<br>
+`Root` — the root of the parsed AST.
 
-A Root node containing the parsed AST. The Root node has walker methods registered and provides access to all child nodes.
-
-### Example Usage
+### Example
 
 ```js
-const { parse } = require('postcss-values-parser');
+import { parse } from 'postcss-values-parser';
 
-// Basic parsing
 const root = parse('10px solid red');
 console.log(root.nodes.length); // 3
-
-// Parsing with options
-const root2 = parse('calc(100px + var(--size))', {
-  variables: { prefixes: ['--', '$'] }
-});
 ```
 
-## ParseOptions
+### Notes on options
 
-The options object that configures parser behavior.
+The `parse(css, options?)` signature accepts an optional second argument for forward‑compatibility, but the current implementation does not use any options. Passing options has no effect in v7.
 
-### Properties
+## Implementation details
 
-#### `ignoreUnknownWords`
-
-Type: `Boolean`<br>
-Default: `false`
-
-If `true`, allows unknown parts of the value to be parsed and added to the AST as Word nodes. If `false`, unknown values may cause parsing to fail or be handled with fallback behavior.
-
-```js
-const root = parse('custom-property-value', {
-  ignoreUnknownWords: true
-});
-```
-
-#### `interpolation`
-
-Type: `Boolean | InterpolationOptions`<br>
-Default: `false`
-
-Enables parsing of interpolated values for preprocessor languages like SCSS, LESS, etc. When set to `true`, uses default interpolation settings. When set to an object, uses the specified interpolation configuration.
-
-```js
-// Enable basic interpolation
-const root = parse('#{$variable}', {
-  interpolation: true
-});
-
-// Custom interpolation prefix
-const root2 = parse('@{variable}', {
-  interpolation: { prefix: '@' }
-});
-```
-
-#### `variables`
-
-Type: `VariablesOptions`<br>
-Default: `{ prefixes: ['--'] }`
-
-Configures how variables are identified in the CSS value. By default, recognizes CSS custom properties (variables starting with `--`).
-
-```js
-// Support SCSS and LESS variables
-const root = parse('$primary-color', {
-  variables: { prefixes: ['--', '$', '@'] }
-});
-```
-
-## Type Interfaces
-
-### InterpolationOptions
-
-```typescript
-interface InterpolationOptions {
-  prefix: string;
-}
-```
-
-Defines the prefix character used for interpolation syntax.
-
-### VariablesOptions
-
-```typescript
-interface VariablesOptions {
-  prefixes: string[];
-}
-```
-
-Defines the prefix characters that identify variables in CSS values.
-
-## Parser Implementation Details
-
-The parser uses the `css-tree` library for lexical analysis and AST generation, then transforms the generic CSS tree into postcss-values-parser specific node types.
+The parser uses css-tree for tokenization and parsing, then maps css-tree node types to postcss-values-parser node types:
 
 ### Node Type Mapping
 
-The parser maps CSS-tree node types to postcss-values-parser node types:
+Node type mapping:
 
 - `Function` → `Func`
 - `Dimension` → `Numeric`
@@ -143,29 +57,24 @@ The parser maps CSS-tree node types to postcss-values-parser node types:
 
 ### Special Handling
 
-#### URL Nodes
+#### URL nodes
 
-When the parser encounters a `Url` node from css-tree, it creates a `Word` node instead of a separate URL node type. This provides consistency with how URLs are handled in CSS values.
-
-```js
-const root = parse('url("image.jpg")');
-const funcNode = root.nodes[0]; // Func node for url()
-// The URL content is parsed as child nodes within the function
-```
+When css-tree produces a `Url` node, it is represented as a `Word` node whose `value` is the URL string. URLs inside `url()` appear as a `Func` node named `url`.
 
 #### Fallback Behavior
 
 Unknown or unrecognized node types are parsed as `Word` nodes to ensure the parser doesn't fail on unexpected input.
 
-#### Source Mapping
+#### Source mapping
 
-The parser preserves source mapping information from the original CSS string, including:
+The parser preserves source locations from the original CSS string, including:
 - Line and column positions
 - Start and end offsets
 - Original source text
 
 ```js
-const root = parse('calc(100px + 20%)', { positions: true });
+import { parse } from 'postcss-values-parser';
+const root = parse('calc(100px + 20%)');
 // Each node maintains source position information
 ```
 
@@ -178,7 +87,7 @@ The parser throws specific error types for different failure scenarios:
 Thrown when the underlying css-tree parser encounters invalid syntax:
 
 ```js
-const { parse, ParseError } = require('postcss-values-parser');
+import { parse, ParseError } from 'postcss-values-parser';
 
 try {
   const root = parse('invalid @#$% syntax');
@@ -194,7 +103,7 @@ try {
 Thrown when the parsed AST is invalid or empty:
 
 ```js
-const { parse, AstError } = require('postcss-values-parser');
+import { parse, AstError } from 'postcss-values-parser';
 
 try {
   const root = parse('');
@@ -283,9 +192,7 @@ root.walkFuncs(func => {
 ### Variable Parsing
 
 ```js
-const root = parse('var(--primary-color)', {
-  variables: { prefixes: ['--'] }
-});
+const root = parse('var(--primary-color)');
 const func = root.nodes[0];
 console.log(func.isVar); // true
 ```

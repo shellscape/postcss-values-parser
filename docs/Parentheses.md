@@ -64,7 +64,7 @@ This class inherits all properties and methods from the `Container` class and Po
 ## Example Usage
 
 ```js
-const { parse } = require('postcss-values-parser');
+import { parse } from 'postcss-values-parser';
 
 const root = parse('calc((100px + 20px) * 2)');
 const func = root.nodes[0]; // calc function

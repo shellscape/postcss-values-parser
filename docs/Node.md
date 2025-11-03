@@ -56,7 +56,7 @@ This class inherits all properties and methods from PostCSS's `Node` class. Plea
 ## Example Usage
 
 ```js
-const { parse, Word } = require('postcss-values-parser');
+import { parse, Word } from 'postcss-values-parser';
 
 const root = parse('bold italic');
 const firstNode = root.nodes[0];

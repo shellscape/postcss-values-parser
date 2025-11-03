@@ -1,12 +1,12 @@
-# Exported Methods
+# Exported API
 
 This module exports the following methods and classes:
 
-### `parse(css, options)`
+### `parse(css, options?)`
 
 Returns: `Root`<br>
 
-Parses a given `String` and returns an AST with a `Root` node. If the input is an invalid CSS value, a `ParseError` is thrown.
+Parses a given string and returns an AST with a `Root` node. If the input is an invalid CSS value, a `ParseError` is thrown.
 
 #### Parameters
 
@@ -17,36 +17,13 @@ _Required_
 
 #### `options`
 
-Type: `ParseOptions`<br>
-_Optional_
+Type: `ParseOptions` (optional)
 
-##### Properties
-
-##### `ignoreUnknownWords`
-
-Type: `Boolean`<br>
-Default: `false`
-
-If `true`, will allow all unknown parts of the value to be parsed and added to the AST. If `false`, unknown values will throw `ParseError`.
-
-##### `interpolation`
-
-Type: `Boolean|InterpolationOptions`<br>
-Default: `false`
-
-Set this option to enable parsing of interpolated values for languages such as SCSS. For example:
-`interpolation: { prefix: '@' }` will allow parsing of the interpolated value `@{batman}` which uses `@` as the "prefix". For SCSS one might use `interpolation: { prefix: '#' }`.
-
-##### `variables`
-
-Type: `VariablesOptions`<br>
-Default: `{ prefixes: ['--'] }`
-
-Set this option to modify how variables are identified in a value. By default, this option is set to recognize CSS variables. For languages such as LESS and SCSS which have their own variable prefixes, additional prefixes can be added to the `prefixes` array.
+Reserved for future use. In v7, options are accepted by the signature but are not used by the parser.
 
 ### `stringify(node, builder)`
 
-A `Function` with a signature matching `(bit) => {}` used to concatenate or manipulate each portion (or bit) of the Node's own AST. The `nodeToString` method makes use of this, as a simple example.
+A function used to concatenate or manipulate each portion (or bit) of a node during stringification. The `nodeToString` helper uses this under the hood.
 
 #### Parameters
 
@@ -79,7 +56,7 @@ Returns: `String`
 
 ### `registerWalkers(Container)`
 
-Registers custom walker methods on the Container prototype to enable walking specific node types. This function is called automatically when the module is loaded, but can be called manually if needed.
+Registers custom walker methods on the Container prototype to enable walking specific node types. This function is not called automatically; call it once before using any `walk*` helpers.
 
 #### Parameters
 
@@ -92,7 +69,7 @@ The Container class to register walker methods on.
 
 ## Exported Classes
 
-All Node classes are exported and can be imported individually:
+All node classes are exported and can be imported individually:
 
 ### Node Classes
 
@@ -116,40 +93,16 @@ All Node classes are exported and can be imported individually:
 
 ### Type Definitions
 
-- `ParseOptions` - Options interface for the parse function
-- `InterpolationOptions` - Options for interpolation parsing
-- `VariablesOptions` - Options for variable recognition
+- `ParseOptions` - Placeholder in v7 (forward‑compatibility)
 - `Stringifier` - Function interface for custom stringifiers
 - `Builder` - Function interface for string building during stringify
 - `NodeOptions` - Options interface for node construction
 
-## Type Interfaces
+## Types
 
 ### `ParseOptions`
 
-```typescript
-interface ParseOptions {
-  ignoreUnknownWords?: boolean;
-  interpolation?: boolean | InterpolationOptions;
-  variables?: VariablesOptions;
-}
-```
-
-### `InterpolationOptions`
-
-```typescript
-interface InterpolationOptions {
-  prefix: string;
-}
-```
-
-### `VariablesOptions`
-
-```typescript
-interface VariablesOptions {
-  prefixes: string[];
-}
-```
+An empty placeholder interface in v7. Kept for forward‑compatibility.
 
 ### `Stringifier`
 
@@ -181,19 +134,16 @@ interface NodeOptions {
 
 ```js
 // Import specific classes
-const { parse, Node, Container, Root } = require('postcss-values-parser');
+import { parse, Node, Container, Root } from 'postcss-values-parser';
 
 // Import error classes
-const { ParseError, AstError } = require('postcss-values-parser');
+import { ParseError, AstError } from 'postcss-values-parser';
 
 // Import utility functions
-const { stringify, nodeToString, registerWalkers } = require('postcss-values-parser');
+import { stringify, nodeToString, registerWalkers } from 'postcss-values-parser';
 
-// Parse with options
-const root = parse('calc(100px + 20%)', {
-  ignoreUnknownWords: true,
-  variables: { prefixes: ['--', '$'] }
-});
+// Parse
+const root = parse('calc(100px + 20%)');
 
 // Custom stringifier
 const customStringifier = (node, builder) => {

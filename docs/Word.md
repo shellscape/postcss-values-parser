@@ -55,7 +55,7 @@ The value of the word.
 The Word node has special handling for URLs that appear outside of function contexts. When a standalone URL is encountered in a CSS value, it is parsed as a Word node with the `isUrl` property set to `true`. This is different from URLs that appear within `url()` functions.
 
 ```js
-const { parse } = require('postcss-values-parser');
+import { parse } from 'postcss-values-parser';
 
 const root = parse('https://example.com');
 const wordNode = root.nodes[0];

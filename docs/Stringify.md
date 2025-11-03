@@ -46,7 +46,7 @@ The stringify function handles different node types appropriately:
 ### Example Usage
 
 ```js
-const { parse, stringify } = require('postcss-values-parser');
+import { parse, stringify } from 'postcss-values-parser';
 
 const root = parse('calc(100px + 20%)');
 let result = '';
@@ -82,7 +82,7 @@ The string representation of the node.
 ### Example Usage
 
 ```js
-const { parse, nodeToString } = require('postcss-values-parser');
+import { parse, nodeToString } from 'postcss-values-parser';
 
 const root = parse('10px solid red');
 const numericNode = root.nodes[0];
@@ -162,7 +162,7 @@ When nodes have source mapping information, the stringify function can utilize t
 ```js
 const { parse } = require('postcss-values-parser');
 
-const root = parse('calc(100px + 20%)', { positions: true });
+const root = parse('calc(100px + 20%)');
 // Source mapping information is preserved during stringification
 ```
 

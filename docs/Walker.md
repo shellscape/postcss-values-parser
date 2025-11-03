@@ -1,13 +1,13 @@
 # Walker
 
-The walker functionality provides methods to traverse the AST and find nodes of specific types. Walker methods are automatically registered on Container and Root nodes, allowing you to search for and iterate over nodes throughout the entire AST.
+The walker helpers provide methods to traverse the AST and find nodes of specific types. These helpers are not registered by default; you must call `registerWalkers(Container)` once before using them.
 
 ## Registration
 
 Walker methods are registered using the `registerWalkers` function:
 
 ```js
-const { registerWalkers, Container } = require('postcss-values-parser');
+import { registerWalkers, Container } from 'postcss-values-parser';
 
 // Register all walker methods on the Container prototype
 registerWalkers(Container);
@@ -15,7 +15,7 @@ registerWalkers(Container);
 
 ## Available Walker Methods
 
-The following walker methods are automatically registered and available on all Container and Root nodes:
+After registration, the following walker methods are available on all `Container` and `Root` nodes:
 
 ### `walkFuncs(callback)`
 
@@ -238,7 +238,9 @@ function callback(node, index) {
 ## Example Usage
 
 ```js
-const { parse } = require('postcss-values-parser');
+import { parse, registerWalkers, Container } from 'postcss-values-parser';
+
+registerWalkers(Container);
 
 const root = parse('calc(100px + 20%) url("image.jpg") #fff');
 
@@ -276,8 +278,8 @@ root.walkWords((node, index) => {
 - Walker methods traverse the entire AST recursively, visiting nested nodes
 - The index parameter in callbacks represents the count of nodes of that specific type encountered
 - Returning `false` from a callback stops the walking process
-- Walker methods are available on all Container and Root nodes
+- Walker methods are available on `Container` and `Root` instances after calling `registerWalkers(Container)`
 - Walking is depth-first, visiting parent nodes before their children
 - Walker methods respect the AST structure and only visit nodes of the specified type
 - The `walkType` method is particularly useful for programmatic traversal where the node type is determined at runtime
-- All walker methods are registered automatically when the module is loaded via `registerWalkers()`
+- Register once per process: call `registerWalkers(Container)` before invoking any `walk*` helpers

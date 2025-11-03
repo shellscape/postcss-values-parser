@@ -187,6 +187,11 @@ console.log(func.isColor); // true
 ### Complex Value Parsing
 
 ```js
+import { Container, parse, registerWalkers } from 'postcss-values-parser';
+
+// Walker helpers are not auto-registered in v7
+registerWalkers(Container);
+
 const root = parse('calc(100% - 20px) url("bg.jpg") center/cover');
 root.walkFuncs((func) => {
   console.log(`Function: ${func.name}`);

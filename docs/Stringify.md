@@ -139,7 +139,7 @@ const root = parse('calc(100px + 20%)');
 console.log(root.toString()); // 'calc(100px + 20%)'
 
 // Custom stringification
-console.log(root.toString(customStringifier));
+console.log(root.toString(upperCaseStringifier));
 ```
 
 ## Advanced Usage

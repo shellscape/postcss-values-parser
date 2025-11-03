@@ -27,12 +27,13 @@ npm install postcss-values-parser --save-dev
 - Node.js >= 20.19.0
 - PostCSS >= 8.4.14 (peer dependency)
 
-Note: This package is ESM‑only. Use `import` in Node.js. In CommonJS on Node.js 20.19.0+ you can `require()` it:
+Note: This package is ESM‑only. Use `import` in Node.js. In CommonJS, load it via dynamic import:
 
 ```js
-// CommonJS (Node >= 20.19.0)
-const { parse } = require('postcss-values-parser');
-```
+// CommonJS
+import('postcss-values-parser').then(({ parse }) => {
+  // use parse(...)
+});
 ```
 
 ## Benefits

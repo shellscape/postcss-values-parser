@@ -33,6 +33,7 @@ Note: This package is ESM‑only. Use `import` in Node.js. In CommonJS on Node.j
 // CommonJS (Node >= 20.19.0)
 const { parse } = require('postcss-values-parser');
 ```
+```
 
 ## Benefits
 

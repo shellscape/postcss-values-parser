@@ -82,7 +82,7 @@ The string representation of the node.
 ### Example Usage
 
 ```js
-import { parse, nodeToString } from 'postcss-values-parser';
+import { nodeToString, parse } from 'postcss-values-parser';
 
 const root = parse('10px solid red');
 const numericNode = root.nodes[0];
@@ -103,7 +103,7 @@ interface Stringifier {
 ### Example Custom Stringifier
 
 ```js
-const { parse } = require('postcss-values-parser');
+import { parse } from 'postcss-values-parser';
 
 // Custom stringifier that uppercases all word values
 const upperCaseStringifier = (node, builder) => {
@@ -113,7 +113,7 @@ const upperCaseStringifier = (node, builder) => {
     builder(node.value + node.unit);
   } else if (node.nodes) {
     // Handle container nodes
-    node.nodes.forEach(child => {
+    node.nodes.forEach((child) => {
       upperCaseStringifier(child, builder);
     });
   } else {
@@ -131,7 +131,7 @@ console.log(root.toString(upperCaseStringifier)); // '10pxSOLIDRED'
 All nodes have a `toString()` method that accepts an optional stringifier parameter:
 
 ```js
-const { parse } = require('postcss-values-parser');
+import { parse } from 'postcss-values-parser';
 
 const root = parse('calc(100px + 20%)');
 
@@ -149,7 +149,7 @@ console.log(root.toString(customStringifier));
 The stringify function can preserve original formatting and spacing when nodes maintain source mapping information:
 
 ```js
-const { parse } = require('postcss-values-parser');
+import { parse } from 'postcss-values-parser';
 
 const root = parse('calc( 100px + 20% )'); // Note the extra spaces
 console.log(root.toString()); // Preserves original spacing
@@ -160,7 +160,7 @@ console.log(root.toString()); // Preserves original spacing
 When nodes have source mapping information, the stringify function can utilize this information to maintain accurate positioning:
 
 ```js
-const { parse } = require('postcss-values-parser');
+import { parse } from 'postcss-values-parser';
 
 const root = parse('calc(100px + 20%)');
 // Source mapping information is preserved during stringification
@@ -171,7 +171,7 @@ const root = parse('calc(100px + 20%)');
 The builder function can be used to create complex string manipulations:
 
 ```js
-const { parse, stringify } = require('postcss-values-parser');
+import { parse, stringify } from 'postcss-values-parser';
 
 const root = parse('10px solid red');
 const parts = [];

@@ -2,9 +2,9 @@
 
 The parser converts CSS value strings into an Abstract Syntax Tree (AST). It uses [css-tree](https://github.com/csstree/csstree) under the hood, then maps css-tree nodes to this package’s node classes.
 
-## parse(css)
+## parse(css, options?)
 
-Converts a CSS value string into an AST with a `Root` node.
+Converts a CSS value string into an AST with a `Root` node. The optional `options` argument is accepted for forward‑compatibility in v7 but is currently ignored.
 
 ### Parameters
 
@@ -13,6 +13,7 @@ Converts a CSS value string into an AST with a `Root` node.
 Type: `string` (required)
 
 Any valid CSS value string, such as:
+
 - `10px solid red`
 - `calc(100% - 20px)`
 - `rgba(255, 0, 0, 0.5)`
@@ -68,12 +69,14 @@ Unknown or unrecognized node types are parsed as `Word` nodes to ensure the pars
 #### Source mapping
 
 The parser preserves source locations from the original CSS string, including:
+
 - Line and column positions
 - Start and end offsets
 - Original source text
 
 ```js
 import { parse } from 'postcss-values-parser';
+
 const root = parse('calc(100px + 20%)');
 // Each node maintains source position information
 ```
@@ -103,7 +106,7 @@ try {
 Thrown when the parsed AST is invalid or empty:
 
 ```js
-import { parse, AstError } from 'postcss-values-parser';
+import { AstError, parse } from 'postcss-values-parser';
 
 try {
   const root = parse('');
@@ -122,9 +125,9 @@ The parser creates nodes using the NodeOptions interface:
 
 ```typescript
 interface NodeOptions {
-  node?: CssNode;    // Original css-tree node
-  value?: string;    // String value
-  parent?: any;      // Parent node
+  node?: CssNode; // Original css-tree node
+  value?: string; // String value
+  parent?: any; // Parent node
 }
 ```
 
@@ -157,6 +160,7 @@ console.log(calcFunc.nodes.length); // Contains parsed parameters
 ## Browser and Environment Support
 
 The parser works in all environments where css-tree is supported:
+
 - Node.js (all supported versions)
 - Modern browsers (ES2015+)
 - Webpack/Rollup bundled applications
@@ -168,7 +172,7 @@ The parser works in all environments where css-tree is supported:
 
 ```js
 const root = parse('10px solid red');
-console.log(root.nodes.map(n => n.type)); // ['numeric', 'word', 'word']
+console.log(root.nodes.map((n) => n.type)); // ['numeric', 'word', 'word']
 ```
 
 ### Function Parsing
@@ -184,7 +188,7 @@ console.log(func.isColor); // true
 
 ```js
 const root = parse('calc(100% - 20px) url("bg.jpg") center/cover');
-root.walkFuncs(func => {
+root.walkFuncs((func) => {
   console.log(`Function: ${func.name}`);
 });
 ```

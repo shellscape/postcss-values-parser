@@ -16,18 +16,11 @@ Please see the [Exports](./Exports.md) documentation for further information.
 
 Parsing is powered by [css-tree](https://github.com/csstree/csstree). Nodes in this package extend PostCSS `Node`/`Container`/`Root` so the API feels familiar, but there is no PostCSS parser involved.
 
-> Note: This package is ESM‑only. Use `import` syntax in Node.js. If you must use CommonJS, load it via dynamic import:
+> Note: This package is ESM‑only. Use `import` syntax in Node.js. In CommonJS on Node >= 20.19.0, `require()` can load ES modules:
 >
 > ```js
-> // CommonJS
-> import('postcss-values-parser').then(({ parse }) => {
->   const root = parse('#fff');
-> });
-> // or
-> (async () => {
->   const { parse } = await import('postcss-values-parser');
->   const root = parse('#fff');
-> })();
+> // CommonJS (Node >= 20.19.0)
+> const { parse } = require('postcss-values-parser');
 > ```
 
 ## Nodes

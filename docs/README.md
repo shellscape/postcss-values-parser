@@ -7,13 +7,21 @@ This is the extended documentation for `postcss-values-parser`.
 Parsing is accomplished by leveraging the `parse` method. For example:
 
 ```js
-const { parse } = require('postcss-values-parser');
+import { parse } from 'postcss-values-parser';
+
 const root = parse('#fff');
 ```
 
 Please see the [Exports](./Exports.md) documentation for further information.
 
-The parser used in this module is derived and inherits from the PostCSS `Parser` class. Methods for the base parser can be found in the [PostCSS Documentation](https://github.com/postcss/postcss/tree/master/docs).
+Parsing is powered by [css-tree](https://github.com/csstree/csstree). Nodes in this package extend PostCSS `Node`/`Container`/`Root` so the API feels familiar, but there is no PostCSS parser involved.
+
+> Note: This package is ESM‑only. Use `import` syntax in Node.js. In CommonJS on Node >= 20.19.0, `require()` can load ES modules:
+>
+> ```js
+> // CommonJS (Node >= 20.19.0)
+> const { parse } = require('postcss-values-parser');
+> ```
 
 ## Nodes
 
@@ -44,12 +52,16 @@ Additionally, this module provides several other foundational classes:
 
 ## Walking The AST
 
-PostCSS provides a means to walk the entire AST to examine nodes of a particular type, regardless of how they are nested in the tree. Each Node type listed above registers a custom walker function with PostCSS to allow walking on those types.
+PostCSS provides a means to walk the entire AST to examine nodes of a particular type, regardless of how they are nested in the tree. This package exposes a `registerWalkers(Container)` helper to add convenience walkers (e.g. `walkNumerics`) onto `Root`/`Container` instances.
 
-Each walker function has a signature of `walk{Node}s` (plural). If wishing to walk all of the numeric values in a value, one would accomplish that like so:
+Walker methods are not registered by default. Call `registerWalkers(Container)` once before using them. Each walker function has a signature of `walk{Node}s` (plural). For example, to walk all numeric values:
 
 ```js
-const { parse } = require('postcss-values-parser');
+import { Container } from 'postcss';
+import { parse, registerWalkers } from 'postcss-values-parser';
+
+// enable walker helpers
+registerWalkers(Container);
 
 const root = parse('10px 1em 2rem 3pt');
 let nodes = [];

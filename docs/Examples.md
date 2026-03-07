@@ -333,22 +333,7 @@ root.walkWords((word) => {
 });
 ```
 
-### SCSS/LESS Variables
-
-```js
-const { parse } = require('postcss-values-parser');
-
-// Parse SCSS variables
-const root = parse('$primary-color', {
-  variables: { prefixes: ['--', '$'] }
-});
-
-root.walkWords((word) => {
-  if (word.isVariable) {
-    console.log(`SCSS Variable: ${word.value}`);
-  }
-});
-```
+> Note: In v7, `Word.isVariable` only detects CSS custom properties (values starting with `--`). SCSS/LESS variable prefixes are not detected.
 
 ## Error Handling
 

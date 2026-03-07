@@ -1,7 +1,5 @@
-[tests]: https://img.shields.io/circleci/project/github/shellscape/postcss-values-parser.svg
-[tests-url]: https://circleci.com/gh/shellscape/postcss-values-parser
-[cover]: https://codecov.io/gh/shellscape/postcss-values-parser/branch/master/graph/badge.svg
-[cover-url]: https://codecov.io/gh/shellscape/postcss-values-parser
+[actions]: https://github.com/shellscape/postcss-values-parser/actions/workflows/validate.yml/badge.svg?branch=master
+[actions-url]: https://github.com/shellscape/postcss-values-parser/actions/workflows/validate.yml
 [size]: https://packagephobia.now.sh/badge?p=postcss-values-parser
 [size-url]: https://packagephobia.now.sh/result?p=postcss-values-parser
 
@@ -9,10 +7,10 @@
   <img width="95" height="95" title="Philosopher’s stone, logo of PostCSS" src="http://postcss.github.io/postcss/logo.svg"><br/><br/>
 </div>
 
-# postcss-values-parser [![tests][tests]][tests-url] [![cover][cover]][cover-url] [![size][size]][size-url]
+# postcss-values-parser [![actions][actions]][actions-url] [![size][size]][size-url]
 
-A CSS property value parser built upon [PostCSS](https://github.com/postcss/postcss),
-following the same node and traversal patterns as PostCSS.
+A CSS property value parser that uses [css-tree](https://github.com/csstree/csstree) for parsing,
+and models nodes on top of PostCSS’s `Node`/`Container`/`Root` classes so the API feels familiar to PostCSS users.
 
 This package powers part of [Prettier](https://prettier.io/). Please consider becoming a sponsor if you find this package useful or are a Prettier user. https://github.com/sponsors/shellscape
 
@@ -26,16 +24,24 @@ npm install postcss-values-parser --save-dev
 
 ## Requirements
 
-`postcss-values-parser` Node version v6.14.0+ and PostCSS v7.0.0+.
+- Node.js >= 20.19.0
+- PostCSS >= 8.4.14 (peer dependency)
+
+Note: This package is ESM‑only. Use `import` in Node.js. In CommonJS on Node >= 20.19.0, `require()` can load ES modules:
+
+```js
+// CommonJS (Node >= 20.19.0)
+const { parse } = require('postcss-values-parser');
+```
 
 ## Benefits
 
-- Leverages PostCSS and its tokenizer under the hood
-- Doesn't strip characters; eg. parenthesis
+- Uses css-tree for fast, standards‑compliant parsing
+- Builds PostCSS‑style nodes for a familiar API
+- Doesn't strip characters; e.g., parentheses are preserved in the AST
 - Full [AST](https://en.wikipedia.org/wiki/Abstract_syntax_tree) traversal
-- Ability to walk the AST for every Node type
-- Convenience methods to stringify Nodes
-- Follows PostCSS patterns for whitespace between Nodes
+- Optional walker helpers (`registerWalkers(Container)`) to walk by node type
+- Convenience methods to stringify nodes
 - Provides convenience properties for number units, colors, etc.
 
 ## Usage

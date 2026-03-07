@@ -56,7 +56,7 @@ This class inherits all properties and methods from PostCSS's `Root` class. Plea
 ## Example Usage
 
 ```js
-const { parse } = require('postcss-values-parser');
+import { parse } from 'postcss-values-parser';
 
 const root = parse('10px solid red');
 
@@ -87,6 +87,11 @@ The Root node has access to all walker methods for traversing the AST. These met
 - `walkType(type, callback)` - Walk through all nodes of a specific type
 
 ```js
+import { Container } from 'postcss';
+import { parse, registerWalkers } from 'postcss-values-parser';
+
+registerWalkers(Container);
+
 const root = parse('calc(100px + 20%) "test" #fff');
 
 // Find all numeric values
@@ -111,6 +116,6 @@ See the [Walker](./Walker.md) documentation for more details on walker methods.
 
 - The Root node is always the top-level node returned by the `parse()` function
 - It automatically handles source mapping and position tracking for all child nodes
-- The Root node provides access to all walker methods for traversing the AST
+- The Root node provides access to all walker methods for traversing the AST once registered via `registerWalkers(Container)`
 - When stringified, the Root node reconstructs the original CSS value from its child nodes
-- Walker methods are registered automatically when the module is loaded
+- Register walker methods via `registerWalkers(Container)` before using them

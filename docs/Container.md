@@ -57,7 +57,7 @@ This class inherits all properties and methods from PostCSS's `Container` class.
 ## Example Usage
 
 ```js
-const { parse } = require('postcss-values-parser');
+import { parse, Word } from 'postcss-values-parser';
 
 const root = parse('calc(100px + 20%)');
 const func = root.nodes[0]; // This is a Func node, which extends Container
@@ -85,7 +85,10 @@ Container nodes have access to all walker methods for traversing their child nod
 - `walkType(type, callback)` - Walk through all nodes of a specific type
 
 ```js
-const { parse } = require('postcss-values-parser');
+import { Container } from 'postcss';
+import { parse, registerWalkers } from 'postcss-values-parser';
+
+registerWalkers(Container);
 
 const root = parse('calc(100px + 20%) url("image.jpg")');
 const func = root.nodes[0]; // calc function
@@ -108,5 +111,5 @@ See the [Walker](./Walker.md) documentation for more details on walker methods.
 - Container nodes automatically handle source mapping and position tracking when nodes are added
 - Child nodes maintain references to their parent container
 - The Container class provides the foundation for complex nodes like `Func`, `Root`, and `Parentheses`
-- Walker methods are registered automatically when the module is loaded
+- Walker helpers must be registered once via `registerWalkers(Container)` before use
 - Walker methods traverse all descendants, not just direct children

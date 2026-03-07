@@ -85,7 +85,8 @@ Container nodes have access to all walker methods for traversing their child nod
 - `walkType(type, callback)` - Walk through all nodes of a specific type
 
 ```js
-import { parse, registerWalkers, Container } from 'postcss-values-parser';
+import { Container } from 'postcss';
+import { parse, registerWalkers } from 'postcss-values-parser';
 
 registerWalkers(Container);
 

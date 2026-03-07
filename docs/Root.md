@@ -87,7 +87,8 @@ The Root node has access to all walker methods for traversing the AST. These met
 - `walkType(type, callback)` - Walk through all nodes of a specific type
 
 ```js
-import { parse, registerWalkers, Container } from 'postcss-values-parser';
+import { Container } from 'postcss';
+import { parse, registerWalkers } from 'postcss-values-parser';
 
 registerWalkers(Container);
 

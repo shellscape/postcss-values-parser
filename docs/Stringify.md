@@ -144,16 +144,18 @@ console.log(root.toString(upperCaseStringifier));
 
 ## Advanced Usage
 
-### Preserving Formatting
+### Default Spacing Normalization
 
-The stringify function can preserve original formatting and spacing when nodes maintain source mapping information:
+The default stringify behavior normalizes spacing and does not preserve the original whitespace from the input:
 
 ```js
 import { parse } from 'postcss-values-parser';
 
-const root = parse('calc( 100px + 20% )'); // Note the extra spaces
-console.log(root.toString()); // Preserves original spacing
+const root = parse('calc( 1 + 2 )'); // Note the extra spaces
+console.log(root.toString()); // 'calc(1 + 2)'
 ```
+
+If you need custom whitespace/formatting output, pass a custom stringifier to `toString()`.
 
 ### Handling Source Maps
 

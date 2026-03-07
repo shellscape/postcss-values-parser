@@ -57,7 +57,8 @@ PostCSS provides a means to walk the entire AST to examine nodes of a particular
 Walker methods are not registered by default. Call `registerWalkers(Container)` once before using them. Each walker function has a signature of `walk{Node}s` (plural). For example, to walk all numeric values:
 
 ```js
-import { Container, parse, registerWalkers } from 'postcss-values-parser';
+import { Container } from 'postcss';
+import { parse, registerWalkers } from 'postcss-values-parser';
 
 // enable walker helpers
 registerWalkers(Container);

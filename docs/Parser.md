@@ -187,7 +187,8 @@ console.log(func.isColor); // true
 ### Complex Value Parsing
 
 ```js
-import { Container, parse, registerWalkers } from 'postcss-values-parser';
+import { Container } from 'postcss';
+import { parse, registerWalkers } from 'postcss-values-parser';
 
 // Walker helpers are not auto-registered in v7
 registerWalkers(Container);

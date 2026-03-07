@@ -7,7 +7,8 @@ The walker helpers provide methods to traverse the AST and find nodes of specifi
 Walker methods are registered using the `registerWalkers` function:
 
 ```js
-import { registerWalkers, Container } from 'postcss-values-parser';
+import { Container } from 'postcss';
+import { registerWalkers } from 'postcss-values-parser';
 
 // Register all walker methods on the Container prototype
 registerWalkers(Container);
@@ -181,6 +182,7 @@ Type: `String`<br>
 _Required_
 
 The type of nodes to walk through. This should match the `type` property of the nodes you want to visit. Valid types include:
+
 - `'word'` - Word nodes
 - `'numeric'` - Numeric nodes
 - `'func'` - Function nodes
@@ -225,12 +227,12 @@ All walker methods accept a callback function with the following signature:
 function callback(node, index) {
   // node: The current node being visited
   // index: The index of this node type (0-based)
-  
+
   // Return false to stop walking
   if (someCondition) {
     return false;
   }
-  
+
   // Continue walking by returning nothing or true
 }
 ```
@@ -238,7 +240,8 @@ function callback(node, index) {
 ## Example Usage
 
 ```js
-import { parse, registerWalkers, Container } from 'postcss-values-parser';
+import { Container } from 'postcss';
+import { parse, registerWalkers } from 'postcss-values-parser';
 
 registerWalkers(Container);
 
@@ -255,7 +258,7 @@ console.log(numerics); // Array of numeric nodes
 // Find all functions
 root.walkFuncs((node) => {
   console.log(`Found function: ${node.name}`);
-  
+
   // Walk through function parameters
   node.walkWords((word) => {
     console.log(`  Parameter: ${word.value}`);
@@ -265,7 +268,7 @@ root.walkFuncs((node) => {
 // Stop walking early
 root.walkWords((node, index) => {
   console.log(`Word ${index}: ${node.value}`);
-  
+
   // Stop after finding 3 words
   if (index >= 2) {
     return false;

@@ -28,4 +28,31 @@ describe('word parsing', () => {
       expect(nodes).toMatchSnapshot();
     });
   }
+
+  const urlFixtures = [
+    { fixture: 'url(https://example.com/image.png)', label: 'unquoted absolute URL' },
+    { fixture: "url('https://example.com/image.png')", label: 'single-quoted absolute URL' },
+    { fixture: 'url("https://example.com/image.png")', label: 'double-quoted absolute URL' },
+    { fixture: 'url(/images/image.png)', label: 'unquoted relative URL' },
+    { fixture: "url('/images/image.png')", label: 'single-quoted relative URL' },
+    { fixture: 'url("/images/image.png")', label: 'double-quoted relative URL' },
+    { fixture: 'url(//cdn.example.com/image.png)', label: 'protocol-relative URL' },
+    { fixture: 'url()', label: 'empty URL value' }
+  ];
+
+  for (const { fixture, label } of urlFixtures) {
+    it(`should expose URL metadata for: ${label}`, () => {
+      const root = parse(fixture);
+      const node = root.first as any;
+
+      expect({
+        input: fixture,
+        output: nodeToString(root),
+        type: node.type,
+        value: node.value,
+        isUrl: node.isUrl,
+        isParseableUrl: node.isParseableUrl
+      }).toMatchSnapshot();
+    });
+  }
 });

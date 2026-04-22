@@ -65,6 +65,8 @@ When css-tree produces a `Url` node, it is represented as a `Word` node whose `v
 - `isUrl` is `true`
 - `isParseableUrl` reflects whether the URL string is parseable (via `is-url-superb`)
 
+Both `url(https://google.com)` and `url('https://google.com')` normalize to the same `Word` value (`https://google.com`) because css-tree emits the same `Url` node shape for quoted and unquoted forms.
+
 #### Fallback Behavior
 
 Unknown or unrecognized node types are parsed as `Word` nodes to ensure the parser doesn't fail on unexpected input.
@@ -128,10 +130,13 @@ The parser creates nodes using the NodeOptions interface:
 
 ```typescript
 interface NodeOptions {
-  isUrl?: boolean; // Internal URL marker used when mapping Url nodes
   node?: CssNode; // Original css-tree node
   value?: string; // String value
   parent?: any; // Parent node
+}
+
+interface WordOptions extends NodeOptions {
+  fromUrlFunc?: boolean; // Internal marker for Word nodes mapped from css-tree Url
 }
 ```
 

@@ -60,14 +60,21 @@ The value of the word.
 
 URL values are represented as `Word` nodes. Use `isUrl` to determine whether a `Word` is a URL value, and use `isParseableUrl` to determine whether the URL string itself is parseable.
 
+For `url(...)`, quoted and unquoted absolute URLs normalize to the same `value`.
+
 ```js
 import { parse } from 'postcss-values-parser';
 
-const absolute = parse('url(https://example.com/image.png)').nodes[0];
+const unquotedAbsolute = parse('url(https://example.com/image.png)').nodes[0];
+const quotedAbsolute = parse("url('https://example.com/image.png')").nodes[0];
 const relative = parse('url(/images/image.png)').nodes[0];
 
-console.log(absolute.isUrl); // true
-console.log(absolute.isParseableUrl); // true
+console.log(unquotedAbsolute.value === quotedAbsolute.value); // true
+console.log(unquotedAbsolute.isUrl); // true
+console.log(unquotedAbsolute.isParseableUrl); // true
+
+console.log(quotedAbsolute.isUrl); // true
+console.log(quotedAbsolute.isParseableUrl); // true
 
 console.log(relative.isUrl); // true
 console.log(relative.isParseableUrl); // false

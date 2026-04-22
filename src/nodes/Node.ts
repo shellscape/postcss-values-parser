@@ -14,7 +14,6 @@ import { Input, Node as PostCssNode } from 'postcss';
 import { stringify } from '../stringify.js';
 
 export interface NodeOptions {
-  isUrl?: boolean;
   node?: CssNode;
   value?: string;
   parent?: any;

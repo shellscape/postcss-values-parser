@@ -24,6 +24,10 @@ export class Word extends Node {
   readonly isVariable: boolean = false;
   declare type: string;
 
+  get isParseableUrl(): boolean {
+    return !this.isVariable && isUrl(this.value);
+  }
+
   constructor(options: NodeOptions) {
     super(options);
     this.type = 'word';
@@ -58,7 +62,9 @@ export class Word extends Node {
     // Determine word properties
     this.isHex = reHex.test(value);
     this.isVariable = reVariable.test(value);
-    this.isUrl = !this.isVariable && isUrl(value);
+    const parseableUrl = !this.isVariable && isUrl(value);
+
+    this.isUrl = Boolean(options && options.isUrl) || parseableUrl;
     this.isColor = this.isHex || (colorNames as any)[value.toLowerCase()] !== undefined;
   }
 }

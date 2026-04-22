@@ -53,6 +53,7 @@ const assign = (parent: Nodes.Container | Nodes.Root, nodes: CssNode[]) => {
       case 'Url':
         // Create a Word node for URL with the URL value for toString()
         newNode = new Nodes.Word({
+          isUrl: true,
           node: {
             ...node,
             type: 'Identifier' as any,
@@ -183,6 +184,7 @@ export const parse = (css: string, _opts?: ParseOptions) => {
         case 'Url':
           // Create a Word node for URL with the URL value for toString()
           newNode = new Nodes.Word({
+            isUrl: true,
             node: {
               ...nodeOptions.node,
               type: 'Identifier' as any,

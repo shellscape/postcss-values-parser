@@ -60,7 +60,10 @@ Node type mapping:
 
 #### URL nodes
 
-When css-tree produces a `Url` node, it is represented as a `Word` node whose `value` is the URL string. URLs inside `url()` appear as a `Func` node named `url`.
+When css-tree produces a `Url` node, it is represented as a `Word` node whose `value` is the URL string. For these nodes:
+
+- `isUrl` is `true`
+- `isParseableUrl` reflects whether the URL string is parseable (via `is-url-superb`)
 
 #### Fallback Behavior
 
@@ -125,6 +128,7 @@ The parser creates nodes using the NodeOptions interface:
 
 ```typescript
 interface NodeOptions {
+  isUrl?: boolean; // Internal URL marker used when mapping Url nodes
   node?: CssNode; // Original css-tree node
   value?: string; // String value
   parent?: any; // Parent node

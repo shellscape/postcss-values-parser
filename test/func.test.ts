@@ -34,4 +34,20 @@ describe('function parsing', () => {
       expect(() => parse(fixture)).toThrow();
     });
   }
+
+  it('should mark absolute url() words as parseable URLs', () => {
+    const root = parse('url(https://example.com/image.png)');
+    const node = root.first as any;
+
+    expect(node.isUrl).toBe(true);
+    expect(node.isParseableUrl).toBe(true);
+  });
+
+  it('should mark relative url() words as URL words but not parseable URLs', () => {
+    const root = parse('url(/images/image.png)');
+    const node = root.first as any;
+
+    expect(node.isUrl).toBe(true);
+    expect(node.isParseableUrl).toBe(false);
+  });
 });

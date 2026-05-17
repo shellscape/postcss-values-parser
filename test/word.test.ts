@@ -30,14 +30,34 @@ describe('word parsing', () => {
   }
 
   const urlFixtures = [
-    { fixture: 'url(https://example.com/image.png)', label: 'unquoted absolute URL' },
-    { fixture: "url('https://example.com/image.png')", label: 'single-quoted absolute URL' },
-    { fixture: 'url("https://example.com/image.png")', label: 'double-quoted absolute URL' },
-    { fixture: 'url(/images/image.png)', label: 'unquoted relative URL' },
-    { fixture: "url('/images/image.png')", label: 'single-quoted relative URL' },
-    { fixture: 'url("/images/image.png")', label: 'double-quoted relative URL' },
-    { fixture: 'url(//cdn.example.com/image.png)', label: 'protocol-relative URL' },
-    { fixture: 'url()', label: 'empty URL value' }
+    { fixture: 'url(https://example.com/image.png)', label: 'unquoted full URL' },
+    { fixture: 'url(/images/image.png)', label: 'unquoted absolute file path' },
+    { fixture: 'url(images/image.png)', label: 'unquoted relative file path' },
+    { fixture: 'url(./images/image.png)', label: 'unquoted relative file path with leading ./' },
+
+    { fixture: "url('https://example.com/image.png')", label: 'single-quoted full URL' },
+    { fixture: "url('/images/image.png')", label: 'single-quoted absolute file path' },
+    { fixture: "url('images/image.png')", label: 'single-quoted relative file path' },
+    { fixture: "url('./images/image.png')", label: 'single-quoted relative file path with leading ./' },
+
+    { fixture: 'url("https://example.com/image.png")', label: 'double-quoted full URL' },
+    { fixture: 'url("/images/image.png")', label: 'double-quoted absolute file path' },
+    { fixture: 'url("images/image.png")', label: 'double-quoted relative file path' },
+    { fixture: 'url("./images/image.png")', label: 'double-quoted relative file path with leading ./' },
+
+    { fixture: "url('https://example.com/image.png?1234567890#abcdef')", label: 'single-quoted full URL with query and fragment' },
+    { fixture: "url('/images/image.png?1234567890#abcdef')", label: 'single-quoted absolute file path with query and fragment' },
+    { fixture: "url('images/image.png?1234567890#abcdef')", label: 'single-quoted relative file path with query and fragment' },
+    { fixture: "url('./images/image.png?1234567890#abcdef')", label: 'single-quoted relative file path with leading ./, query, and fragment' },
+
+    { fixture: 'url("https://example.com/image.png?1234567890#abcdef")', label: 'double-quoted full URL with query and fragment' },
+    { fixture: 'url("/images/image.png?1234567890#abcdef")', label: 'double-quoted absolute file path with query and fragment' },
+    { fixture: 'url("images/image.png?1234567890#abcdef")', label: 'double-quoted relative file path with query and fragment' },
+    { fixture: 'url("./images/image.png?1234567890#abcdef")', label: 'double-quoted relative file path with leading ./, query, and fragment' },
+
+    { fixture: 'url()', label: 'empty URL value' },
+    { fixture: "url('')", label: 'empty single-quoted URL value' },
+    { fixture: 'url("")', label: 'empty double-quoted URL value' }
   ];
 
   for (const { fixture, label } of urlFixtures) {

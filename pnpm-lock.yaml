@@ -87,9 +87,6 @@ importers:
       rewiremock:
         specifier: ^3.14.6
         version: 3.14.6
-      strip-ansi:
-        specifier: ^7.1.0
-        version: 7.1.0
       text-table:
         specifier: ^0.2.0
         version: 0.2.0

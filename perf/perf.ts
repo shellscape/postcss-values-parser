@@ -1,11 +1,11 @@
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
+import { stripVTControlCharacters as stripAnsi } from 'node:util';
 
 import chalk from 'chalk';
 import { globby } from 'globby';
 import perfy from 'perfy';
 import valueParser from 'postcss-value-parser';
-import stripAnsi from 'strip-ansi';
 import table from 'text-table';
 
 import { parse } from '../dist/index.js';
@@ -73,8 +73,8 @@ interface TestResult {
       ours > theirs
         ? chalk.red(ours.toString())
         : theirs > ours
-        ? chalk.green(ours.toString())
-        : ours.toString(),
+          ? chalk.green(ours.toString())
+          : ours.toString(),
       theirs.toString()
     ]);
   }

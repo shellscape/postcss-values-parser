@@ -1,2 +1,10 @@
 onlyBuiltDependencies:
   - esbuild
+
+minimumReleaseAgeStrict: false
+
+allowBuilds:
+  core-js: true
+  esbuild: true
+  pre-commit: true
+  spawn-sync: true

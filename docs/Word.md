@@ -20,7 +20,13 @@ If `true`, denotes that the word represents a hexadecimal value.
 
 Type: `Boolean`<br>
 
-If `true`, denotes that the word represents a Universal Resource Locator (URL). Note that this is only set to `true` for standalone URLs, not for URLs within function calls like `url()`.
+If `true`, denotes that the word represents a URL value. This includes URL values that originate from `url(...)`.
+
+### `isParseableUrl`
+
+Type: `Boolean`<br>
+
+If `true`, denotes that the word's value is recognized as a parseable URL by [`is-url-superb`](https://www.npmjs.com/package/is-url-superb).
 
 ### `isVariable`
 
@@ -52,19 +58,24 @@ The value of the word.
 
 ## URL Handling
 
-The Word node has special handling for URLs that appear outside of function contexts. When a standalone URL is encountered in a CSS value, it is parsed as a Word node with the `isUrl` property set to `true`. This is different from URLs that appear within `url()` functions.
+URL values are represented as `Word` nodes. Use `isUrl` to determine whether a `Word` is a URL value, and use `isParseableUrl` to determine whether the URL string itself is parseable.
+
+For `url(...)`, quoted and unquoted absolute URLs normalize to the same `value`.
 
 ```js
 import { parse } from 'postcss-values-parser';
 
-const root = parse('https://example.com');
-const wordNode = root.nodes[0];
+const unquotedAbsolute = parse('url(https://example.com/image.png)').nodes[0];
+const quotedAbsolute = parse("url('https://example.com/image.png')").nodes[0];
+const relative = parse('url(/images/image.png)').nodes[0];
 
-console.log(wordNode.type); // 'word'
-console.log(wordNode.isUrl); // true
-console.log(wordNode.value); // 'https://example.com'
+console.log(unquotedAbsolute.value === quotedAbsolute.value); // true
+console.log(unquotedAbsolute.isUrl); // true
+console.log(unquotedAbsolute.isParseableUrl); // true
+
+console.log(quotedAbsolute.isUrl); // true
+console.log(quotedAbsolute.isParseableUrl); // true
+
+console.log(relative.isUrl); // true
+console.log(relative.isParseableUrl); // false
 ```
-
-Note: URLs within `url()` functions are handled differently and create `Func` nodes instead of `Word` nodes.
-
-

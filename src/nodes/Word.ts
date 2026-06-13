@@ -17,6 +17,10 @@ import { Node, NodeOptions } from './Node.js';
 const reHex = /^#([0-9a-f]{3}|[0-9a-f]{4}|[0-9a-f]{6}|[0-9a-f]{8})$/i;
 const reVariable = /^--/;
 
+export interface WordOptions extends NodeOptions {
+  fromUrlFunc?: boolean;
+}
+
 export class Word extends Node {
   readonly isColor: boolean = false;
   readonly isHex: boolean = false;
@@ -24,7 +28,11 @@ export class Word extends Node {
   readonly isVariable: boolean = false;
   declare type: string;
 
-  constructor(options: NodeOptions) {
+  get isParseableUrl(): boolean {
+    return !this.isVariable && isUrl(this.value);
+  }
+
+  constructor(options: WordOptions) {
     super(options);
     this.type = 'word';
 
@@ -58,7 +66,9 @@ export class Word extends Node {
     // Determine word properties
     this.isHex = reHex.test(value);
     this.isVariable = reVariable.test(value);
-    this.isUrl = !this.isVariable && isUrl(value);
+    const parseableUrl = !this.isVariable && isUrl(value);
+
+    this.isUrl = Boolean(options && options.fromUrlFunc) || parseableUrl;
     this.isColor = this.isHex || (colorNames as any)[value.toLowerCase()] !== undefined;
   }
 }

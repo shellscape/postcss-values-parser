@@ -28,4 +28,51 @@ describe('word parsing', () => {
       expect(nodes).toMatchSnapshot();
     });
   }
+
+  const urlFixtures = [
+    { fixture: 'url(https://example.com/image.png)', label: 'unquoted full URL' },
+    { fixture: 'url(/images/image.png)', label: 'unquoted absolute file path' },
+    { fixture: 'url(images/image.png)', label: 'unquoted relative file path' },
+    { fixture: 'url(./images/image.png)', label: 'unquoted relative file path with leading ./' },
+
+    { fixture: "url('https://example.com/image.png')", label: 'single-quoted full URL' },
+    { fixture: "url('/images/image.png')", label: 'single-quoted absolute file path' },
+    { fixture: "url('images/image.png')", label: 'single-quoted relative file path' },
+    { fixture: "url('./images/image.png')", label: 'single-quoted relative file path with leading ./' },
+
+    { fixture: 'url("https://example.com/image.png")', label: 'double-quoted full URL' },
+    { fixture: 'url("/images/image.png")', label: 'double-quoted absolute file path' },
+    { fixture: 'url("images/image.png")', label: 'double-quoted relative file path' },
+    { fixture: 'url("./images/image.png")', label: 'double-quoted relative file path with leading ./' },
+
+    { fixture: "url('https://example.com/image.png?1234567890#abcdef')", label: 'single-quoted full URL with query and fragment' },
+    { fixture: "url('/images/image.png?1234567890#abcdef')", label: 'single-quoted absolute file path with query and fragment' },
+    { fixture: "url('images/image.png?1234567890#abcdef')", label: 'single-quoted relative file path with query and fragment' },
+    { fixture: "url('./images/image.png?1234567890#abcdef')", label: 'single-quoted relative file path with leading ./, query, and fragment' },
+
+    { fixture: 'url("https://example.com/image.png?1234567890#abcdef")', label: 'double-quoted full URL with query and fragment' },
+    { fixture: 'url("/images/image.png?1234567890#abcdef")', label: 'double-quoted absolute file path with query and fragment' },
+    { fixture: 'url("images/image.png?1234567890#abcdef")', label: 'double-quoted relative file path with query and fragment' },
+    { fixture: 'url("./images/image.png?1234567890#abcdef")', label: 'double-quoted relative file path with leading ./, query, and fragment' },
+
+    { fixture: 'url()', label: 'empty URL value' },
+    { fixture: "url('')", label: 'empty single-quoted URL value' },
+    { fixture: 'url("")', label: 'empty double-quoted URL value' }
+  ];
+
+  for (const { fixture, label } of urlFixtures) {
+    it(`should expose URL metadata for: ${label}`, () => {
+      const root = parse(fixture);
+      const node = root.first as any;
+
+      expect({
+        input: fixture,
+        output: nodeToString(root),
+        type: node.type,
+        value: node.value,
+        isUrl: node.isUrl,
+        isParseableUrl: node.isParseableUrl
+      }).toMatchSnapshot();
+    });
+  }
 });

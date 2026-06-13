@@ -3730,7 +3730,7 @@ exports[`function parsing > should parse: url( "/gfx/img/bg.jpg" ) 3`] = `
     ],
     "isColor": false,
     "isHex": false,
-    "isUrl": false,
+    "isUrl": true,
     "isVariable": false,
     "raws": {},
     "source": {
@@ -3806,7 +3806,7 @@ exports[`function parsing > should parse: url( '/gfx/img/bg.jpg' ) 3`] = `
     ],
     "isColor": false,
     "isHex": false,
-    "isUrl": false,
+    "isUrl": true,
     "isVariable": false,
     "raws": {},
     "source": {
@@ -3882,7 +3882,7 @@ exports[`function parsing > should parse: url( /gfx/img/bg.jpg  3`] = `
     ],
     "isColor": false,
     "isHex": false,
-    "isUrl": false,
+    "isUrl": true,
     "isVariable": false,
     "raws": {},
     "source": {
@@ -3920,7 +3920,7 @@ exports[`function parsing > should parse: url( /gfx/img/bg.jpg ) 3`] = `
     ],
     "isColor": false,
     "isHex": false,
-    "isUrl": false,
+    "isUrl": true,
     "isVariable": false,
     "raws": {},
     "source": {
@@ -3958,7 +3958,7 @@ exports[`function parsing > should parse: url() 3`] = `
     ],
     "isColor": false,
     "isHex": false,
-    "isUrl": false,
+    "isUrl": true,
     "isVariable": false,
     "raws": {},
     "source": {
@@ -3996,7 +3996,7 @@ exports[`function parsing > should parse: url() foo bar baz 3`] = `
     ],
     "isColor": false,
     "isHex": false,
-    "isUrl": false,
+    "isUrl": true,
     "isVariable": false,
     "raws": {},
     "source": {
@@ -4121,7 +4121,7 @@ exports[`function parsing > should parse: url(//123.example.com) 3`] = `
     ],
     "isColor": false,
     "isHex": false,
-    "isUrl": false,
+    "isUrl": true,
     "isVariable": false,
     "raws": {},
     "source": {

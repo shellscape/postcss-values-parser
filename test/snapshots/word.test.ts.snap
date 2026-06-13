@@ -1,5 +1,258 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`word parsing > should expose URL metadata for: double-quoted absolute file path 1`] = `
+{
+  "input": "url("/images/image.png")",
+  "isParseableUrl": false,
+  "isUrl": true,
+  "output": "/images/image.png",
+  "type": "word",
+  "value": "/images/image.png",
+}
+`;
+
+exports[`word parsing > should expose URL metadata for: double-quoted absolute file path with query and fragment 1`] = `
+{
+  "input": "url("/images/image.png?1234567890#abcdef")",
+  "isParseableUrl": false,
+  "isUrl": true,
+  "output": "/images/image.png?1234567890#abcdef",
+  "type": "word",
+  "value": "/images/image.png?1234567890#abcdef",
+}
+`;
+
+exports[`word parsing > should expose URL metadata for: double-quoted full URL 1`] = `
+{
+  "input": "url("https://example.com/image.png")",
+  "isParseableUrl": true,
+  "isUrl": true,
+  "output": "https://example.com/image.png",
+  "type": "word",
+  "value": "https://example.com/image.png",
+}
+`;
+
+exports[`word parsing > should expose URL metadata for: double-quoted full URL with query and fragment 1`] = `
+{
+  "input": "url("https://example.com/image.png?1234567890#abcdef")",
+  "isParseableUrl": true,
+  "isUrl": true,
+  "output": "https://example.com/image.png?1234567890#abcdef",
+  "type": "word",
+  "value": "https://example.com/image.png?1234567890#abcdef",
+}
+`;
+
+exports[`word parsing > should expose URL metadata for: double-quoted relative file path 1`] = `
+{
+  "input": "url("images/image.png")",
+  "isParseableUrl": false,
+  "isUrl": true,
+  "output": "images/image.png",
+  "type": "word",
+  "value": "images/image.png",
+}
+`;
+
+exports[`word parsing > should expose URL metadata for: double-quoted relative file path with leading ./ 1`] = `
+{
+  "input": "url("./images/image.png")",
+  "isParseableUrl": false,
+  "isUrl": true,
+  "output": "./images/image.png",
+  "type": "word",
+  "value": "./images/image.png",
+}
+`;
+
+exports[`word parsing > should expose URL metadata for: double-quoted relative file path with leading ./, query, and fragment 1`] = `
+{
+  "input": "url("./images/image.png?1234567890#abcdef")",
+  "isParseableUrl": false,
+  "isUrl": true,
+  "output": "./images/image.png?1234567890#abcdef",
+  "type": "word",
+  "value": "./images/image.png?1234567890#abcdef",
+}
+`;
+
+exports[`word parsing > should expose URL metadata for: double-quoted relative file path with query and fragment 1`] = `
+{
+  "input": "url("images/image.png?1234567890#abcdef")",
+  "isParseableUrl": false,
+  "isUrl": true,
+  "output": "images/image.png?1234567890#abcdef",
+  "type": "word",
+  "value": "images/image.png?1234567890#abcdef",
+}
+`;
+
+exports[`word parsing > should expose URL metadata for: empty URL value 1`] = `
+{
+  "input": "url()",
+  "isParseableUrl": false,
+  "isUrl": true,
+  "output": "",
+  "type": "word",
+  "value": "",
+}
+`;
+
+exports[`word parsing > should expose URL metadata for: empty double-quoted URL value 1`] = `
+{
+  "input": "url("")",
+  "isParseableUrl": false,
+  "isUrl": true,
+  "output": "",
+  "type": "word",
+  "value": "",
+}
+`;
+
+exports[`word parsing > should expose URL metadata for: empty single-quoted URL value 1`] = `
+{
+  "input": "url('')",
+  "isParseableUrl": false,
+  "isUrl": true,
+  "output": "",
+  "type": "word",
+  "value": "",
+}
+`;
+
+exports[`word parsing > should expose URL metadata for: single-quoted absolute file path 1`] = `
+{
+  "input": "url('/images/image.png')",
+  "isParseableUrl": false,
+  "isUrl": true,
+  "output": "/images/image.png",
+  "type": "word",
+  "value": "/images/image.png",
+}
+`;
+
+exports[`word parsing > should expose URL metadata for: single-quoted absolute file path with query and fragment 1`] = `
+{
+  "input": "url('/images/image.png?1234567890#abcdef')",
+  "isParseableUrl": false,
+  "isUrl": true,
+  "output": "/images/image.png?1234567890#abcdef",
+  "type": "word",
+  "value": "/images/image.png?1234567890#abcdef",
+}
+`;
+
+exports[`word parsing > should expose URL metadata for: single-quoted full URL 1`] = `
+{
+  "input": "url('https://example.com/image.png')",
+  "isParseableUrl": true,
+  "isUrl": true,
+  "output": "https://example.com/image.png",
+  "type": "word",
+  "value": "https://example.com/image.png",
+}
+`;
+
+exports[`word parsing > should expose URL metadata for: single-quoted full URL with query and fragment 1`] = `
+{
+  "input": "url('https://example.com/image.png?1234567890#abcdef')",
+  "isParseableUrl": true,
+  "isUrl": true,
+  "output": "https://example.com/image.png?1234567890#abcdef",
+  "type": "word",
+  "value": "https://example.com/image.png?1234567890#abcdef",
+}
+`;
+
+exports[`word parsing > should expose URL metadata for: single-quoted relative file path 1`] = `
+{
+  "input": "url('images/image.png')",
+  "isParseableUrl": false,
+  "isUrl": true,
+  "output": "images/image.png",
+  "type": "word",
+  "value": "images/image.png",
+}
+`;
+
+exports[`word parsing > should expose URL metadata for: single-quoted relative file path with leading ./ 1`] = `
+{
+  "input": "url('./images/image.png')",
+  "isParseableUrl": false,
+  "isUrl": true,
+  "output": "./images/image.png",
+  "type": "word",
+  "value": "./images/image.png",
+}
+`;
+
+exports[`word parsing > should expose URL metadata for: single-quoted relative file path with leading ./, query, and fragment 1`] = `
+{
+  "input": "url('./images/image.png?1234567890#abcdef')",
+  "isParseableUrl": false,
+  "isUrl": true,
+  "output": "./images/image.png?1234567890#abcdef",
+  "type": "word",
+  "value": "./images/image.png?1234567890#abcdef",
+}
+`;
+
+exports[`word parsing > should expose URL metadata for: single-quoted relative file path with query and fragment 1`] = `
+{
+  "input": "url('images/image.png?1234567890#abcdef')",
+  "isParseableUrl": false,
+  "isUrl": true,
+  "output": "images/image.png?1234567890#abcdef",
+  "type": "word",
+  "value": "images/image.png?1234567890#abcdef",
+}
+`;
+
+exports[`word parsing > should expose URL metadata for: unquoted absolute file path 1`] = `
+{
+  "input": "url(/images/image.png)",
+  "isParseableUrl": false,
+  "isUrl": true,
+  "output": "/images/image.png",
+  "type": "word",
+  "value": "/images/image.png",
+}
+`;
+
+exports[`word parsing > should expose URL metadata for: unquoted full URL 1`] = `
+{
+  "input": "url(https://example.com/image.png)",
+  "isParseableUrl": true,
+  "isUrl": true,
+  "output": "https://example.com/image.png",
+  "type": "word",
+  "value": "https://example.com/image.png",
+}
+`;
+
+exports[`word parsing > should expose URL metadata for: unquoted relative file path 1`] = `
+{
+  "input": "url(images/image.png)",
+  "isParseableUrl": false,
+  "isUrl": true,
+  "output": "images/image.png",
+  "type": "word",
+  "value": "images/image.png",
+}
+`;
+
+exports[`word parsing > should expose URL metadata for: unquoted relative file path with leading ./ 1`] = `
+{
+  "input": "url(./images/image.png)",
+  "isParseableUrl": false,
+  "isUrl": true,
+  "output": "./images/image.png",
+  "type": "word",
+  "value": "./images/image.png",
+}
+`;
+
 exports[`word parsing > should parse:  \\"word\\" \\s  1`] = `"\\"word\\""`;
 
 exports[`word parsing > should parse:  \\"word\\" \\s  2`] = `"\\"word\\" \\s"`;

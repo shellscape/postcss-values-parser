@@ -60,7 +60,12 @@ Node type mapping:
 
 #### URL nodes
 
-When css-tree produces a `Url` node, it is represented as a `Word` node whose `value` is the URL string. URLs inside `url()` appear as a `Func` node named `url`.
+When css-tree produces a `Url` node, it is represented as a `Word` node whose `value` is the URL string. For these nodes:
+
+- `isUrl` is `true`
+- `isParseableUrl` reflects whether the URL string is parseable (via `is-url-superb`)
+
+Both `url(https://google.com)` and `url('https://google.com')` normalize to the same `Word` value (`https://google.com`) because css-tree emits the same `Url` node shape for quoted and unquoted forms.
 
 #### Fallback Behavior
 
@@ -128,6 +133,10 @@ interface NodeOptions {
   node?: CssNode; // Original css-tree node
   value?: string; // String value
   parent?: any; // Parent node
+}
+
+interface WordOptions extends NodeOptions {
+  fromUrlFunc?: boolean; // Internal marker for Word nodes mapped from css-tree Url
 }
 ```
 
